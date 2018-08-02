@@ -7,7 +7,7 @@
 
 ## 下载地址
 
-+ [GitHub](https://github.com/WizenZhang/NMUThesis): [https://github.com/WizenZhang/NMUThesis/releases](https://github.com/WizenZhang/NMUThesis/releases)
++ [GitHub](https://github.com/WizenZhang/NMUThesis): [https://github.com/WizenZhang/NMUThesis](https://github.com/WizenZhang/NMUThesis)
 
 ## 文件列表
 
@@ -45,4 +45,4 @@ BUAAThesis
 
 ***
 
-By [Wizen Zhang](https://github.com/WizenZhang/NMUThesis), Aug 2018.
+By [Wizen Zhang](https://github.com/WizenZhang), Aug 2018.
