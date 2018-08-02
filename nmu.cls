@@ -444,20 +444,28 @@
 		\vspace{30mm}
 		\begin{center}
 			\bfseries \xiaochu \heiti {北方民族大学}\par
-			{\xiaoyi \heiti {硕士学位论文}}\par			
-			\erhao\heiti {\NMU@title\hfill}\par
-			\sanhao{\NMU@englishtitle\hfill}\par
-			\vspace{30mm}
-			\songti\xiaosan{
-			\begin{tabular}{ccl@{\extracolsep{2em}}l}
-				~~ & 所在学院:& \underline{\makebox[13em]{\qquad {\NMU@institute} \qquad }}\\
-				~~&专业名称:&\underline{\makebox[13em]{\qquad {\NMU@major} \qquad }}\\
-				~~ & 研究方向:& \underline{\makebox[13em]{\qquad {\NMU@research} \qquad }}\\
-				~~ & 完成日期:&\underline{\makebox[13em]{\qquad {%
-							\NMU@submitdate} \qquad }}\\
-			\end{tabular}} 
+			{\xiaoyi \heiti {硕士学位论文}}\par	
+		\end{center}		
+
+    \parbox[t][3cm][t]{\textwidth}{
+	  \begin{center}
+		{\erhao\heiti {\NMU@title\hfill}\\}
+	  \end{center}}
+	\parbox[t][3cm][t]{\textwidth}{
+	  \begin{center}
+			{\sanhao{\NMU@englishtitle\hfill}\\}
+      \end{center}}
 			
-		\end{center}
+	\parbox[t][9cm][c]{\textwidth}{\sihao\songti\hspace{2em}
+		\begin{tabular}{ccl@{\extracolsep{2em}}l}
+			~~ & 所在学院:& \underline{\makebox[13em]{\qquad {\NMU@institute} \qquad }}\\
+			~~&专业名称:&\underline{\makebox[13em]{\qquad {\NMU@major} \qquad }}\\
+			~~ & 研究方向:& \underline{\makebox[13em]{\qquad {\NMU@research} \qquad }}\\
+			~~ & 完成日期:&\underline{\makebox[13em]{\qquad {%
+						\NMU@submitdate} \qquad }}\\
+		\end{tabular}} 
+			
+		
 		
 		\clearautopage
 }}
@@ -478,13 +486,25 @@
   \vspace{3mm}
   \begin{center}
 	\includegraphics[width=25.4mm]{nmu_logo}\par
+	\vspace{7.4mm}
 	\chuhao \lishu{北方民族大学}\par
-	{\xiaoerhao \songti {硕士学位论文}}\par
-	\erhao\heiti {\NMU@title\hfill}\\
-	\sanhao{\NMU@englishtitle\hfill}\par
-	\vspace{6mm}
-	\songti\sihao{
-	\begin{tabular}{ccl@{\extracolsep{2em}}l}
+	\vspace{5mm}
+	{\xiaoerhao \songti {硕士学位论文}}\par	
+  \end{center}
+
+  \parbox[t][3cm][t]{\textwidth}{
+	\begin{center}
+		{\erhao\heiti {\NMU@title\hfill}\\}
+    \end{center}}
+  \parbox[t][3cm][t]{\textwidth}{
+	\begin{center}
+		{\sanhao{\NMU@englishtitle\hfill}\\}
+    \end{center}}
+
+   % \extracolsep:将所有列在设定的表格宽度中均匀展开
+   % 2em: 1em(当前字体中M的宽度)
+	\parbox[t][10cm][c]{\textwidth}{\sihao\songti\hspace{1em}
+ 	  \begin{tabular}{ccl@{\extracolsep{2em}}l}
 		~~&学\hfill 位\hfill 申\hfill 请\hfill 人:& \underline{\makebox[13em]{\qquad {\NMU@author} \qquad }}\\
 		~~ & 指\hfill 导\hfill 教\hfill 师:&\underline{\makebox[13em]{\qquad \NMU@supervisor \qquad }}\\
 		~~&申\hfill 请\hfill 的\hfill 学\hfill 位\hfill 门\hfill 类:&\underline{\makebox[13em]{\qquad {\NMU@applyclass} \qquad }}\\
@@ -493,9 +513,7 @@
 		~~ & 所\hfill 在\hfill 学\hfill 院:& \underline{\makebox[13em]{\qquad {\NMU@institute} \qquad }}\\
 		~~ & 论 \hfill 文\hfill 完\hfill 成\hfill 日\hfill 期:&\underline{\makebox[13em]{\qquad {%
 					\NMU@submitdate} \qquad }}\\
-	\end{tabular}} 
-	
-  \end{center}
+	  \end{tabular}}
 
   \clearautopage
 }}
