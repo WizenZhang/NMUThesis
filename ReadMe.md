@@ -7,7 +7,7 @@
 
 ## 下载地址
 
-+ [GitHub](https://github.com/CheckBoxStudio): [https://github.com/CheckBoxStudio/BUAAThesis/releases](https://github.com/CheckBoxStudio/BUAAThesis/releases)
++ [GitHub](https://github.com/WizenZhang/NMUThesis): [https://github.com/WizenZhang/NMUThesis](https://github.com/WizenZhang/NMUThesis)
 
 ## 文件列表
 
@@ -31,7 +31,7 @@ BUAAThesis
 ## 建议及问题反馈
 
 + E-mail: [wizen_zhang@163.com](wizen_zhang@163.com)
-+ GitHub: [https://github.com/CheckBoxStudio/BUAAThesis/issues](https://github.com/CheckBoxStudio/BUAAThesis/issues)
++ GitHub: [https://github.com/WizenZhang/NMUThesis/issues](https://github.com/WizenZhang/NMUThesis/issues)
 
 ## 我的环境
 
@@ -45,4 +45,4 @@ BUAAThesis
 
 ***
 
-By [Wizen Zhang](https://github.com/weiquanmao), Aug 2018.
+By [Wizen Zhang](https://github.com/WizenZhang/NMUThesis), Aug 2018.
