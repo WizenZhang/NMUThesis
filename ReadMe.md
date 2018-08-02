@@ -7,7 +7,7 @@
 
 ## 下载地址
 
-+ [GitHub](https://github.com/WizenZhang/NMUThesis): [https://github.com/WizenZhang/NMUThesis](https://github.com/WizenZhang/NMUThesis)
++ [GitHub](https://github.com/WizenZhang/NMUThesis): [https://github.com/WizenZhang/NMUThesis/releases](https://github.com/WizenZhang/NMUThesis/releases)
 
 ## 文件列表
 
