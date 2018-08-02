@@ -35,8 +35,8 @@
  \kern-.26em\raise.5ex\hbox{\rotatebox[origin=c]{180}{S}}%
 }
 
-% 引用ctexbook: 小4,1.5倍行距
-\LoadClass[UTF8,zihao=-4,linespread=1.7]{ctexbook}%1.5+0.2行间距
+% 引用ctexbook: 五号,1.5倍行距
+\LoadClass[UTF8,zihao=5,linespread=1.5]{ctexbook}%1.5行间距
 
 %% 预声明
 \RequirePackage{ifthen}       % ifthenelse/equal/isundefined等判断比较命令
@@ -213,6 +213,9 @@
   listfigurename={图~清~单},
   listtablename={表~清~单},
 }
+
+\renewcommand{\contentsname}{\zihao{2} \heiti 目~~~~录}
+
 % 标题样式修改
 \ctexset{%
   chapter={%章标题 : 三号黑体居中 单倍行距 段前/段后0.5行 另起新页
@@ -284,9 +287,9 @@
 % 设置目录格式
 \titlecontents{chapter}[0pt]{\songti\zihao{4}}{\thecontentslabel\ }{}
 {\hspace{.5em}\titlerule*[4pt]{$\cdot$}\normalsize\contentspage}
-\titlecontents{section}[2em]{\zihao{-4}}{\thecontentslabel\ }{}
+\titlecontents{section}[2em]{\songti\zihao{-4}}{\thecontentslabel\ }{}
 {\hspace{.5em}\titlerule*[4pt]{$\cdot$}\normalsize\contentspage}
-\titlecontents{subsection}[3em]{\zihao{-4}}{\thecontentslabel\ }{}
+\titlecontents{subsection}[3em]{\songti\zihao{-4}}{\thecontentslabel\ }{}
 {\hspace{.5em}\titlerule*[4pt]{$\cdot$}\normalsize\contentspage}
 \titlecontents{figure}[0pt]{\songti\zihao{-4}}{图~\thecontentslabel\quad}{}
 {\hspace{.5em}\titlerule*[4pt]{$\cdot$}\normalsize\contentspage}
@@ -445,13 +448,14 @@
 			\erhao\heiti {\NMU@title\hfill}\par
 			\sanhao{\NMU@englishtitle\hfill}\par
 			\vspace{30mm}
+			\songti\xiaosan{
 			\begin{tabular}{ccl@{\extracolsep{2em}}l}
 				~~ & 所在学院:& \underline{\makebox[13em]{\qquad {\NMU@institute} \qquad }}\\
 				~~&专业名称:&\underline{\makebox[13em]{\qquad {\NMU@major} \qquad }}\\
 				~~ & 研究方向:& \underline{\makebox[13em]{\qquad {\NMU@research} \qquad }}\\
 				~~ & 完成日期:&\underline{\makebox[13em]{\qquad {%
 							\NMU@submitdate} \qquad }}\\
-			\end{tabular} 
+			\end{tabular}} 
 			
 		\end{center}
 		
@@ -473,12 +477,13 @@
   }
   \vspace{3mm}
   \begin{center}
-	\includegraphics[width=27mm]{nmu_logo}\par
+	\includegraphics[width=25.4mm]{nmu_logo}\par
 	\chuhao \lishu{北方民族大学}\par
 	{\xiaoerhao \songti {硕士学位论文}}\par
 	\erhao\heiti {\NMU@title\hfill}\\
 	\sanhao{\NMU@englishtitle\hfill}\par
-	\vspace{5mm}
+	\vspace{6mm}
+	\songti\sihao{
 	\begin{tabular}{ccl@{\extracolsep{2em}}l}
 		~~&学\hfill 位\hfill 申\hfill 请\hfill 人:& \underline{\makebox[13em]{\qquad {\NMU@author} \qquad }}\\
 		~~ & 指\hfill 导\hfill 教\hfill 师:&\underline{\makebox[13em]{\qquad \NMU@supervisor \qquad }}\\
@@ -488,7 +493,7 @@
 		~~ & 所\hfill 在\hfill 学\hfill 院:& \underline{\makebox[13em]{\qquad {\NMU@institute} \qquad }}\\
 		~~ & 论 \hfill 文\hfill 完\hfill 成\hfill 日\hfill 期:&\underline{\makebox[13em]{\qquad {%
 					\NMU@submitdate} \qquad }}\\
-	\end{tabular} 
+	\end{tabular}} 
 	
   \end{center}
 
@@ -538,18 +543,18 @@
 \newcommand{\abstructkeyword}{% 摘要
 {\pdfbookmark[0]{中英摘要}{abstructkeyword}
   \begin{spacing}{1.7}%1.5+0.2
-    {\zihao{3} \heiti  \centerline{摘~~~~要}}
-    {\zihao{-4} \songti ~\par
+    {\sanhao \heiti  \centerline{摘~~~~要}}
+    {\xiaosi \songti ~\par
       \@abstrctcn \par ~\par
-      {\heiti 关键字：} \@keywordcn
+      {\sihao\heiti 关键字：} \@keywordcn
     }
     
     \clearpage
     %\ifthenelse{\equal{\@beginright}{off}}{\clearpage}{\clearautopage}
     {\zihao{3} \bfseries  \centerline{{Abstract}}}
-    {\zihao{-4}  ~\par
+    {\xiaosi  ~\par
       \@abstrcten \par ~\par
-      {\bfseries Key words:} \@keyworden
+      {\sihao\bfseries Key words:} \@keyworden
     }
 
   \end{spacing}
