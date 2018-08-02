@@ -44,6 +44,8 @@
 \RequirePackage{fancyhdr}     % 设置页眉页脚
 \RequirePackage{setspace}     % 设置行间距
 \RequirePackage{times}        % Times New Roman字体
+\RequirePackage[T1]{fontenc}  % 修改默认文本和数学字形为Times New Roman字体
+\RequirePackage{mathptmx}     % 修改默认文本和数学字形为Times New Roman字体
 \RequirePackage{float}        % 图片
 \RequirePackage{graphicx}     % 图片
 \RequirePackage{subfigure}    % 图片
@@ -281,15 +283,15 @@
 	
 % 设置目录格式
 \titlecontents{chapter}[0pt]{\songti\zihao{4}}{\thecontentslabel\ }{}
-{\hspace{.5em}\titlerule*[4pt]{$\cdot$}\contentspage}
-\titlecontents{section}[2em]{\songti\zihao{-4}}{\thecontentslabel\ }{}
-{\hspace{.5em}\titlerule*[4pt]{$\cdot$}\contentspage}
-\titlecontents{subsection}[3em]{\songti\zihao{-4}}{\thecontentslabel\ }{}
-{\hspace{.5em}\titlerule*[4pt]{$\cdot$}\contentspage}
+{\hspace{.5em}\titlerule*[4pt]{$\cdot$}\normalsize\contentspage}
+\titlecontents{section}[2em]{\zihao{-4}}{\thecontentslabel\ }{}
+{\hspace{.5em}\titlerule*[4pt]{$\cdot$}\normalsize\contentspage}
+\titlecontents{subsection}[3em]{\zihao{-4}}{\thecontentslabel\ }{}
+{\hspace{.5em}\titlerule*[4pt]{$\cdot$}\normalsize\contentspage}
 \titlecontents{figure}[0pt]{\songti\zihao{-4}}{图~\thecontentslabel\quad}{}
-{\hspace{.5em}\titlerule*[4pt]{$\cdot$}\contentspage}
+{\hspace{.5em}\titlerule*[4pt]{$\cdot$}\normalsize\contentspage}
 \titlecontents{table}[0pt]{\songti\zihao{-4}}{表~\thecontentslabel\quad}{}
-{\hspace{.5em}\titlerule*[4pt]{$\cdot$}\contentspage}
+{\hspace{.5em}\titlerule*[4pt]{$\cdot$}\normalsize\contentspage}
 
 
 % 图表环境设置
@@ -411,16 +413,16 @@
   \renewcommand{\headrulewidth}{0.4pt}%页眉设置
   \ifthenelse{\equal{\@printtype}{twoside}}{% 双面打印
   	\fancyfoot[C]{}
-  	\fancyfoot[RO]{\textcolor{gray}{\zihao{5}\setmainfont{Times New Roman}-\thepage-}}
-  	\fancyfoot[LE]{\textcolor{gray}{\zihao{5}\setmainfont{Times New Roman}-\thepage-}}
+  	\fancyfoot[RO]{\textcolor{gray}{\zihao{5}-\thepage-}}
+  	\fancyfoot[LE]{\textcolor{gray}{\zihao{5}-\thepage-}}
   }{%
-    \fancyfoot[C]{\textcolor{gray}{\zihao{5}\setmainfont{Times New Roman}-\thepage-}}
+    \fancyfoot[C]{\textcolor{gray}{\zihao{5}-\thepage-}}
   }
   \ifthenelse{\equal{\@thesis}{master} \OR \equal{\@thesis}{professional}}{%
-      \fancyhead[C]{\textcolor{gray}{\zihao{-5}北方民族大学{\setmainfont{Times New Roman}\NMU@session}届硕士学位论文\hfill\leftmark}}
+      \fancyhead[C]{\textcolor{gray}{\zihao{-5}北方民族大学{\NMU@session}届硕士学位论文\hfill\leftmark}}
   }{}
   \ifthenelse{\equal{\@thesis}{doctor}}{%
-      \fancyhead[C]{\textcolor{gray}{\zihao{-5}北方民族大学{\setmainfont{Times New Roman}\NMU@session}届博士学位论文\hfill\leftmark}}
+      \fancyhead[C]{\textcolor{gray}{\zihao{-5}北方民族大学{\NMU@session}届博士学位论文\hfill\leftmark}}
   }{}
   \setcounter{page}{1}
 }
@@ -441,13 +443,13 @@
 			\bfseries \xiaochu \heiti {北方民族大学}\par
 			{\xiaoyi \heiti {硕士学位论文}}\par			
 			\erhao\heiti {\NMU@title\hfill}\par
-			\sanhao\setmainfont{Times New Roman}{\NMU@englishtitle\hfill}\par
+			\sanhao{\NMU@englishtitle\hfill}\par
 			\vspace{30mm}
 			\begin{tabular}{ccl@{\extracolsep{2em}}l}
 				~~ & 所在学院:& \underline{\makebox[13em]{\qquad {\NMU@institute} \qquad }}\\
 				~~&专业名称:&\underline{\makebox[13em]{\qquad {\NMU@major} \qquad }}\\
 				~~ & 研究方向:& \underline{\makebox[13em]{\qquad {\NMU@research} \qquad }}\\
-				~~ & 完成日期:&\underline{\setmainfont{Times New Roman}\makebox[13em]{\qquad {%
+				~~ & 完成日期:&\underline{\makebox[13em]{\qquad {%
 							\NMU@submitdate} \qquad }}\\
 			\end{tabular} 
 			
@@ -462,11 +464,11 @@
  \thispagestyle{empty}%此页不加页眉页脚
   {\begin{center}
   	\wuhao \songti \noindent
-  	\makebox[3\ccwd][s]{分类号}：{\setmainfont{Times New Roman} \NMU@classification}%
-  	\hfill 单位代码：{\setmainfont{Times New Roman} \NMU@serialnumber\hphantom{160}}    
+  	\makebox[3\ccwd][s]{分类号}：{\NMU@classification}%
+  	\hfill 单位代码：{ \NMU@serialnumber\hphantom{160}}    
   	\\
   	\makebox[3\ccwd][s]{密级}：\NMU@secretlevel
-  	\hfill \makebox[4\ccwd][s]{学号}：{\setmainfont{Times New Roman} \NMU@studentnumber}
+  	\hfill \makebox[4\ccwd][s]{学号}：{\NMU@studentnumber}
   \end{center}   
   }
   \vspace{3mm}
@@ -475,7 +477,7 @@
 	\chuhao \lishu{北方民族大学}\par
 	{\xiaoerhao \songti {硕士学位论文}}\par
 	\erhao\heiti {\NMU@title\hfill}\\
-	\sanhao\setmainfont{Times New Roman}{\NMU@englishtitle\hfill}\par
+	\sanhao{\NMU@englishtitle\hfill}\par
 	\vspace{5mm}
 	\begin{tabular}{ccl@{\extracolsep{2em}}l}
 		~~&学\hfill 位\hfill 申\hfill 请\hfill 人:& \underline{\makebox[13em]{\qquad {\NMU@author} \qquad }}\\
@@ -484,7 +486,7 @@
 		~~&专\hfill 业\hfill 名\hfill 称:&\underline{\makebox[13em]{\qquad {\NMU@major} \qquad }}\\
 		~~ & 研\hfill 究\hfill 方\hfill 向:& \underline{\makebox[13em]{\qquad {\NMU@research} \qquad }}\\
 		~~ & 所\hfill 在\hfill 学\hfill 院:& \underline{\makebox[13em]{\qquad {\NMU@institute} \qquad }}\\
-		~~ & 论 \hfill 文\hfill 完\hfill 成\hfill 日\hfill 期:&\underline{\setmainfont{Times New Roman}\makebox[13em]{\qquad {%
+		~~ & 论 \hfill 文\hfill 完\hfill 成\hfill 日\hfill 期:&\underline{\makebox[13em]{\qquad {%
 					\NMU@submitdate} \qquad }}\\
 	\end{tabular} 
 	
@@ -544,8 +546,8 @@
     
     \clearpage
     %\ifthenelse{\equal{\@beginright}{off}}{\clearpage}{\clearautopage}
-    {\zihao{3} \bfseries  \centerline{\setmainfont{Times New Roman}{Abstract}}}
-    {\zihao{-4} \setmainfont{Times New Roman} ~\par
+    {\zihao{3} \bfseries  \centerline{{Abstract}}}
+    {\zihao{-4}  ~\par
       \@abstrcten \par ~\par
       {\bfseries Key words:} \@keyworden
     }
