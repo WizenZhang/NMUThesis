@@ -477,10 +477,10 @@
   {\begin{center}
   	\wuhao \songti \noindent
   	\makebox[3\ccwd][s]{分类号}：{\NMU@classification}%
-  	\hfill 单位代码：{ \NMU@serialnumber\hphantom{160}}    
+  	\hfill 单位代码：\makebox[8\ccwd][s]{\NMU@serialnumber}    
   	\\
   	\makebox[3\ccwd][s]{密级}：\NMU@secretlevel
-  	\hfill \makebox[4\ccwd][s]{学号}：{\NMU@studentnumber}
+  	\hfill \makebox[4\ccwd][s]{学号}：\makebox[8\ccwd][s]{\NMU@studentnumber}
   \end{center}   
   }
   \vspace{3mm}
