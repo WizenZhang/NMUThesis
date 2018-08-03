@@ -200,6 +200,29 @@
 % 页眉
 \newcommand*\session[1]{\gdef\NMU@session{#1}}			% 毕业届
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  重定义字号命令
+\newcommand{\chuhao}{\fontsize{42pt}{\baselineskip}\selectfont}     % 初号
+\newcommand{\xiaochu}{\fontsize{32pt}{38pt}\selectfont}    % 小初
+\newcommand{\yihao}{\fontsize{26pt}{36pt}\selectfont}    % 一号, 1.4倍行距
+\newcommand{\xiaoyi}{\fontsize{24pt}{36pt}\selectfont}    % 小一号, 1.5倍行距
+\newcommand{\erhao}{\fontsize{22pt}{28pt}\selectfont}    % 二号, 1.25倍行距
+\newcommand{\xiaoerhao}{\fontsize{18pt}{18pt}\selectfont}    % 小二, 单倍行距
+\newcommand{\sanhao}{\fontsize{16pt}{24pt}\selectfont}    % 三号, 1.5倍行距
+\newcommand{\sansan}{\fontsize{16pt}{48pt}\selectfont}    % 三号, 3倍行距
+\newcommand{\xiaosan}{\fontsize{15pt}{22pt}\selectfont}    % 小三, 1.5倍行距
+\newcommand{\sihao}{\fontsize{14pt}{21pt}\selectfont}    % 四号, 1.5倍行距
+\newcommand{\sierwu}{\fontsize{14pt}{35pt}\selectfont}    % 四号, 2.5倍行距
+\newcommand{\banxiaosi}{\fontsize{13pt}{19.5pt}\selectfont}% 半小四, 1.5倍行距
+\newcommand{\xiaosi}{\fontsize{12pt}{18pt}\selectfont}    % 小四, 1.5倍行距
+\newcommand{\xiaosier}{\fontsize{12pt}{24pt}\selectfont}    % 小四, 2倍行距
+\newcommand{\dawuhao}{\fontsize{11pt}{11pt}\selectfont}    % 大五号, 单倍行距
+\newcommand{\wuhao}{\fontsize{10.5pt}{10.5pt}\selectfont}    % 五号, 单倍行距
+\newcommand{\xiaowuhao}{\fontsize{9pt}{9pt}\selectfont}   %小五号，单倍行距
+
+% 定义封面及标题页设置中常用的下划线命令（默认宽度90pt）
+\renewcommand\ULthickness{0.7pt}			% 重新定义下划线的厚度
+\newcommand\NMUunderline[2][90pt]{\uline{\hbox to #1{\hss#2\hss}}\hskip3pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% CTeX调整
 % 半角/缩进/行伸缩设置
 \ctexset{%
@@ -219,19 +242,19 @@
 % 标题样式修改
 \ctexset{%
   chapter={%章标题 : 三号黑体居中 单倍行距 段前/段后0.5行 另起新页
-    format=\zihao{3} \heiti \centering \thispagestyle{fancy},
+    format=\sansan \heiti \centering \thispagestyle{fancy},
     fixskip=true,
     beforeskip=19.27pt,
     afterskip=22.48pt,
     break=\clearpage,
   },
   section={%节标题 : 四号黑体居左 单倍行距 段前/段后0.5行
-    format=\zihao{4} \heiti \raggedright,
+    format=\sierwu \heiti \raggedright,
     beforeskip=8.43pt,
     afterskip=11.24pt,
   },
   subsection={%条标题 : 小四号黑体居左 单倍行距 段前/段后0.5行
-    format=\zihao{-4} \heiti \raggedright,
+    format=\xiaosier \heiti \raggedright,
     beforeskip=3.61pt,
     afterskip=3.61pt,
   },
@@ -246,26 +269,6 @@
   }
 }
 
-%---------- 重定义字号命令 ----------
-\newcommand{\chuhao}{\fontsize{42pt}{\baselineskip}\selectfont}     % 初号
-\newcommand{\xiaochu}{\fontsize{32pt}{38pt}\selectfont}    % 小初
-\newcommand{\yihao}{\fontsize{26pt}{36pt}\selectfont}    % 一号, 1.4倍行距
-\newcommand{\xiaoyi}{\fontsize{24pt}{36pt}\selectfont}    % 小一号, 1.5倍行距
-\newcommand{\erhao}{\fontsize{22pt}{28pt}\selectfont}    % 二号, 1.25倍行距
-\newcommand{\xiaoerhao}{\fontsize{18pt}{18pt}\selectfont}    % 小二, 单倍行距
-\newcommand{\sanhao}{\fontsize{16pt}{24pt}\selectfont}    % 三号, 1.5倍行距
-\newcommand{\xiaosan}{\fontsize{15pt}{22pt}\selectfont}    % 小三, 1.5倍行距
-\newcommand{\sihao}{\fontsize{14pt}{21pt}\selectfont}    % 四号, 1.5倍行距
-\newcommand{\banxiaosi}{\fontsize{13pt}{19.5pt}\selectfont}    % 半小四, 1.5倍行距
-\newcommand{\xiaosi}{\fontsize{12pt}{18pt}\selectfont}    % 小四, 1.5倍行距
-\newcommand{\dawuhao}{\fontsize{11pt}{11pt}\selectfont}    % 大五号, 单倍行距
-\newcommand{\wuhao}{\fontsize{10.5pt}{10.5pt}\selectfont}    % 五号, 单倍行距
-%\newcommand{\lwuhao}{\fontsize{10.5pt}{6.35mm}\selectfont}    %宁夏大学论文要求字号和行距
-\newcommand{\xiaowuhao}{\fontsize{9pt}{9pt}\selectfont}   %小五号，单倍行距
-
-% 定义封面及标题页设置中常用的下划线命令（默认宽度90pt）
-\renewcommand\ULthickness{0.7pt}			% 重新定义下划线的厚度
-\newcommand\NMUunderline[2][90pt]{\uline{\hbox to #1{\hss#2\hss}}\hskip3pt}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% 页面设置
 % 设置页面大小
@@ -608,12 +611,12 @@
 }
 
 \newcommand{\reference}{%参考文献
-	\ctexset{chapter/numbering=false,chapter/format=\zihao{3} \heiti \centering}
+	\ctexset{chapter/numbering=false,chapter/format=\sansan \heiti \centering}
 	\addcontentsline{toc}{chapter}{参考文献}
 }
 
 \renewcommand{\appendix}{% 附录
-  \ctexset{chapter/numbering=false,chapter/format=\zihao{3} \heiti \centering}
+  \ctexset{chapter/numbering=false,chapter/format=\sansan \heiti \centering}
   \chapter{附录}
   \setcounter{section}{0}%
   \setcounter{subsection}{0}%
@@ -633,13 +636,13 @@
 
 \newcommand{\acknowledgments}{%致谢（盲审版不显示）
   \ifthenelse{\equal{\@version}{ultimate}}{%
-	\ctexset{chapter/numbering=false,chapter/format=\zihao{3} \heiti \centering}
+	\ctexset{chapter/numbering=false,chapter/format=\sansan \heiti \centering}
 	\chapter{致谢}}{}
   
 }
 \newcommand{\biography}{%个人简介（盲审版不显示）
   \ifthenelse{\equal{\@version}{ultimate}}{%
-    \ctexset{chapter/numbering=false,chapter/format=\zihao{3} \heiti \centering}
+    \ctexset{chapter/numbering=false,chapter/format=\sansan \heiti \centering}
     \chapter{个人简介}}{}
 }
 

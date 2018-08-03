@@ -1,4 +1,4 @@
-del *.aux /s
+﻿del *.aux /s
 del *.bak /s
 del *.log /s
 del *.bbl /s

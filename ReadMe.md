@@ -17,16 +17,36 @@ BUAAThesis
  |- GBT7714-2005.bst      // 国标参考文献BibTeX样式文件2005版
  |- GBT7714-2015.bst      // 国标参考文献BibTeX样式文件2015版
  |- nmu_logo.png          // 论文封皮北方民族大学校徽
- |- NMUThesis.tex          // LaTeX模板
+ |- NMUThesis.tex         // LaTeX模板
+ |- NMUThesis.pdf         // PDF模板样例
  |- tex/*.tex             // LaTeX模板样例中的
  |- ref.bib               // LaTeX模板中的参考文献Bib文件
- |- .gitignore            // Git忽略规则
+ |- make.bat             // 生成NMUThesis.pdf
+ |- clean.bat             // 清理冗余文件
  +- ReadMe.md             // 本文件
 ```
 
 ## 模板使用
 
-+ LaTeX: 参看LaTeX模板示例NMUThesis.tex及相应插入章节tex/*.tex
+**LaTeX: 参看LaTeX模板示例NMUThesis.tex及相应插入章节tex/*.tex**
+
+####模式切换
+\documentclass[*thesis*,*printtype*,*version*]{nmu}
+
+#####I.论文类型(thesis)
++ 学术硕士论文（master）<缺省值>
++ 专业硕士论文（professional）
++ 博士论文（doctor）
+
+#####II.打印设置(printtype)
+
++ 单面打印（onside）<缺省值>
++ 双面答应（twoside）
+
+#####III.论文版本设置(version)
++ 盲审版（blind）<缺省值>
++ 最终版（ultimate）
+
 
 ## 建议及问题反馈
 
