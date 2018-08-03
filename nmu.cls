@@ -3,6 +3,7 @@
 %% %% 北方民族大学研究生毕业论文模板 - LaTeX 07-30-2018
 %% %% 论文样式参考自《北方民族大学研究生学位论文格式和要求--院教字〔2003〕169号》
 %% %% 本模板改写自《北京航空航天大学学术论文LaTeX模板》
+%% %% 部分样例参考《浙江大学研究生硕士(博士)学位论文LaTeX模板》
 %% %% 基于ctexbook
 %% %%
 %% %% 初始版本作者:
@@ -48,13 +49,16 @@
 \RequirePackage{mathptmx}     % 修改默认文本和数学字形为Times New Roman字体
 \RequirePackage{float}        % 图片
 \RequirePackage{graphicx}     % 图片
-\RequirePackage{subfigure}    % 图片
+%\RequirePackage{subfigure}   % 图片
 \RequirePackage{epstopdf}     % 图片
-\RequirePackage{array}        % 
+\RequirePackage{subcaption}   % 并排图形。subfigure、subfig与subcaption不兼容
+\RequirePackage[stable,perpage,symbol*]{footmisc}% 对脚注样式的控制功能。
+\RequirePackage{array}        % 表格处理必备宏包
 \RequirePackage{enumitem}     %
-\RequirePackage{booktabs}     % 表格上下粗线
+\RequirePackage{booktabs}     % 表格上下粗线 
 \RequirePackage{longtable}    % 长表格
 \RequirePackage{multirow}     % 多行表格
+\RequirePackage{tabu}         % 制表宏包，推荐使用，不使用其他制表宏包。
 \RequirePackage{caption}      % 标题设置
 \RequirePackage{algorithm2e}  % 算法环境
 \RequirePackage{listings}     % 代码环境
@@ -299,44 +303,79 @@
 \titlecontents{table}[0pt]{\songti\zihao{-4}}{表~\thecontentslabel\quad}{}
 {\hspace{.5em}\titlerule*[4pt]{$\cdot$}\normalsize\contentspage}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 浮动体相关定义
+% 设置浮动环境标题的字体大小。根据学位论文格式要求，插图和表格标题字体需要比正文
+% 字体略小。
+\captionsetup{%
+	format=hang,
+	labelsep=quad,		% 去掉图表号后的冒号。图序与图名文字之间空一个汉字宽度。
+	skip=10pt,			% 标题与图标之间空10pt距离。
+	font=small,			% 标题字体比正文小一号，这里取small。
+	width=.75\textwidth}% 标题最大宽度为0.75倍正文宽度。
 
-% 图表环境设置
-\let\org@table\table
-\let\org@endtable\endtable
-\renewenvironment{table}[1][h!]
-{\begin{spacing}{1.2} \org@table[#1] \songti\zihao{5}}
-{\org@endtable \end{spacing}}
-  
-\let\org@longtable\longtable
-\let\org@endlongtable\endlongtable
-\renewenvironment{longtable}[1][h!]
-{\begin{spacing}{1.2} \songti\zihao{5}\org@longtable[#1]}
-{\org@endlongtable \end{spacing}}
+% 根据学位论文格式要求，表格的标题必须位于表格上方，插图的标题必须位于插图下方。
+\captionsetup[table]{position=above}
+\captionsetup[figure]{position=below}
 
-\@removefromreset{table}{chapter}
-\@removefromreset{figure}{chapter}
-\renewcommand{\thefigure}{\arabic{figure}}
-\renewcommand{\thetable}{\arabic{table}}
-\DeclareCaptionFormat{tabfigformat}{\bf\songti\zihao{5}{#1~~#3}}
-\captionsetup[figure]{
-  position=bottom, margin=0mm, format=tabfigformat,
-  aboveskip=6pt, belowskip=-15pt, justification=centerlast}
-\captionsetup[table]{
-  position=top, margin=0mm, format=tabfigformat,
-  aboveskip=0pt, belowskip=0pt, justification=centerlast}
+%% 以下为设置浮动对象和文字之间的距离。
+% 版心顶部或者版心底部浮动体之间的垂直距离，默认为12pt plus 2pt minus 2pt。
+\setlength{\floatsep}{20bp \@plus4pt \@minus1pt}
 
-%出现在页面中间的浮动对象与上下方文本之间的垂直距离
-%缺省为 12pt plus 2pt minus 2pt。 
-%\setlength{\intextsep}{12pt \@plus2pt \@minus 2pt}
+% 文本行之间浮动体（使用h位置选项）与上下文之间的距离，默认为12pt plus 2pt minus
+% 2pt。
+\setlength{\intextsep}{20bp \@plus4pt \@minus2pt}
 
-%出现在页面的顶部或底部的浮动对象之间的垂直距离
-%缺省为 12pt plus 2pt minus 2pt
-%\setlength{\floatsep}{12pt \@plus2pt \@minus2pt}
+% 版心顶部或底部的浮动体与文本之间的距离，默认为12pt plus 2pt minus 2pt。
+\setlength{\textfloatsep}{20bp \@plus4pt \@minus2pt}
 
-%出现在页面的顶部或底部的浮动对象与文本之间的垂直距离
-% 缺省为 20pt plus 2pt minus 4pt。
-%\setlength{\textfloatsep}{20bp \@plus2pt \@minus4pt}
+% 浮动页中，版心顶部的浮动体与版心顶边之间的距离，默认为0pt plus 1fil。
+\setlength{\@fptop}{0bp \@plus1.0fil}
 
+% 浮动页中浮动体直接的距离，默认为8pt plus 2fil。
+\setlength{\@fpsep}{12bp \@plus2.0fil}
+
+% 浮动页中，版心底部的浮动体与版心底边之间的距离，默认为0pt plus 1fil。
+\setlength{\@fpbot}{0bp \@plus1.0fil}
+
+%% 下面这组命令使浮动对象的缺省值稍微宽松一点，从而防止幅度对象占据过多的文本页
+%% 面，也可以防止在很大空白的浮动页上放置很小的图形。
+% 默认情况下，LaTeX要求每页的文字至少占据 20%，否则该页就只单独放置一个浮动环境。
+% 而这通常不是我们想要的。我们将这个要求降低到 5%。
+\renewcommand{\textfraction}{0.05}
+% 在一文本页中，被置于版心顶部的所有浮动体的高度与版心高度的最大比值，默认为0.7，
+% 这里修改为0.9，任何造成高度超过版心高度90% 的浮动体都被将阻止置于当前版心顶部。
+\renewcommand{\topfraction}{0.9}
+% 同上，只不过变成了版心底部，默认为0.3.
+\renewcommand{\bottomfraction}{0.8}
+% 在任意一个“浮动页”中，所有的浮动体高度与版心的高度的最小比值，默认为 0.5，这里
+% 设置成0.85。因此，浮动页中空白与版心的比值不会超过1-\floatpagefraction。
+\renewcommand{\floatpagefraction}{0.85}
+
+%设置“图1.1”、“表2.2”为“图1-1”、“表2-2”
+\renewcommand {\thetable} {\thechapter{}-\arabic{table}}
+\renewcommand {\thefigure} {\thechapter{}-\arabic{figure}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ---------- 脚注样式 ----------
+% 使用footmisc宏包和pifont宏包设置符合 GB/T 7713.1-2006 规范的脚注样式。注意，由
+% 于pifont宏包提供的特殊符号的限制，一页之中最多只能有10个脚注。
+% 这些命令设置跟脚注设置方法思路全都引用自南京大学计算机科学与技术系胡海星编写的
+% 《NJU-Thesis:南京大学学位论文XeLaTeX模板》v1.1.18 (2015/7/16)版本。
+\DefineFNsymbols*{circlednumber}[text]{%
+	{\ding{192}} %
+	{\ding{193}} %
+	{\ding{194}} %
+	{\ding{195}} %
+	{\ding{196}} %
+	{\ding{197}} %
+	{\ding{198}} %
+	{\ding{199}} %
+	{\ding{200}} %
+	{\ding{201}}}
+\setfnsymbol{circlednumber}
+% 脚注部分需要修改，段落部分单倍行距。
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 设置参考文献格式
 \newcommand\bibstyle@super{\bibpunct{[}{]}{,}{s}{,}{\textsuperscript{,}}}
 \newcommand\bibstyle@numbers{\bibpunct{[}{]}{,}{n}{,}{,}}

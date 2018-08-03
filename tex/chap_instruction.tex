@@ -1,13 +1,18 @@
 % 本LaTeX模板的一般使用说明
-\chapter{说明}
+\chapter{说明\footnote{章标题中脚注命令测试}}
 Again，这是北方民族大学学术论文\LaTeX{}模板（\CTeX{}-Based）---\NMUThesis{}。
 
-本\LaTeX{}模板为北民大研究生学术论文模板，适用于理工类学术硕士和专业硕士。本\LaTeX{}模板参考自院教字〔2003〕169号《北方民族大学研究生学位论文格式和要求》，基本覆盖了论文内容和格式方面的要求。
+本\LaTeX{}模板为北民大研究生学术论文模板，适用于理工类学术硕士和专业硕士。本\LaTeX{}模板参考自院教字〔2003〕169号《北方民族大学研究生学位论文格式和要求》，基本覆盖了论文内容和格式方面的要求。如图\ref{fig:first_image_t}是北方民族大学校标。
 
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=.5\textwidth]{nmu_logo}
+	\caption{北方民族大学校标}\label{fig:first_image_t}
+\end{figure}
 %-----------------------------
-\section{宏包使用}
+\section{宏包\footnote{节标题中脚注命令测试}使用}
 
-请将以下文件与此LaTeX文件放在同一目录中：
+请将以下文件与此LaTeX文件放在同一目录中\footnote{本模板改写自《北京航空航天大学学术论文LaTeX模板》，部分样例参考《浙江大学研究生硕士(博士)学位论文LaTeX模板》}：
 
 \begin{tabular}{ll}
  \verb|nmu.cls |             & $\triangleright$ LaTeX宏模板文件 \\
@@ -15,6 +20,11 @@ Again，这是北方民族大学学术论文\LaTeX{}模板（\CTeX{}-Based）---
  \verb|GBT7714-2015.bst|      & $\triangleright$ 国标参考文献BibTeX样式文件2015 \\
  \verb|nmu_logo.png|         & $\triangleright$论文封皮北方民族大学校徽 \\
  \verb|tex/*.tex|             & $\triangleright$本模板样例中的独立章节\\
+ \verb|figures/*|             & $\triangleright$本模板样例中的插图路径\\
+ \verb|NMUThesis.tex|             & $\triangleright$LaTeX模板\\
+ \verb|NMUThesis.pdf|             & $\triangleright$PDF模板样例\\
+ \verb|make.bat|             & $\triangleright$生成NMUThesis.pdf\\
+ \verb|clean.bat|             & $\triangleright$清理冗余文件\\
 \end{tabular}\\
 
 通过 \verb|\documentclass[<thesis>,<printtype>,<version>]{nmu}|载入宏包：
@@ -86,7 +96,7 @@ Again，这是北方民族大学学术论文\LaTeX{}模板（\CTeX{}-Based）---
 \begin{itemize}
   \item[$\triangleright$] 暂无中文斜体；
   \item[$\triangleright$] 中文粗体将转换为楷体；
-  \item[$\triangleright$] 行末针对标点的断行不好，例如\ref{sec:error1}处的有个“、”被断在了句首；
+  \item[$\triangleright$] 行末针对标点的断行不好，例如\ref{sec:error1}处的有可能会被“、”断在了句首；
   \item[$\triangleright$] \verb|\label{<text>}|中不能使用中文；
   \item[$\triangleright$] 浮动体与正文之间的距离是弹性的；
   \item[$\triangleright$] 命令符与汉字之间请注意加空格以避免undefined错误（pdfLaTeX下好像一般不存在这个问题，主要在XeLaTeX编译环境下发生）；

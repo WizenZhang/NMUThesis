@@ -86,12 +86,182 @@
   \verb|\citeyearpar{tlc2}| & \citeyearpar{tlc2}\\
 \end{tabular}
 
-\section{浮动体}
+\section{浮动体\footnote{样例参考《浙江大学研究生硕士(博士)学位论文LaTeX模板》}}
+\subsection{插图测试}
+如图\ref{fig:first_image_tset}是对此模版的第一张插图测试。
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width = 0.5\linewidth]{Chapter1.png}
+	\caption{第一张插图测试}\label{fig:first_image_tset}
+\end{figure}
+
+以下是一段对这些插图来历的介绍，引用自知乎专栏All about TeXnique中夏晓昊的文章\href{http://zhuanlan.zhihu.com/LaTeX/19669122}{《The TeXbook导读：从那头（多图杀猫的）狮子说起》}。
+
+在The TeXbook中，有着一系列的以狮子为主题的插图。这些插图的作者是Duane Bibby。也是从The TeXbook开始，不少TeX书也采取了以狮子为主的插图，作者也是Duane Bibby。另外，每年的TUG（TeX Users Group）年会都会有一张以狮子为主题的logo，这只狮子已经是社区的吉祥物了。
+
+为什么选择狮子呢？Yannis Haralambous写道（原文法语，此为转译后的英文）：Not for nothing is TeX represented by a lion. Donald Knuth has told us that lions are to him the guardians of libraries in the United States because there is a statue of a lion in front of the entrance of each large library there. Guardian of libraries, guardian of the Book—is that not indeed what TeX ultimately aspires to be? 或许吧。 （顺便说一句，TeX和MetaFont都用了狮子，TeX是公狮子，MetaFont是母狮子，多么和谐的一对啊。如果你还是忽略MetaFont的存在，那你还没有认识到它的重要性。）
+
+作为插图，首要的一点就是贴切，然后是有趣。在TeX社区里面，have fun是一个很重要的词组，也有人说Happy TeXing。我知道有不少人不喜欢TeX，但是能有什么理由呢？如果你用不到它，那么浅尝辄止即可。如果你会用到很频繁，最好慢慢修炼做到精通。如果你只是偶尔用到，那么可以搬个模版什么的，甚至也可以找人帮你（不要指望别人会用足够的空闲时间来帮你，他没有这个义务，请支付报酬，最少也得请吃个红烧肉吧）。下面的插图，是TeX TeXbook中的，我也希望这个新年的假期，能有人有空来看看这本书。即使不能把所有的东西都看懂，那么也会对TeX的设计有了一定的了解，拿到扳手就好。
+
+\subsection{表格测试}
+在这里推荐制表采用功能强大的tabu宏包以取代其它制表宏包。具体tabu宏包的使用说明参见tabu宏包的说明文档。
+
+以下节分别用来测试各种表格环境如，tabular，tabu，longtabu等，还有对caption格式的修改和测试。以下表格样式全部采用三线表。
+
+\subsection{array宏包tabular表格环境测试}
+如表\ref{tab:first_table_test}是对array宏包的tabular表格环境测试。
+\begin{table}[htbp]
+	\centering
+	\caption{这是一个用tabular环境的测试用的表格}\label{tab:first_table_test}
+	\begin{tabular}{lrr}
+		\toprule
+		\textbf{行星}     & \textbf{赤道半径}km & \textbf{公转周期}d \\
+		\midrule
+		水星     & 2.439  & 87.9 \\
+		金星     & 6.1    & 224.682 \\
+		地球     & 6378.14 & 365.24 \\
+		\bottomrule
+	\end{tabular}%
+\end{table}
+
+\subsection{tabu宏包表格环境测试}
+如表\ref{tab:tabu_test_1}是对tabu宏包的tabu表格环境测试。在这里表格命令与表\ref{tab:first_table_test}的命令相同，只是tabular环境改成了tabu环境。
+\begin{table}[htbp]
+	\centering
+	\caption{这是一个用tabu环境的测试用的表格}\label{tab:tabu_test_1}
+	\begin{tabu}{lrr}
+		\toprule
+		\textbf{行星}     & \textbf{赤道半径}km & \textbf{公转周期}d \\
+		\midrule
+		水星     & 2.439  & 87.9 \\
+		金星     & 6.1    & 224.682 \\
+		地球     & 6378.14 & 365.24 \\
+		\bottomrule
+	\end{tabu}%
+\end{table}
+
+表\ref{tab:tabu_test_2}对tabu to表格的x列模式进行测试。在表格导言区中设置为X[1]X[2]X[2]，表示这三列表格的列宽比值为1:2:2，总的表格宽度由tabu to环境设置，这里设置为0.6\textbackslash linewidth。相比于tabular环境，tabu环境的列宽设置方便许多。
+\begin{table}[htbp]
+	\centering
+	\caption{tabu环境测试表格---X列模式}\label{tab:tabu_test_2}
+	\begin{tabu} to 0.6\linewidth{X[1]X[2]X[2]}
+		\toprule
+		\textbf{行星}     & \textbf{赤道半径}km & \textbf{公转周期}d \\
+		\midrule
+		水星     & 2.439  & 87.9 \\
+		金星     & 6.1    & 224.682 \\
+		地球     & 6378.14 & 365.24 \\
+		\bottomrule
+	\end{tabu}%
+\end{table}
+
+如表\ref{tab:tabu_test_3}是longtabu环境测试表格。longtabu环境不能用在table浮动体环境中。根据GB/T 7713.1-2006规定：如果某个表需要转页接排，在随后的各页上应重复表的编号。编号后跟标题（可省略）和“（续）”，置于表上方。续表应重复表头。
+
+特别需要注意的是，longtabu是基于longtable宏包开发的，所以在nmu.cls文件中已经插入了longtable宏包。longtable环境的所有功能都可以在longtabu中使用，如\textbackslash endhead，\textbackslash endfirsthead，\textbackslash endfoot，\textbackslash endlastfoot，和\textbackslash caption等。具体用法请参见longtable和tabu宏包的相应文档。
+\begin{longtabu}{lccc}
+	\caption{材料弹性模量及泊松比}\label{tab:tabu_test_3}\\
+	\toprule
+	名  称   & 弹性模量E/Gpa & 切变模量G/Gpa & 泊松比$\mu$ \\
+	\midrule%
+	\endfirsthead
+	\caption{材料弹性模量及泊松比（续）}\\
+	\toprule
+	名  称   & 弹性模量E/Gpa & 切变模量G/Gpa & 泊松比$\mu$ \\
+	\midrule%
+	\endhead
+	\bottomrule%
+	\endfoot
+	镍铬钢、合金钢 & 206    & 79.38  & 0.3 \\
+	碳　钢    &  196～206 & 79     & 0.3 \\
+	铸　钢    &  172～202 &        & 0.3 \\
+	球墨铸铁   &  140～154 &  73～76 & 0.3 \\
+	灰铸铁、白口铸铁 &  113～157 & 44     &  0.23～0.27 \\
+	冷拔纯铜   & 127    & 48     &   \\
+	轧制磷青铜  & 113    & 41     &  0.32～0.35 \\
+	轧制纯铜   & 108    & 39     &  0.31～0.34 \\
+	轧制锰青铜  & 108    & 39     & 0.35 \\
+	铸铝青铜   & 103    & 41     & 0.3 \\
+	冷拔黄铜   &  89～97 &  34～36 &  0.32～0.42 \\
+	轧制锌    & 82     & 31     & 0.27 \\
+	硬铝合金   & 70     & 26     & 0.3 \\
+	轧制铝    & 68     &  25～26 &  0.32～0.36 \\
+	铅      & 17     & 7      & 0.42 \\
+	玻璃     & 55     & 22     & 0.25 \\
+	混凝土    &  14～39 &  439～15.7 &  0.1～0.18 \\
+	纵纹木材   &  9.8～12 & 0.5    &   \\
+	横纹木材   &  0.5～0.98 &  0.44～0.64 &   \\
+	橡胶     & 0.00784 &        & 0.47 \\
+	电木     &  1.96～2.94 &  0.69～2.06 &  0.35～0.38 \\
+	赛璐珞    &  1.71～1.89 &  0.69～0.98 & 0.4 \\
+	可锻铸铁   & 152    &        &  \\
+	拔制铝线   & 69     &        &  \\
+	大理石    & 55     &        &  \\
+	花岗石    & 48     &        &  \\
+	石灰石    & 41     &        &  \\
+	尼龙1010 & 1.07   &        &  \\
+	夹布酚醛塑料 &  4～8.8 &        &  \\
+	石棉酚醛塑料 & 1.3    &        &  \\
+	高压聚乙烯  &  0.15～0.25 &        &  \\
+	低压聚乙烯  &  0.49～0.78 &        &  \\
+	聚丙烯    &  1.32～1.42 &        &  \\
+	硬聚氯乙烯  &  3.14～3.92 &        &  \\
+	聚四氟乙烯  &  1.14～1.42 &        &  \\
+\end{longtabu}%
+
+\subsection{子图}
+这里子图的排版推荐使用subcaption宏包，不再推荐使用subfig宏包，更不推荐使用subfigure宏包。值得注意的是，在nmu.cls文件中已经写入了subcaption宏包，而且subcaption宏包与subfigure和subfig宏包是相互冲突的。因此，如果你还想使用subfig宏包而不想使用subcaption宏包，请自己到nmu.cls文件的相关位置更改，具体的使用及修改方法参见相应的宏包说明文档。不过在这里还是不推荐直接去更改nmu.cls文档，除非你对\LaTeX 的相关命令很清楚，知道自己在改什么，并且不会对其他格式产生影响。
+
+具体的subcaption宏包使用方法我这里不仔细介绍，以下只是对subcaption进行一些简单的测试，主要是格式调整和交叉引用。
+
+如图\ref{fig:subfig_test1}是有两张子图的模式，对子图进行交叉引用，如图\ref{subfig:1a}和图\ref{subfig:1b}。
+
+\begin{figure}[htbp]
+	\centering
+	\begin{subfigure}[b]{.4\textwidth}
+		\centering
+		\includegraphics[width = \textwidth]{Chapter2.png}
+		\caption{书籍排版与普通排版}\label{subfig:1a}
+	\end{subfigure}
+	\quad
+	\begin{subfigure}[b]{.4\textwidth}
+		\centering
+		\includegraphics[width = \textwidth]{Chapter3.png}
+		\caption{\TeX 的控制系列}\label{subfig:1b}
+	\end{subfigure}
+	\caption{子图模式测试1:2张图}\label{fig:subfig_test1}
+\end{figure}
+
+如图\ref{fig:subfig_test2}是有四张子图的模式，对子图进行交叉引用，如图\ref{subfig:2a}、图\ref{subfig:2b}、图\ref{subfig:2c}和图\ref{subfig:2d}。
+
+\begin{figure}[htbp]
+	\centering
+	\begin{subfigure}[b]{.4\textwidth}
+		\centering
+		\includegraphics[width = \textwidth]{Chapter4.png}
+		\caption{字体}\label{subfig:2a}
+	\end{subfigure}
+	\begin{subfigure}[b]{.4\textwidth}
+		\centering
+		\includegraphics[width = \textwidth]{Chapter5.png}
+		\caption{编组}\label{subfig:2b}
+	\end{subfigure}
+	\begin{subfigure}[b]{.4\textwidth}
+		\centering
+		\includegraphics[width = \textwidth]{Chapter6.png}
+		\caption{运行\TeX}\label{subfig:2c}
+	\end{subfigure}
+	\begin{subfigure}[b]{.4\textwidth}
+		\centering
+		\includegraphics[width = \textwidth]{Chapter7.png}
+		\caption{\TeX 工作原理}\label{subfig:2d}
+	\end{subfigure}
+	\caption{子图模式测试2:4张图}\label{fig:subfig_test2}
+\end{figure}
 
 \section{算法环境}
 
 模板中使用 \texttt{algorithm2e} 宏包实现算法环境。关于该宏包的具体用法请阅读宏包的官方文档。\\
-\centerline{-----------$\downarrow$-----------Space Check-----------$\downarrow$-----------}
 
 \begin{algorithm}[!h]
   %\SetAlgoLined
@@ -112,7 +282,6 @@
   }
 \end{algorithm}
 
-\centerline{-----------$\uparrow$-----------Space Check-----------$\uparrow$-----------}
 
 \RestyleAlgo{ruled}
 \begin{algorithm}[!h]
@@ -167,172 +336,6 @@
     }
   }
 \end{algorithm}
-
-\subsection{三线表}
-推荐使用三线表的方式，如表~\ref{tab:exampletable}。\\
-\centerline{-----------$\downarrow$-----------Space Check-----------$\downarrow$-----------}
-
-\begin{table}[!h]
-  \centering
-  \caption{表的标题}
-  \label{tab:exampletable}
-  \begin{tabular}{p{4cm}p{4cm}}
-    \toprule
-    \multicolumn{1}{c}{\textbf{操作系统}} & \multicolumn{1}{c}{\textbf{TeX 发行版}} \\
-    \midrule
-    所有 & TeX Live \\
-    macOS & MacTeX \\
-    Windows & MikTeX \\
-    \bottomrule
-  \end{tabular}
-\end{table}
-
-\begin{table}[!h]
-  \centering
-  \caption{让我们看看一个长标题长什么样。还不够长？那我再多写一点。还是不够长？那我再多写一点点。OK，就是长这样的！}
-  \label{tab:exampletable}
-  \begin{tabular}{p{4cm}p{4cm}}
-    \toprule
-    \multicolumn{1}{c}{\textbf{操作系统}} & \multicolumn{1}{c}{\textbf{TeX 发行版}} \\
-    \midrule
-    所有 & TeX Live \\
-    macOS & MacTeX \\
-    Windows & MikTeX \\
-    \bottomrule
-  \end{tabular}
-\end{table}
-
-\centerline{-----------$\uparrow$-----------Space Check-----------$\uparrow$-----------}
-
-我们在这儿插入一行字；
-
-我们在这儿再插入一行字；
-
-我们在这儿插入一行字；
-
-我们在这儿再插入一行字；
-
-我们在这儿插入一行字；
-
-我们在这儿再插入一行字；
-
-我们在这儿插入一行字；
-
-我们在这儿再插入一行字；
-
-\section{长表格}
-
-超过一页的表格要使用专门的 \texttt{longtable} 环境（表~\ref{tab:longtable}）。\\
-\centerline{-----------$\downarrow$-----------Space Check-----------$\downarrow$-----------}
-
-
-\begin{longtable}[h]{ccc}
-  % 首页表头
-  \caption[长表格演示]{长表格演示}
-  \label{tab:longtable}\\
-  \toprule
-  名称  & 说明 & 备注\\
-  \midrule
-  \endfirsthead
-  % 续页表头
-  \caption[]{长表格演示（续）} \\
-  \toprule
-  名称  & 说明 & 备注 \\
-  \midrule
-  \endhead
-  % 首页表尾
-  \hline
-  \multicolumn{3}{r}{\small 续下页}
-  \endfoot
-  % 续页表尾
-  \bottomrule
-  \endlastfoot
-  
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-  AAAAAAAAAAAA   &   BBBBBBBBBBB   &   CCCCCCCCCCCCCC   \\
-\end{longtable}
-
-\centerline{-----------$\uparrow$-----------Space Check-----------$\uparrow$-----------}
-
-
-\section{插图}
-
-\centerline{-----------$\downarrow$-----------Space Check-----------$\downarrow$-----------}
-\begin{figure}[!h]
-  \centering
-  \includegraphics[width=.5\textwidth]{nmu_logo}
-  \caption{测试图片\\第二行题注}
-  \label{fig:logo}
-\end{figure}
-\centerline{-----------$\uparrow$-----------Space Check-----------$\uparrow$-----------}
-
-我们在这儿插入一行字；
-
-我们在这儿再插入一行字；
-
-我们在这儿插入一行字；
-
-我们在这儿再插入一行字；
-
-我们在这儿插入一行字；
-
-我们在这儿再插入一行字；
-
-我们在这儿插入一行字；
-
-我们在这儿再插入一行字；
 
 \section{数学环境}
 
@@ -449,7 +452,6 @@
 \end{proof}
 
 
-
 \subsection{自定义}
 
 \newtheorem*{axiomofchoice}{Axiom of choice}
@@ -481,39 +483,3 @@
 \begin{proof}[A concise proof]
   Obvious.
 \end{proof}
-
-我们在这儿插入一行字；
-
-我们在这儿再插入一行字；
-
-我们在这儿插入一行字；
-
-我们在这儿再插入一行字；
-
-我们在这儿插入一行字；
-
-我们在这儿再插入一行字；
-
-我们在这儿插入一行字；
-
-我们在这儿再插入一行字；
-
-我们在这儿插入一行字；
-
-我们在这儿再插入一行字；
-
-我们在这儿插入一行字；
-
-我们在这儿再插入一行字；
-
-我们在这儿插入一行字；
-
-我们在这儿再插入一行字；
-
-我们在这儿插入一行字；
-
-我们在这儿再插入一行字；
-
-我们在这儿插入一行字；
-
-我们在这儿再插入一行字；

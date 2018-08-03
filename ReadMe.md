@@ -13,13 +13,14 @@
 
 ```
 BUAAThesis
- |- buaa.cls              // LaTeX宏模板文件
+ |- nmu.cls              // LaTeX宏模板文件
  |- GBT7714-2005.bst      // 国标参考文献BibTeX样式文件2005版
  |- GBT7714-2015.bst      // 国标参考文献BibTeX样式文件2015版
- |- nmu_logo.png          // 论文封皮北方民族大学校徽
+ |- nmu_logo.png          // 论文封皮北方民族大学校标
  |- NMUThesis.tex         // LaTeX模板
  |- NMUThesis.pdf         // PDF模板样例
  |- tex/*.tex             // LaTeX模板样例中的
+ |- figures/*             // 本模板样例中的插图路径
  |- ref.bib               // LaTeX模板中的参考文献Bib文件
  |- make.bat             // 生成NMUThesis.pdf
  |- clean.bat             // 清理冗余文件
@@ -31,7 +32,7 @@ BUAAThesis
 **LaTeX: 参看LaTeX模板示例NMUThesis.tex及相应插入章节tex/*.tex**
 
 ####模式切换
-\documentclass[*thesis*,*printtype*,*version*]{nmu}
+\documentclass[<*thesis*>,<*printtype*>,<*version*>]{nmu}
 
 #####I.论文类型(thesis)
 + 学术硕士论文（master）<缺省值>
