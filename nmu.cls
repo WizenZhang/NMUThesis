@@ -223,6 +223,10 @@
 \newcommand{\wuhao}{\fontsize{10.5pt}{10.5pt}\selectfont}    % 五号, 单倍行距
 \newcommand{\xiaowuhao}{\fontsize{9pt}{9pt}\selectfont}   %小五号，单倍行距
 
+% 宋体的中文加粗 
+\setCJKfamilyfont{zhsong}[AutoFakeBold = {2.17}]{SimSun}
+\renewcommand*{\songti}{\CJKfamily{zhsong}}
+
 % 定义封面及标题页设置中常用的下划线命令（默认宽度90pt）
 \renewcommand\ULthickness{0.7pt}			% 重新定义下划线的厚度
 \newcommand\NMUunderline[2][90pt]{\uline{\hbox to #1{\hss#2\hss}}\hskip3pt}
@@ -606,7 +610,7 @@
     {\sanhao \heiti  \centerline{摘~~~~要}}
     {\xiaosi \songti ~\par
       \@abstrctcn \par ~\par
-      {\sihao\heiti 关键字：} \@keywordcn
+      {\sihao \bfseries{\songti 关键字：}} \@keywordcn
     }
     
     \clearpage

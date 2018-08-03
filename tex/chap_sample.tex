@@ -2,7 +2,7 @@
 \chapter{示例}
 %==============================
 \section{参考文献引用}
-测试一下上标引用\upcite{Ruel_2012}，引用\cite{knuth84,knuth86a,lamport94}，还有其它引用\cite{Ruel_2012,knuth86a,lamport94}.
+测试一下上标引用\upcite{Ruel_2012}，引用\cite{knuth84,knuth86a,lamport94}，还有其它引用\upcite{Ruel_2012,knuth86a,lamport94}.
 %--------------------------------
 \subsection{数字标注}
 \noindent
@@ -87,6 +87,20 @@
 \end{tabular}
 
 \section{浮动体\footnote{样例参考《浙江大学研究生硕士(博士)学位论文LaTeX模板》}}
+在实际撰写文稿的过程中，我们可能会碰到一些占据篇幅较大，但同时又不方便分页的内容。（比如图片和表格，通常属于这样的类型）此时，我们通常会希望将它们放在别的地方，避免页面空间不够而强行置入这些内容导致 overfull vbox 或者大片的空白。此外，因为被放在别的地方，所以，我们通常需要对这些内容做一个简单的描述，确保读者在看到这些大块的内容时，不至于无从下手去理解。同时，因为此类内容被放在别的地方，所以在文中引述它们时，我们无法用「下图」、「上表」之类的相对位置来引述他们。于是，我们需要对它们进行编号，方便在文中引用。
+
+在 LaTeX 中，默认有 figure 和 table 两种浮动体。（当然，你还可以自定义其他类型的浮动体）在这些环境中，可以用 $\backslash$caption\{\} 命令生成上述简短的描述。至于编号，也是用 $\backslash$caption\{\} 生成的。这类编号遵循了 TeX 对于编号处理的传统：它们会自动编号，不需要用户操心具体的编号数值。 至于「别的地方」是哪里，LaTeX 为浮动体启用了所谓「位置描述符」的标记。基本来说，包含以下几种
+
+h - 表示 here。此类浮动体称为文中的浮动体（in-text floats）。
+
+t - 表示 top。此类浮动体会尝试放在一页的顶部。
+
+b - 表示 bottom。此类浮动体会尝试放在一页的底部。
+
+p - 表示 float page，浮动页。此类浮动体会尝试单独成页。
+
+LaTeX 会将浮动体与文本流分离，而后按照位置描述符，根据相应的算法插入 LaTeX 认为合适的位置。
+
 \subsection{插图测试}
 如图\ref{fig:first_image_tset}是对此模版的第一张插图测试。
 
@@ -262,7 +276,7 @@
 \section{算法环境}
 
 模板中使用 \texttt{algorithm2e} 宏包实现算法环境。关于该宏包的具体用法请阅读宏包的官方文档。\\
-
+\centerline{-----------$\downarrow$-----------Space Check-----------$\downarrow$-----------}
 \begin{algorithm}[!h]
   %\SetAlgoLined
   %\SetAlgoVlined
@@ -282,7 +296,9 @@
   }
 \end{algorithm}
 
+\centerline{-----------$\uparrow$-----------Space Check-----------$\uparrow$-----------}
 
+\centerline{-----------$\downarrow$-----------Space Check-----------$\downarrow$-----------}
 \RestyleAlgo{ruled}
 \begin{algorithm}[!h]
   \caption{A How to (ruled).}
@@ -300,6 +316,8 @@
     }
   }
 \end{algorithm}
+
+\centerline{-----------$\uparrow$-----------Space Check-----------$\uparrow$-----------}
 
 \RestyleAlgo{boxed}
 \begin{algorithm}[!h]
