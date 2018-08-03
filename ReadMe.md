@@ -43,7 +43,7 @@ BUAAThesis
 ##### II.打印设置(printtype)
 
 + 单面打印（onside）<缺省值>
-+ 双面答应（twoside）
++ 双面打印（twoside）
 
 ##### III.论文版本设置(version)
 + 盲审版（blind）<缺省值>
