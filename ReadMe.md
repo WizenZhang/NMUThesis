@@ -31,20 +31,21 @@ BUAAThesis
 
 **LaTeX: 参看LaTeX模板示例NMUThesis.tex及相应插入章节tex/*.tex**
 
-####模式切换
+### 模式切换
+
 \documentclass[<*thesis*>,<*printtype*>,<*version*>]{nmu}
 
-#####I.论文类型(thesis)
+##### I.论文类型(thesis)
 + 学术硕士论文（master）<缺省值>
 + 专业硕士论文（professional）
 + 博士论文（doctor）
 
-#####II.打印设置(printtype)
+##### II.打印设置(printtype)
 
 + 单面打印（onside）<缺省值>
 + 双面答应（twoside）
 
-#####III.论文版本设置(version)
+##### III.论文版本设置(version)
 + 盲审版（blind）<缺省值>
 + 最终版（ultimate）
 
