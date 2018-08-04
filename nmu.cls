@@ -1,6 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% %% <UTF-8>
-%% %% 北方民族大学研究生毕业论文模板 - LaTeX 08-01-2018
+%% %% 北方民族大学学位论文LaTeX模板 - LaTeX 08-01-2018
 %% %% 论文样式参考自《北方民族大学研究生学位论文格式和要求--院教字〔2003〕169号》
 %% %% 本模板改写自《北京航空航天大学学术论文LaTeX模板》
 %% %% 部分样例参考《浙江大学研究生硕士(博士)学位论文LaTeX模板》
@@ -97,6 +97,8 @@
 \DeclareOption{Doctor}{\gdef\@thesis{doctor}}
 \DeclareOption{Oneside}{\gdef\@printtype{oneside}}
 \DeclareOption{Twoside}{\gdef\@printtype{twoside}}
+\DeclareOption{Blind}{\gdef\@printtype{blind}}
+\DeclareOption{Ultimate}{\gdef\@printtype{ultimate}}
 
 %% 选项传递给ctexbook
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{ctexbook}}
@@ -177,7 +179,7 @@
 %% 输入
 \def\@refcolor{} % 给注释及引用使用颜色 on/off
 \newcommand{\refcolor}[1]{\gdef\@refcolor{#1}}
-\def\@emptypagewords{} % 空白页留字
+\def\@emptypagewords{} % 空白页
 \newcommand{\emptypagewords}[1]{\gdef\@emptypagewords{#1}}
 \def\@beginright{} % 摘要、目录、第一章右侧打开 on/off
 \newcommand{\beginright}[1]{\gdef\@beginright{#1}}
@@ -284,17 +286,22 @@
 % 打印留边平移5mm
 \geometry{papersize={210mm,297mm}}
 \ifthenelse{\equal{\@printtype}{twoside}}{% 双面面
-  \geometry{top=30mm,bottom=25mm,inner=30mm,outer=25mm}
+  \geometry{left=30mm,right=25mm,top=30mm,bottom=25mm}
 }{%
   \ifthenelse{\equal{\@printtype}{oneside}}{% 单面
-    \geometry{top=30mm,bottom=25mm,left=30mm,right=25mm}
+    \geometry{left=25mm,right=25mm,top=30mm,bottom=25mm}
     \geometry{layouthoffset=5mm}}{}
 }
 
 % 设置空白页眉页脚
 \pagestyle{fancy}
 \fancyhf{}%清空初始页眉页脚
-	
+
+% 设置[独创性声明和使用授权书]、[致谢]与[个人简介]显示条件（盲审版不显示） 
+\def\show{Y} %显示条件
+\ifthenelse{\equal{\@version}{ultimate}}{
+	\def\Show{Y}}{\def\Show{N}}
+
 % 设置目录格式
 \titlecontents{chapter}[0pt]{\songti\zihao{4}}{\thecontentslabel\ }{}
 {\hspace{.5em}\titlerule*[4pt]{$\cdot$}\normalsize\contentspage}
@@ -441,10 +448,10 @@
   \sethyper
 }
 \AfterEndPreamble{%
-  \ifthenelse{\equal{\@version}{blind}}{%
-	\makeblindcover }
-  { \makecovercn
-    \makestatementnmu}
+  \ifthenelse{\equal{\Show{}}{\show{}}}{ 
+	\makecovercn
+	\makestatementnmu}%显示最终版
+   {\makeblindcover  }%显示盲审版
 
   \def\headrule{}%此页不加页眉
   \fancyfoot[C]{\textcolor{gray}{\zihao{-5} \uppercase\expandafter{\romannumeral \thepage}}}
@@ -677,15 +684,14 @@
   \setcounter{equation}{0}
 }
 
-\newcommand{\acknowledgments}{%致谢（盲审版不显示）
-  \ifthenelse{\equal{\@version}{ultimate}}{%
-	\ctexset{chapter/numbering=false,chapter/format=\sansan \heiti \centering}
+\newcommand{\acknowledgments}{%致谢	
+	\ctexset{chapter/numbering=false,chapter/format=\sansan \heiti \centering}	
+	\ifthenelse{\equal{\@version}{ultimate}}{%（盲审版不显示）	
 	\chapter{致谢}}{}
-  
 }
-\newcommand{\biography}{%个人简介（盲审版不显示）
-  \ifthenelse{\equal{\@version}{ultimate}}{%
-    \ctexset{chapter/numbering=false,chapter/format=\sansan \heiti \centering}
+\newcommand{\biography}{%个人简介
+	\ctexset{chapter/numbering=false,chapter/format=\sansan \heiti \centering}
+    \ifthenelse{\equal{\@version}{ultimate}}{%（盲审版不显示）  
     \chapter{个人简介}}{}
 }
 

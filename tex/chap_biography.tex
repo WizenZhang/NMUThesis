@@ -1,7 +1,11 @@
 % [个人简介]
 % \biography = \chapter{个人简介}
 \biography
+\ifthenelse{\equal{\Show{}}{\show{}}}{% 是否显示[个人简介]章
 \thispagestyle{fancy}%添加页眉页脚
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 内容由此开始
+
 \begin{enumerate}[label=\arabic*)]
 	\item 简要介绍自己，内容包括姓名，性别，民族，籍贯，第一学历毕业院校及专业，取得的学位。
 	
@@ -11,3 +15,7 @@
 \vspace{5cm}
 
 This is \NMUThesis{}, Happy TeXing! --- from Wizen Zhang.
+
+% 内容由此结束		
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%		
+}{}

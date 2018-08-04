@@ -116,7 +116,7 @@ p - 表示 float page，浮动页。此类浮动体会尝试单独成页。
 
 为什么选择狮子呢？Yannis Haralambous写道（原文法语，此为转译后的英文）：Not for nothing is TeX represented by a lion. Donald Knuth has told us that lions are to him the guardians of libraries in the United States because there is a statue of a lion in front of the entrance of each large library there. Guardian of libraries, guardian of the Book—is that not indeed what TeX ultimately aspires to be? 或许吧。 （顺便说一句，TeX和MetaFont都用了狮子，TeX是公狮子，MetaFont是母狮子，多么和谐的一对啊。如果你还是忽略MetaFont的存在，那你还没有认识到它的重要性。）
 
-作为插图，首要的一点就是贴切，然后是有趣。在TeX社区里面，have fun是一个很重要的词组，也有人说Happy TeXing。我知道有不少人不喜欢TeX，但是能有什么理由呢？如果你用不到它，那么浅尝辄止即可。如果你会用到很频繁，最好慢慢修炼做到精通。如果你只是偶尔用到，那么可以搬个模版什么的，甚至也可以找人帮你（不要指望别人会用足够的空闲时间来帮你，他没有这个义务，请支付报酬，最少也得请吃个红烧肉吧）。下面的插图，是TeX TeXbook中的，我也希望这个假期，能有人有空来看看这本书。即使不能把所有的东西都看懂，那么也会对TeX的设计有了一定的了解，拿到扳手就好。
+作为插图，首要的一点就是贴切，然后是有趣。在TeX社区里面，have fun是一个很重要的词组，也有人说Happy TeXing。我知道有不少人不喜欢TeX，但是能有什么理由呢？如果你用不到它，那么浅尝辄止即可。如果你会用到很频繁，最好慢慢修炼做到精通。如果你只是偶尔用到，那么可以搬个模版什么的，甚至也可以找人帮你（不要指望别人会用足够的空闲时间来帮你，他没有这个义务，请支付报酬，最少也得请吃个饭吧）。下面的插图，是TeX TeXbook中的，我也希望这个假期，能有人有空来看看这本书。即使不能把所有的东西都看懂，那么也会对TeX的设计有了一定的了解，拿到扳手就好。
 
 \subsection{表格测试}
 在这里推荐制表采用功能强大的tabu宏包以取代其它制表宏包。具体tabu宏包的使用说明参见tabu宏包的说明文档。
@@ -173,54 +173,39 @@ p - 表示 float page，浮动页。此类浮动体会尝试单独成页。
 如表\ref{tab:tabu_test_3}是longtabu环境测试表格。longtabu环境不能用在table浮动体环境中。根据GB/T 7713.1-2006规定：如果某个表需要转页接排，在随后的各页上应重复表的编号。编号后跟标题（可省略）和“（续）”，置于表上方。续表应重复表头。
 
 特别需要注意的是，longtabu是基于longtable宏包开发的，所以在nmu.cls文件中已经插入了longtable宏包。longtable环境的所有功能都可以在longtabu中使用，如\textbackslash endhead，\textbackslash endfirsthead，\textbackslash endfoot，\textbackslash endlastfoot，和\textbackslash caption等。具体用法请参见longtable和tabu宏包的相应文档。
-\begin{longtabu}{lccc}
-	\caption{材料弹性模量及泊松比}\label{tab:tabu_test_3}\\
+\begin{longtabu}{cccccc}
+	\caption{2018年6月全球编程语言TIOBE排行榜}\label{tab:tabu_test_3}\\
 	\toprule
-	名  称   & 弹性模量E/Gpa & 切变模量G/Gpa & 泊松比$\mu$ \\
+	Jun 2018   & Jun 2017 & Change & Programming Language & Ratings &Change\\
 	\midrule%
 	\endfirsthead
-	\caption{材料弹性模量及泊松比（续）}\\
+	\caption{2018年6月全球编程语言TIOBE排行榜（续）}\\
 	\toprule
-	名  称   & 弹性模量E/Gpa & 切变模量G/Gpa & 泊松比$\mu$ \\
+	Jun 2018   & Jun 2017 & Change & Programming Language & Ratings &Change \\
 	\midrule%
 	\endhead
 	\bottomrule%
 	\endfoot
-	镍铬钢、合金钢 & 206    & 79.38  & 0.3 \\
-	碳　钢    &  196～206 & 79     & 0.3 \\
-	铸　钢    &  172～202 &        & 0.3 \\
-	球墨铸铁   &  140～154 &  73～76 & 0.3 \\
-	灰铸铁、白口铸铁 &  113～157 & 44     &  0.23～0.27 \\
-	冷拔纯铜   & 127    & 48     &   \\
-	轧制磷青铜  & 113    & 41     &  0.32～0.35 \\
-	轧制纯铜   & 108    & 39     &  0.31～0.34 \\
-	轧制锰青铜  & 108    & 39     & 0.35 \\
-	铸铝青铜   & 103    & 41     & 0.3 \\
-	冷拔黄铜   &  89～97 &  34～36 &  0.32～0.42 \\
-	轧制锌    & 82     & 31     & 0.27 \\
-	硬铝合金   & 70     & 26     & 0.3 \\
-	轧制铝    & 68     &  25～26 &  0.32～0.36 \\
-	铅      & 17     & 7      & 0.42 \\
-	玻璃     & 55     & 22     & 0.25 \\
-	混凝土    &  14～39 &  439～15.7 &  0.1～0.18 \\
-	纵纹木材   &  9.8～12 & 0.5    &   \\
-	横纹木材   &  0.5～0.98 &  0.44～0.64 &   \\
-	橡胶     & 0.00784 &        & 0.47 \\
-	电木     &  1.96～2.94 &  0.69～2.06 &  0.35～0.38 \\
-	赛璐珞    &  1.71～1.89 &  0.69～0.98 & 0.4 \\
-	可锻铸铁   & 152    &        &  \\
-	拔制铝线   & 69     &        &  \\
-	大理石    & 55     &        &  \\
-	花岗石    & 48     &        &  \\
-	石灰石    & 41     &        &  \\
-	尼龙1010 & 1.07   &        &  \\
-	夹布酚醛塑料 &  4～8.8 &        &  \\
-	石棉酚醛塑料 & 1.3    &        &  \\
-	高压聚乙烯  &  0.15～0.25 &        &  \\
-	低压聚乙烯  &  0.49～0.78 &        &  \\
-	聚丙烯    &  1.32～1.42 &        &  \\
-	硬聚氯乙烯  &  3.14～3.92 &        &  \\
-	聚四氟乙烯  &  1.14～1.42 &        &  \\
+	1 & 1 &              & Java & 15.368$\%$ & +0.88$\%$  \\
+	2 & 2 &              & C & 14.936$\%$ & +8.09$\%$  \\
+	3 & 3 &              & C++ & 8.337$\%$ & +2.61$\%$  \\
+	4 & 4 &              & Python & 5.761$\%$ & +1.43$\%$  \\
+	5 & 5 &              & C$\#$ & 4.314$\%$ & +0.78$\%$  \\
+	6 & 6 &              & Visual Basic .NET & 3.762$\%$ & +0.65$\%$  \\
+	7 & 8 &   $\uparrow$ & PHP & 2.881$\%$ & +0.11$\%$  \\
+	8 & 7 & $\downarrow$ & JavaScript & 2.495$\%$ & -0.53$\%$  \\
+	9 & - &   $\uparrow$ & SQL & 2.339$\%$ & +2,34$\%$  \\
+	10 & 14 & $\uparrow$ & R & 1.452$\%$ & -0.70$\%$  \\
+	11 & 11 &  & Ruby & 1.253$\%$ & -0.97$\%$  \\
+	12 & 18 & $\uparrow$ & Objective-C & 1.181$\%$ & -0.78$\%$  \\
+	13 & 16 & $\uparrow$ & Visual Basic & 1.154$\%$ & -0.86$\%$  \\
+	14 & 9 & $\downarrow$ & Perl & 1.147$\%$ & -1.16$\%$  \\
+	15 & 12 & $\downarrow$ & Swift & 1.145$\%$ & -1.06$\%$  \\
+	16 & 10 & $\downarrow$ & Assembly language & 0.915$\%$ & -1.34$\%$  \\
+	17 & 17 &  & MATLAB & 0.894$\%$ & -1.10$\%$  \\
+	18 & 15 & $\downarrow$ & Go & 0.879$\%$ & -1.17$\%$  \\
+	19 & 13 & $\downarrow$ & Delphi/Object Pascal & 0.875$\%$ & -1.28$\%$  \\
+	20 & 20 &  & PL/SQL & 0.848$\%$ & -0.72$\%$  \\
 \end{longtabu}%
 
 \subsection{子图}

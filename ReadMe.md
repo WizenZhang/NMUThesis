@@ -1,8 +1,8 @@
-# 北方民族大学学术论文LaTeX模板
+# 北方民族大学学位论文LaTeX模板
 
 **本模板仅为个人兴趣之作，非官方模板.**
 
-本项目为北方民族大学学术论文模板NMUThesis。模板按照院教字〔2003〕169号《北方民族大学研究生学位论文格式和要求》制定，适用于理工类博士、硕士、专业硕士学术论文（中文）。
+本项目为北方民族大学学位论文模板NMUThesis。模板按照院教字〔2003〕169号《北方民族大学研究生学位论文格式和要求》制定，适用于理工类博士、学术硕士、专业硕士论文（中文）。
 
 
 ## 下载地址
@@ -13,16 +13,16 @@
 
 ```
 BUAAThesis
- |- nmu.cls              // LaTeX宏模板文件
+ |- nmu.cls               // LaTeX宏模板文件
  |- GBT7714-2005.bst      // 国标参考文献BibTeX样式文件2005版
  |- GBT7714-2015.bst      // 国标参考文献BibTeX样式文件2015版
- |- nmu_logo.png          // 论文封皮北方民族大学校标
+ |- nmu_logo.png          // 论文封面北方民族大学校标
  |- NMUThesis.tex         // LaTeX模板
  |- NMUThesis.pdf         // PDF模板样例
  |- tex/*.tex             // LaTeX模板样例中的
  |- figures/*             // 本模板样例中的插图路径
  |- ref.bib               // LaTeX模板中的参考文献Bib文件
- |- make.bat             // 生成NMUThesis.pdf
+ |- make.bat              // 生成NMUThesis.pdf
  |- clean.bat             // 清理冗余文件
  +- ReadMe.md             // 本文件
 ```
