@@ -127,14 +127,14 @@ p - 表示 float page，浮动页。此类浮动体会尝试单独成页。
 如表\ref{tab:first_table_test}是对array宏包的tabular表格环境测试。
 \begin{table}[htbp]
 	\centering
-	\caption{这是一个用tabular环境的测试用的表格}\label{tab:first_table_test}
+	\caption{tabular环境的编程语言优缺点对比表格}\label{tab:first_table_test}
 	\begin{tabular}{lrr}
 		\toprule
-		\textbf{行星}     & \textbf{赤道半径}km & \textbf{公转周期}d \\
+		\textbf{编程语言}     & \textbf{优势} & \textbf{劣势} \\
 		\midrule
-		水星     & 2.439  & 87.9 \\
-		金星     & 6.1    & 224.682 \\
-		地球     & 6378.14 & 365.24 \\
+		Python     & 简单易学  & 速度较慢 \\
+		C/C++     & 跨平台性能好    & 学习难度大 \\
+		Java     & 使用范围最广 & 占用内存大 \\
 		\bottomrule
 	\end{tabular}%
 \end{table}
@@ -143,14 +143,14 @@ p - 表示 float page，浮动页。此类浮动体会尝试单独成页。
 如表\ref{tab:tabu_test_1}是对tabu宏包的tabu表格环境测试。在这里表格命令与表\ref{tab:first_table_test}的命令相同，只是tabular环境改成了tabu环境。
 \begin{table}[htbp]
 	\centering
-	\caption{这是一个用tabu环境的测试用的表格}\label{tab:tabu_test_1}
+	\caption{tabu环境的编程语言优缺点对比表格}\label{tab:tabu_test_1}
 	\begin{tabu}{lrr}
 		\toprule
-		\textbf{行星}     & \textbf{赤道半径}km & \textbf{公转周期}d \\
+		\textbf{编程语言}     & \textbf{优势} & \textbf{劣势} \\
 		\midrule
-		水星     & 2.439  & 87.9 \\
-		金星     & 6.1    & 224.682 \\
-		地球     & 6378.14 & 365.24 \\
+		C$\#$     & 全面集成.Net库  & 跨平台能力太差 \\
+		JavaScript     & 学习难度低    & 过于依赖浏览器 \\
+		SQL    & 开发速度快，安全性好 & 运行速度换开发速度 \\
 		\bottomrule
 	\end{tabu}%
 \end{table}
@@ -158,14 +158,14 @@ p - 表示 float page，浮动页。此类浮动体会尝试单独成页。
 表\ref{tab:tabu_test_2}对tabu to表格的x列模式进行测试。在表格导言区中设置为X[1]X[2]X[2]，表示这三列表格的列宽比值为1:2:2，总的表格宽度由tabu to环境设置，这里设置为0.6\textbackslash linewidth。相比于tabular环境，tabu环境的列宽设置方便许多。
 \begin{table}[htbp]
 	\centering
-	\caption{tabu环境测试表格---X列模式}\label{tab:tabu_test_2}
+	\caption{tabu环境的编程语言优缺点对比表格---X列模式}\label{tab:tabu_test_2}
 	\begin{tabu} to 0.6\linewidth{X[1]X[2]X[2]}
 		\toprule
-		\textbf{行星}     & \textbf{赤道半径}km & \textbf{公转周期}d \\
+		\textbf{编程语言}     & \textbf{优势} & \textbf{劣势} \\
 		\midrule
-		水星     & 2.439  & 87.9 \\
-		金星     & 6.1    & 224.682 \\
-		地球     & 6378.14 & 365.24 \\
+		PHP     & 社区庞大活跃易上手  & 运行速度慢 \\
+		Kotlin     & 和Java互操作性佳    & 继承了Java劣势 \\
+		Swift     & 在iOS占比变大 & 版本更迭快差异大 \\
 		\bottomrule
 	\end{tabu}%
 \end{table}
