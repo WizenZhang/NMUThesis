@@ -8,10 +8,9 @@
 %% %%
 %% %% 初始版本作者:
 %% %%   Wizen Zhang (wizen zhang@163.com)
-%% %% 参与修改:
 %% %%
 %% %% Versions:
-%% %%   v1.0  Wizen Zhang (08-01-2018)
+%% %%  	v1.0  Wizen Zhang (08-01-2018)
 %% %%
 %% %% 建议采用等宽字体查看本文档
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -432,7 +431,7 @@
   }
   \ifthenelse{\equal{\@refcolor}{on}}{%
     \hypersetup{
-      allcolors=black,
+      allcolors=blue,
     }
   }{%
     \hypersetup{

@@ -13,14 +13,14 @@
 
 ```
 BUAAThesis
+ |- NMUThesis.tex         // LaTeX模板(main)
+ |- NMUThesis.pdf         // PDF模板样例
  |- nmu.cls               // LaTeX宏模板文件
  |- GBT7714-2005.bst      // 国标参考文献BibTeX样式文件2005版
  |- GBT7714-2015.bst      // 国标参考文献BibTeX样式文件2015版
  |- nmu_logo.png          // 论文封面北方民族大学校标
- |- NMUThesis.tex         // LaTeX模板
- |- NMUThesis.pdf         // PDF模板样例
- |- tex/*.tex             // LaTeX模板样例中的
- |- figures/*             // 本模板样例中的插图路径
+ |- tex/*.tex             // LaTeX模板样例中的独立章节
+ |- figures/*             // LaTeX模板样例中的插图存放目录
  |- ref.bib               // LaTeX模板中的参考文献Bib文件
  |- make.bat              // 生成NMUThesis.pdf
  |- clean.bat             // 清理冗余文件
