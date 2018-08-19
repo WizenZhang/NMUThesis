@@ -495,20 +495,21 @@
 		}
 		\vspace{30mm}
 		\begin{center}
-			\bfseries \xiaochu \heiti {北方民族大学}\par
-			{\xiaoyi \heiti {硕士学位论文}}\par	
+			\includegraphics[height=36pt]{nmu.png}\par
+			\vspace{1pt}
+			\includegraphics[height=26pt]{master.png}\par	
 		\end{center}		
 
     \parbox[t][3cm][t]{\textwidth}{
 	  \begin{center}
-		{\erhao\heiti {\NMU@title\hfill}\\}
+		{\erhao\songti {\NMU@title\hfill}\\}
 	  \end{center}}
 	\parbox[t][3cm][t]{\textwidth}{
 	  \begin{center}
-			{\sanhao{\NMU@englishtitle\hfill}\\}
+			{\xiaoerhao{\NMU@englishtitle\hfill}\\}
       \end{center}}
 			
-	\parbox[t][9cm][c]{\textwidth}{\sihao\songti\hspace{2em}
+	\parbox[t][9cm][c]{\textwidth}{\xiaosan\songti\hspace{2em}
 		\begin{tabular}{ccl@{\extracolsep{2em}}l}
 			~~ & 所在学院:& \underline{\makebox[13em]{\qquad {\NMU@institute} \qquad }}\\
 			~~&专业名称:&\underline{\makebox[13em]{\qquad {\NMU@major} \qquad }}\\

@@ -923,7 +923,8 @@ FUNCTION {format.address.publisher}
     }
     { url empty$ doi empty$ and
         { format.publisher empty$ not
-            { format.sine.loco ": " * format.publisher * }
+%           { format.sine.loco ": " * format.publisher * }
+            {  format.publisher }
             { format.sine.loco.sine.nomine }
           if$
         }

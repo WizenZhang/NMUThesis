@@ -2,38 +2,38 @@
 \chapter{示例}
 %==============================
 \section{参考文献引用}
-参考文献类型：专著[M]，会议论文集[C]，报纸文章[N]，期刊文章[J]，学位论文[D]，报告[R]，标准[S]，专利[P]，论文集中的析出文献[A]。测试一下上标引用\upcite{Ruel_2012}，引用\cite{knuth84,knuth86a,lamport94}，还有其它引用\upcite{Ruel_2012,knuth86a,lamport94}.
+参考文献类型：专著[M]，会议论文集[C]，报纸文章[N]，期刊文章[J]，学位论文[D]，报告[R]，标准[S]，专利[P]，论文集中的析出文献[A]。测试一下上标引用\upcite{Le2016Multiple}，引用\cite{Le2016Multiple,Kaya2015,tf2017}，还有其它引用\upcite{Li2017An,Le2016Multiple,tf2017}.
 %--------------------------------
 \subsection{数字标注}
 \noindent
 \begin{tabular}{l@{\quad$\Rightarrow$\quad}l}
-  \verb|\cite{knuth86a}| & \cite{knuth86a}\\
-  \verb|\citet{knuth86a}| & \citet{knuth86a}\\
-  \verb|\citet[chap.~2]{knuth86a}| & \citet[chap.~2]{knuth86a}\\[0.5ex]
-  \verb|\citep{knuth86a}| & \citep{knuth86a}\\
-  \verb|\citep[chap.~2]{knuth86a}| & \citep[chap.~2]{knuth86a}\\
-  \verb|\citep[see][]{knuth86a}| & \citep[see][]{knuth86a}\\
-  \verb|\citep[see][chap.~2]{knuth86a}| & \citep[see][chap.~2]{knuth86a}\\[0.5ex]
-  \verb|\citet*{knuth86a}| & \citet*{knuth86a}\\
-  \verb|\citep*{knuth86a}| & \citep*{knuth86a}\\
+	\verb|\cite{Li2017An}| & \cite{Li2017An}\\
+	\verb|\citet{Li2017An}| & \citet{Li2017An}\\
+	\verb|\citet[chap.~2]{Li2017An}| & \citet[chap.~2]{Li2017An}\\[0.5ex]
+	\verb|\citep{Li2017An}| & \citep{Li2017An}\\
+	\verb|\citep[chap.~2]{Li2017An}| & \citep[chap.~2]{Li2017An}\\
+	\verb|\citep[see][]{Li2017An}| & \citep[see][]{Li2017An}\\
+	\verb|\citep[see][chap.~2]{Li2017An}| & \citep[see][chap.~2]{Li2017An}\\[0.5ex]
+	\verb|\citet*{Li2017An}| & \citet*{Li2017An}\\
+	\verb|\citep*{Li2017An}| & \citep*{Li2017An}\\
 \end{tabular}
 \par\noindent
 \begin{tabular}{l@{\quad$\Rightarrow$\quad}l}
-  \verb|\citet{knuth86a,tlc2}| & \citet{knuth86a,tlc2}\\
-  \verb|\citep{knuth86a,tlc2}| & \citep{knuth86a,tlc2}\\
-  \verb|\cite{knuth86a,knuth84}| & \cite{knuth86a,knuth84}\\
-  \verb|\upcite{knuth86a,knuth84}| & \upcite{knuth86a,knuth84}\\
-  \verb|\citet{knuth86a,knuth84}| & \citet{knuth86a,knuth84}\\
-  \verb|\citep{knuth86a,knuth84}| & \citep{knuth86a,knuth84}\\
-  \verb|\cite{knuth86a,knuth84,tlc2}| & \cite{knuth86a,knuth84,tlc2}\\
+	\verb|\citet{Li2017An,Kaya2015}| & \citet{Li2017An,Kaya2015}\\
+	\verb|\citep{Li2017An,Kaya2015}| & \citep{Li2017An,Kaya2015}\\
+	\verb|\cite{Li2017An,lamport1994}| & \cite{Li2017An,lamport1994}\\
+	\verb|\upcite{Li2017An,lamport1994}| & \upcite{Li2017An,lamport1994}\\
+	\verb|\citet{Li2017An,lamport1994}| & \citet{Li2017An,lamport1994}\\
+	\verb|\citep{Li2017An,lamport1994}| & \citep{Li2017An,lamport1994}\\
+	\verb|\cite{Li2017An,lamport1994,Kaya2015}| & \cite{Li2017An,lamport1994,Kaya2015}\\
 \end{tabular}
 
 %--------------------------------
 \subsection{数字标注-上标形式}
 \noindent
 \begin{tabular}{l@{\quad$\Rightarrow$\quad}l}
-  \verb|\upcite{knuth86a}| & \upcite{knuth86a}\\
-  \verb|\upcite{knuth86a,knuth84,tlc2}| & \upcite{knuth86a,knuth84,tlc2}\\
+	\verb|\upcite{Li2017An}| & \upcite{Li2017An}\\
+	\verb|\upcite{Li2017An,lamport1994,Kaya2015}| & \upcite{Li2017An,lamport1994,Kaya2015}\\
 \end{tabular}
 \par\noindent
 实现源码：\verb|\newcommand{\upcite}[1]{\textsuperscript{\cite{#1}}}|。
@@ -44,23 +44,23 @@
 \citestyle{authoryear}
 \noindent
 \begin{tabular}{l@{\quad$\Rightarrow$\quad}l}
-  \verb|\cite{knuth86a}| & \cite{knuth86a}\\
-  \verb|\citet{knuth86a}| & \citet{knuth86a}\\
-  \verb|\citet[chap.~2]{knuth86a}| & \citet[chap.~2]{knuth86a}\\[0.5ex]
-  \verb|\citep{knuth86a}| & \citep{knuth86a}\\
-  \verb|\citep[chap.~2]{knuth86a}| & \citep[chap.~2]{knuth86a}\\
-  \verb|\citep[see][]{knuth86a}| & \citep[see][]{knuth86a}\\
-  \verb|\citep[see][chap.~2]{knuth86a}| & \citep[see][chap.~2]{knuth86a}\\[0.5ex]
-  \verb|\citet*{knuth86a}| & \citet*{knuth86a}\\
-  \verb|\citep*{knuth86a}| & \citep*{knuth86a}\\
+	\verb|\cite{Li2017An}| & \cite{Li2017An}\\
+	\verb|\citet{Li2017An}| & \citet{Li2017An}\\
+	\verb|\citet[chap.~2]{Li2017An}| & \citet[chap.~2]{Li2017An}\\[0.5ex]
+	\verb|\citep{Li2017An}| & \citep{Li2017An}\\
+	\verb|\citep[chap.~2]{Li2017An}| & \citep[chap.~2]{Li2017An}\\
+	\verb|\citep[see][]{Li2017An}| & \citep[see][]{Li2017An}\\
+	\verb|\citep[see][chap.~2]{Li2017An}| & \citep[see][chap.~2]{Li2017An}\\[0.5ex]
+	\verb|\citet*{Li2017An}| & \citet*{Li2017An}\\
+	\verb|\citep*{Li2017An}| & \citep*{Li2017An}\\
 \end{tabular}
 \par\noindent
 \begin{tabular}{l@{\quad$\Rightarrow$\quad}l}
-  \verb|\citet{knuth86a,tlc2}| & \citet{knuth86a,tlc2}\\
-  \verb|\citep{knuth86a,tlc2}| & \citep{knuth86a,tlc2}\\
-  \verb|\cite{knuth86a,knuth84}| & \cite{knuth86a,knuth84}\\
-  \verb|\citet{knuth86a,knuth84}| & \citet{knuth86a,knuth84}\\
-  \verb|\citep{knuth86a,knuth84}| & \citep{knuth86a,knuth84}\\
+	\verb|\citet{Li2017An,Kaya2015}| & \citet{Li2017An,Kaya2015}\\
+	\verb|\citep{Li2017An,Kaya2015}| & \citep{Li2017An,Kaya2015}\\
+	\verb|\cite{Li2017An,lamport1994}| & \cite{Li2017An,lamport1994}\\
+	\verb|\citet{Li2017An,lamport1994}| & \citet{Li2017An,lamport1994}\\
+	\verb|\citep{Li2017An,lamport1994}| & \citep{Li2017An,lamport1994}\\
 \end{tabular}
 \citestyle{numbers}
 
@@ -68,22 +68,22 @@
 \subsection{其他形式的标注}
 \noindent
 \begin{tabular}{l@{\quad$\Rightarrow$\quad}l}
-  \verb|\citealt{tlc2}| & \citealt{tlc2}\\
-  \verb|\citealt*{tlc2}| & \citealt*{tlc2}\\
-  \verb|\citealp{tlc2}| & \citealp{tlc2}\\
-  \verb|\citealp*{tlc2}| & \citealp*{tlc2}\\
-  \verb|\citealp{tlc2,knuth86a}| & \citealp{tlc2,knuth86a}\\
-  \verb|\citealp[pg.~32]{tlc2}| & \citealp[pg.~32]{tlc2}\\
-  \verb|\citenum{tlc2}| & \citenum{tlc2}\\
-  \verb|\citetext{priv.\ comm.}| & \citetext{priv.\ comm.}\\
+	\verb|\citealt{Kaya2015}| & \citealt{Kaya2015}\\
+	\verb|\citealt*{Kaya2015}| & \citealt*{Kaya2015}\\
+	\verb|\citealp{Kaya2015}| & \citealp{Kaya2015}\\
+	\verb|\citealp*{Kaya2015}| & \citealp*{Kaya2015}\\
+	\verb|\citealp{Kaya2015,Li2017An}| & \citealp{Kaya2015,Li2017An}\\
+	\verb|\citealp[pg.~32]{Kaya2015}| & \citealp[pg.~32]{Kaya2015}\\
+	\verb|\citenum{Kaya2015}| & \citenum{Kaya2015}\\
+	\verb|\citetext{priv.\ comm.}| & \citetext{priv.\ comm.}\\
 \end{tabular}
 
 \noindent
 \begin{tabular}{l@{\quad$\Rightarrow$\quad}l}
-  \verb|\citeauthor{tlc2}| & \citeauthor{tlc2}\\
-  \verb|\citeauthor*{tlc2}| & \citeauthor*{tlc2}\\
-  \verb|\citeyear{tlc2}| & \citeyear{tlc2}\\
-  \verb|\citeyearpar{tlc2}| & \citeyearpar{tlc2}\\
+	\verb|\citeauthor{Kaya2015}| & \citeauthor{Kaya2015}\\
+	\verb|\citeauthor*{Kaya2015}| & \citeauthor*{Kaya2015}\\
+	\verb|\citeyear{Kaya2015}| & \citeyear{Kaya2015}\\
+	\verb|\citeyearpar{Kaya2015}| & \citeyearpar{Kaya2015}\\
 \end{tabular}
 
 \section{浮动体\footnote{样例参考《浙江大学研究生硕士(博士)学位论文\LaTeX{}模板》}}
@@ -186,44 +186,44 @@ p - 表示 float page，浮动页。此类浮动体会尝试单独成页。
 	\endhead
 	\bottomrule%
 	\endfoot
-1	&	1	&		&	Java	&	15.368$\%$	&	+0.88$\%$	\\
-2	&	2	&		&	C	&	14.936$\%$	&	+8.09$\%$	\\
-3	&	3	&		&	C++	&	8.337$\%$	&	+2.61$\%$	\\
-4	&	4	&		&	Python	&	5.761$\%$	&	+1.43$\%$	\\
-5	&	5	&		&	C$\#$	&	4.314$\%$	&	+0.78$\%$	\\
-6	&	6	&		&	Visual Basic .NET	&	3.762$\%$	&	+0.65$\%$	\\
-7	&	8	&	$\uparrow$	&	PHP	&	2.881$\%$	&	+0.11$\%$	\\
-8	&	7	&	$\downarrow$	&	JavaScript	&	2.495$\%$	&	-0.53$\%$	\\
-9	&	-	&	$\uparrow$	&	SQL	&	2.339$\%$	&	+2,34$\%$	\\
-10	&	14	&	$\uparrow$	&	R	&	1.452$\%$	&	-0.70$\%$	\\
-11	&	11	&		&	Ruby	&	1.253$\%$	&	-0.97$\%$	\\
-12	&	18	&	$\uparrow$	&	Objective-C	&	1.181$\%$	&	-0.78$\%$	\\
-13	&	16	&	$\uparrow$	&	Visual Basic	&	1.154$\%$	&	-0.86$\%$	\\
-14	&	9	&	$\downarrow$	&	Perl	&	1.147$\%$	&	-1.16$\%$	\\
-15	&	12	&	$\downarrow$	&	Swift	&	1.145$\%$	&	-1.06$\%$	\\
-16	&	10	&	$\downarrow$	&	Assembly language	&	0.915$\%$	&	-1.34$\%$	\\
-17	&	17	&		&	MATLAB	&	0.894$\%$	&	-1.10$\%$	\\
-18	&	15	&	$\downarrow$	&	Go	&	0.879$\%$	&	-1.17$\%$	\\
-19	&	13	&	$\downarrow$	&	Delphi/Object Pascal	&	0.875$\%$	&	-1.28$\%$	\\
-20	&	20	&		&	PL/SQL	&	0.848$\%$	&	-0.72$\%$	\\
-21	&		&		&	SAS	&	1.102$\%$	&		\\
-22	&		&		&	Dart	&	0.799$\%$	&		\\
-23	&		&		&	COBOL	&	0.685$\%$	&		\\
-24	&		&		&	D	&	0.545$\%$	&		\\
-25	&		&		&	Lua	&	0.519$\%$	&		\\
-26	&		&		&	ABAP	&	0.463$\%$	&		\\
-27	&		&		&	Fortran	&	0.459$\%$	&		\\
-28	&		&		&	Transact-SQL	&	0.427$\%$	&		\\
-29	&		&		&	Scratch	&	0.398$\%$	&		\\
-30	&		&		&	Scala	&	0.377$\%$	&		\\
-31	&		&		&	Apex	&	0.362$\%$	&		\\
-32	&		&		&	Prolog	&	0.349$\%$	&		\\
-33	&		&		&	Ada	&	0.340$\%$	&		\\
-34	&		&		&	Lisp	&	0.338$\%$	&		\\
-35	&		&		&	F$\#$	&	0.338$\%$	&		\\
-36	&		&		&	LabVIEW	&	0.331$\%$	&		\\
-37	&		&		&	Julia	&	0.301$\%$	&		\\
-38	&		&		&	Kotlin	&	0.278$\%$	&		\\	
+	1	&	1	&		&	Java	&	15.368$\%$	&	+0.88$\%$	\\
+	2	&	2	&		&	C	&	14.936$\%$	&	+8.09$\%$	\\
+	3	&	3	&		&	C++	&	8.337$\%$	&	+2.61$\%$	\\
+	4	&	4	&		&	Python	&	5.761$\%$	&	+1.43$\%$	\\
+	5	&	5	&		&	C$\#$	&	4.314$\%$	&	+0.78$\%$	\\
+	6	&	6	&		&	Visual Basic .NET	&	3.762$\%$	&	+0.65$\%$	\\
+	7	&	8	&	$\uparrow$	&	PHP	&	2.881$\%$	&	+0.11$\%$	\\
+	8	&	7	&	$\downarrow$	&	JavaScript	&	2.495$\%$	&	-0.53$\%$	\\
+	9	&	-	&	$\uparrow$	&	SQL	&	2.339$\%$	&	+2,34$\%$	\\
+	10	&	14	&	$\uparrow$	&	R	&	1.452$\%$	&	-0.70$\%$	\\
+	11	&	11	&		&	Ruby	&	1.253$\%$	&	-0.97$\%$	\\
+	12	&	18	&	$\uparrow$	&	Objective-C	&	1.181$\%$	&	-0.78$\%$	\\
+	13	&	16	&	$\uparrow$	&	Visual Basic	&	1.154$\%$	&	-0.86$\%$	\\
+	14	&	9	&	$\downarrow$	&	Perl	&	1.147$\%$	&	-1.16$\%$	\\
+	15	&	12	&	$\downarrow$	&	Swift	&	1.145$\%$	&	-1.06$\%$	\\
+	16	&	10	&	$\downarrow$	&	Assembly language	&	0.915$\%$	&	-1.34$\%$	\\
+	17	&	17	&		&	MATLAB	&	0.894$\%$	&	-1.10$\%$	\\
+	18	&	15	&	$\downarrow$	&	Go	&	0.879$\%$	&	-1.17$\%$	\\
+	19	&	13	&	$\downarrow$	&	Delphi/Object Pascal	&	0.875$\%$	&	-1.28$\%$	\\
+	20	&	20	&		&	PL/SQL	&	0.848$\%$	&	-0.72$\%$	\\
+	21	&		&		&	SAS	&	1.102$\%$	&		\\
+	22	&		&		&	Dart	&	0.799$\%$	&		\\
+	23	&		&		&	COBOL	&	0.685$\%$	&		\\
+	24	&		&		&	D	&	0.545$\%$	&		\\
+	25	&		&		&	Lua	&	0.519$\%$	&		\\
+	26	&		&		&	ABAP	&	0.463$\%$	&		\\
+	27	&		&		&	Fortran	&	0.459$\%$	&		\\
+	28	&		&		&	Transact-SQL	&	0.427$\%$	&		\\
+	29	&		&		&	Scratch	&	0.398$\%$	&		\\
+	30	&		&		&	Scala	&	0.377$\%$	&		\\
+	31	&		&		&	Apex	&	0.362$\%$	&		\\
+	32	&		&		&	Prolog	&	0.349$\%$	&		\\
+	33	&		&		&	Ada	&	0.340$\%$	&		\\
+	34	&		&		&	Lisp	&	0.338$\%$	&		\\
+	35	&		&		&	F$\#$	&	0.338$\%$	&		\\
+	36	&		&		&	LabVIEW	&	0.331$\%$	&		\\
+	37	&		&		&	Julia	&	0.301$\%$	&		\\
+	38	&		&		&	Kotlin	&	0.278$\%$	&		\\	
 \end{longtabu}%
 
 \subsection{子图}
@@ -281,22 +281,22 @@ p - 表示 float page，浮动页。此类浮动体会尝试单独成页。
 模板中使用 \texttt{algorithm2e} 宏包实现算法环境。关于该宏包的具体用法请阅读宏包的官方文档。\\
 \centerline{-----------$\downarrow$-----------Space Check-----------$\downarrow$-----------}
 \begin{algorithm}[!h]
-  %\SetAlgoLined
-  %\SetAlgoVlined
-  \caption{A How to (plain).}
-  \KwData{this text}
-  \KwResult{how to write algorithm with \LaTeX2e{} }
-  
-  initialization\;
-  \While{not at end of this document}{
-    read current\;
-    \eIf{understand}{
-      go to next section\;
-      current section becomes this one\;
-    }{
-      go back to the beginning of current section\;
-    }
-  }
+	%\SetAlgoLined
+	%\SetAlgoVlined
+	\caption{A How to (plain).}
+	\KwData{this text}
+	\KwResult{how to write algorithm with \LaTeX2e{} }
+	
+	initialization\;
+	\While{not at end of this document}{
+		read current\;
+		\eIf{understand}{
+			go to next section\;
+			current section becomes this one\;
+		}{
+			go back to the beginning of current section\;
+		}
+	}
 \end{algorithm}
 
 \centerline{-----------$\uparrow$-----------Space Check-----------$\uparrow$-----------}
@@ -304,58 +304,58 @@ p - 表示 float page，浮动页。此类浮动体会尝试单独成页。
 \centerline{-----------$\downarrow$-----------Space Check-----------$\downarrow$-----------}
 \RestyleAlgo{ruled}
 \begin{algorithm}[!h]
-  \caption{A How to (ruled).}
-  \KwData{this text}
-  \KwResult{how to write algorithm with \LaTeX2e{} }
-  
-  initialization\;
-  \While{not at end of this document}{
-    read current\;
-    \eIf{understand}{
-      go to next section\;
-      current section becomes this one\;
-    }{
-      go back to the beginning of current section\;
-    }
-  }
+	\caption{A How to (ruled).}
+	\KwData{this text}
+	\KwResult{how to write algorithm with \LaTeX2e{} }
+	
+	initialization\;
+	\While{not at end of this document}{
+		read current\;
+		\eIf{understand}{
+			go to next section\;
+			current section becomes this one\;
+		}{
+			go back to the beginning of current section\;
+		}
+	}
 \end{algorithm}
 
 \centerline{-----------$\uparrow$-----------Space Check-----------$\uparrow$-----------}
 
 \RestyleAlgo{boxed}
 \begin{algorithm}[!h]
-  \caption{A How to (boxed).}
-  \KwData{this text}
-  \KwResult{how to write algorithm with \LaTeX2e{} }
-  
-  initialization\;
-  \While{not at end of this document}{
-    read current\;
-    \eIf{understand}{
-      go to next section\;
-      current section becomes this one\;
-    }{
-      go back to the beginning of current section\;
-    }
-  }
+	\caption{A How to (boxed).}
+	\KwData{this text}
+	\KwResult{how to write algorithm with \LaTeX2e{} }
+	
+	initialization\;
+	\While{not at end of this document}{
+		read current\;
+		\eIf{understand}{
+			go to next section\;
+			current section becomes this one\;
+		}{
+			go back to the beginning of current section\;
+		}
+	}
 \end{algorithm}
 
 \RestyleAlgo{boxruled}
 \begin{algorithm}[!h]
-  \caption{A How to (boxruled).}
-  \KwData{this text}
-  \KwResult{how to write algorithm with \LaTeX2e{} }
-  
-  initialization\;
-  \While{not at end of this document}{
-    read current\;
-    \eIf{understand}{
-      go to next section\;
-      current section becomes this one\;
-    }{
-      go back to the beginning of current section\;
-    }
-  }
+	\caption{A How to (boxruled).}
+	\KwData{this text}
+	\KwResult{how to write algorithm with \LaTeX2e{} }
+	
+	initialization\;
+	\While{not at end of this document}{
+		read current\;
+		\eIf{understand}{
+			go to next section\;
+			current section becomes this one\;
+		}{
+			go back to the beginning of current section\;
+		}
+	}
 \end{algorithm}
 
 \section{数学环境}
@@ -364,17 +364,17 @@ p - 表示 float page，浮动页。此类浮动体会尝试单独成页。
 
 模板定义了一些正体（upright）的数学符号：
 \begin{center}
-  \begin{tabular}{rl}
-    \toprule
-    符号                 & 命令 \\
-    \midrule
-    常数$\eu$     & \verb|\eu| \\
-    复数单位$\iu$ & \verb|\iu| \\
-    微分符号$\diff$ & \verb|\diff| \\
-    $\argmax$         & \verb|\argmax| \\
-    $\argmin$         & \verb|\argmin| \\
-    \bottomrule
-  \end{tabular}
+	\begin{tabular}{rl}
+		\toprule
+		符号                 & 命令 \\
+		\midrule
+		常数$\eu$     & \verb|\eu| \\
+		复数单位$\iu$ & \verb|\iu| \\
+		微分符号$\diff$ & \verb|\diff| \\
+		$\argmax$         & \verb|\argmax| \\
+		$\argmin$         & \verb|\argmin| \\
+		\bottomrule
+	\end{tabular}
 \end{center}
 
 更多的例子：
@@ -391,85 +391,85 @@ p - 表示 float page，浮动页。此类浮动体会尝试单独成页。
 \subsection{定理、引理和证明}
 
 \begin{definition}
-  If the integral of function $f$ is measurable and non-negative, we define
-  its (extended) \textbf{Lebesgue integral} by
-  \begin{equation}
-  \int f = \sup_g \int g,
-  \end{equation}
-  where the supremum is taken over all measurable functions $g$ such that
-  $0 \leq g \leq f$, and where $g$ is bounded and supported on a set of
-  finite measure.
+	If the integral of function $f$ is measurable and non-negative, we define
+	its (extended) \textbf{Lebesgue integral} by
+	\begin{equation}
+	\int f = \sup_g \int g,
+	\end{equation}
+	where the supremum is taken over all measurable functions $g$ such that
+	$0 \leq g \leq f$, and where $g$ is bounded and supported on a set of
+	finite measure.
 \end{definition}
 
 \begin{example}
-  Simple examples of functions on $\mathbf{R}^d$ that are integrable
-  (or non-integrable) are given by
-  \begin{equation}
-  f_a(x) =
-  \begin{cases}
-  |x|^{-a} & \text{if } |x| \leq 1,\\
-  0 & \text{if } x > 1.
-  \end{cases}
-  \end{equation}
-  \begin{equation}
-  F_a(x) = \frac{1}{1 + |x|^a}, \qquad \text{all } x \in \mathbf{R}^d.
-  \end{equation}
-  Then $f_a$ is integrable exactly when $a < d$, while $F_a$ is integrable
-  exactly when $a > d$.
+	Simple examples of functions on $\mathbf{R}^d$ that are integrable
+	(or non-integrable) are given by
+	\begin{equation}
+	f_a(x) =
+	\begin{cases}
+	|x|^{-a} & \text{if } |x| \leq 1,\\
+	0 & \text{if } x > 1.
+	\end{cases}
+	\end{equation}
+	\begin{equation}
+	F_a(x) = \frac{1}{1 + |x|^a}, \qquad \text{all } x \in \mathbf{R}^d.
+	\end{equation}
+	Then $f_a$ is integrable exactly when $a < d$, while $F_a$ is integrable
+	exactly when $a > d$.
 \end{example}
 
 \begin{lemma}[Fatou]
-  Suppose $\{f_n\}$ is a sequence of measurable functions with $f_n \geq 0$.
-  If $\lim_{n \to \infty} f_n(x) = f(x)$ for a.e. $x$, then
-  \begin{equation}
-  \int f \leq \liminf_{n \to \infty} \int f_n.
-  \end{equation}
+	Suppose $\{f_n\}$ is a sequence of measurable functions with $f_n \geq 0$.
+	If $\lim_{n \to \infty} f_n(x) = f(x)$ for a.e. $x$, then
+	\begin{equation}
+	\int f \leq \liminf_{n \to \infty} \int f_n.
+	\end{equation}
 \end{lemma}
 
 \begin{remark}
-  We do not exclude the cases $\int f = \infty$,
-  or $\liminf_{n \to \infty} f_n = \infty$.
+	We do not exclude the cases $\int f = \infty$,
+	or $\liminf_{n \to \infty} f_n = \infty$.
 \end{remark}
 
 \begin{corollary}
-  Suppose $f$ is a non-negative measurable function, and $\{f_n\}$ a sequence
-  of non-negative measurable functions with
-  $f_n(x) \leq f(x)$ and $f_n(x) \to f(x)$ for almost every $x$. Then
-  \begin{equation}
-  \lim_{n \to \infty} \int f_n = \int f.
-  \end{equation}
+	Suppose $f$ is a non-negative measurable function, and $\{f_n\}$ a sequence
+	of non-negative measurable functions with
+	$f_n(x) \leq f(x)$ and $f_n(x) \to f(x)$ for almost every $x$. Then
+	\begin{equation}
+	\lim_{n \to \infty} \int f_n = \int f.
+	\end{equation}
 \end{corollary}
 
 \begin{proposition}
-  Suppose $f$ is integrable on $\mathbf{R}^d$. Then for every $\epsilon > 0$:
-  \begin{enumerate}
-    \renewcommand{\theenumi}{\roman{enumi}}
-    \item There exists a set of finite measure $B$ (a ball, for example) such that
-    \begin{equation}
-    \int_{B^c} |f| < \epsilon.
-    \end{equation}
-    \item There is a $\delta > 0$ such that
-    \begin{equation}
-    \int_E |f| < \epsilon \qquad \text{whenever } m(E) < \delta.
-    \end{equation}
-  \end{enumerate}
+	Suppose $f$ is integrable on $\mathbf{R}^d$. Then for every $\epsilon > 0$:
+	\begin{enumerate}
+		\renewcommand{\theenumi}{\roman{enumi}}
+		\item There exists a set of finite measure $B$ (a ball, for example) such that
+		\begin{equation}
+		\int_{B^c} |f| < \epsilon.
+		\end{equation}
+		\item There is a $\delta > 0$ such that
+		\begin{equation}
+		\int_E |f| < \epsilon \qquad \text{whenever } m(E) < \delta.
+		\end{equation}
+	\end{enumerate}
 \end{proposition}
 
 \begin{theorem}
-  Suppose $\{f_n\}$ is a sequence of measurable functions such that
-  $f_n(x) \to f(x)$ a.e. $x$, as $n$ tends to infinity.
-  If $|f_n(x)| \leq g(x)$, where $g$ is integrable, then
-  \begin{equation}
-  \int |f_n - f| \to 0 \qquad \text{as } n \to \infty,
-  \end{equation}
-  and consequently
-  \begin{equation}
-  \int f_n \to \int f \qquad \text{as } n \to \infty.
-  \end{equation}
+	Suppose $\{f_n\}$ is a sequence of measurable functions such that
+	$f_n(x) \to f(x)$ a.e. $x$, as $n$ tends to infinity.
+	If $|f_n(x)| \leq g(x)$, where $g$ is integrable, then
+	\begin{equation}
+	\int |f_n - f| \to 0 \qquad \text{as } n \to \infty,
+	\end{equation}
+	and consequently
+	\begin{equation}
+	\int f_n \to \int f \qquad \text{as } n \to \infty.
+	\end{equation}
 \end{theorem}
 
 \begin{proof}
-  Trivial.
+	Trivial.
 \end{proof}
 
 
@@ -477,30 +477,30 @@ p - 表示 float page，浮动页。此类浮动体会尝试单独成页。
 
 \newtheorem*{axiomofchoice}{Axiom of choice}
 \begin{axiomofchoice}
-  Suppose $E$ is a set and ${E_\alpha}$ is a collection of
-  non-empty subsets of $E$. Then there is a function $\alpha
-  \mapsto x_\alpha$ (a ``choice function'') such that
-  \begin{equation}
-  x_\alpha \in E_\alpha,\qquad \text{for all }\alpha.
-  \end{equation}
+	Suppose $E$ is a set and ${E_\alpha}$ is a collection of
+	non-empty subsets of $E$. Then there is a function $\alpha
+	\mapsto x_\alpha$ (a ``choice function'') such that
+	\begin{equation}
+	x_\alpha \in E_\alpha,\qquad \text{for all }\alpha.
+	\end{equation}
 \end{axiomofchoice}
 
 \newtheorem{observation}{Observation}[chapter]
 \begin{observation}
-  Suppose a partially ordered set $P$ has the property
-  that every chain has an upper bound in $P$. Then the
-  set $P$ contains at least one maximal element.
+	Suppose a partially ordered set $P$ has the property
+	that every chain has an upper bound in $P$. Then the
+	set $P$ contains at least one maximal element.
 \end{observation}
 \begin{proof}[A concise proof]
-  Obvious.
+	Obvious.
 \end{proof}
 
 \newtheorem{observationvar2}[observation]{Observationvar2}
 \begin{observationvar2}
-  Suppose a partially ordered set $P$ has the property
-  that every chain has an upper bound in $P$. Then the
-  set $P$ contains at least one maximal element.
+	Suppose a partially ordered set $P$ has the property
+	that every chain has an upper bound in $P$. Then the
+	set $P$ contains at least one maximal element.
 \end{observationvar2}
 \begin{proof}[A concise proof]
-  Obvious.
+	Obvious.
 \end{proof}
