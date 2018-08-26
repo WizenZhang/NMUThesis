@@ -74,4 +74,4 @@ BUAAThesis
 
 ***
 
-By [Wizen Zhang](https://github.com/WizenZhang), at NMU.
+By [Wizen Zhang](https://wizenzhang.github.io/), at NMU.
