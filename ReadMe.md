@@ -1,5 +1,5 @@
 # 北方民族大学学位论文LaTeX模板
-[![](https://img.shields.io/badge/version-v3.0-brightgreen.svg)](https://github.com/WizenZhang/NMUThesis/releases)
+[![](https://img.shields.io/badge/version-v3.0-brightgreen.svg)](https://github.com/WizenZhang/NMUThesis/releases)   ![](https://img.shields.io/badge/license-MIT-blue.svg)
 
 **本模板仅为个人兴趣之作，非官方模板.**
 
