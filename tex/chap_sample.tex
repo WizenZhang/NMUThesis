@@ -103,13 +103,11 @@ p - 表示 float page，浮动页。此类浮动体会尝试单独成页。
 
 \subsection{插图测试}
 如图\ref{fig:first_image_tset}是对此模版的第一张插图测试。
-
-\begin{figure}[htbp]
+\begin{figure}[htb]
 	\centering
-	\includegraphics[width = 0.5\linewidth]{Chapter1.png}
+	\includegraphics[width = 5cm]{Chapter1.png}
 	\caption{第一张插图测试}\label{fig:first_image_tset}
 \end{figure}
-
 以下是一段对这些插图来历的介绍，引用自知乎专栏All about TeXnique中夏晓昊的文章\href{http://zhuanlan.zhihu.com/LaTeX/19669122}{《The TeXbook导读：从那头（多图杀猫的）狮子说起》}。
 
 在The TeXbook中，有着一系列的以狮子为主题的插图。这些插图的作者是Duane Bibby。也是从The TeXbook开始，不少TeX书也采取了以狮子为主的插图，作者也是Duane Bibby。另外，每年的TUG（TeX Users Group）年会都会有一张以狮子为主题的logo，这只狮子已经是社区的吉祥物了。
@@ -125,7 +123,7 @@ p - 表示 float page，浮动页。此类浮动体会尝试单独成页。
 
 \subsection{array宏包tabular表格环境测试}
 如表\ref{tab:first_table_test}是对array宏包的tabular表格环境测试。
-\begin{table}[htbp]
+\begin{table}[htb]
 	\centering
 	\caption{tabular环境的编程语言优缺点对比表格}\label{tab:first_table_test}
 	\begin{tabular}{lrr}
@@ -141,7 +139,7 @@ p - 表示 float page，浮动页。此类浮动体会尝试单独成页。
 
 \subsection{tabu宏包表格环境测试}
 如表\ref{tab:tabu_test_1}是对tabu宏包的tabu表格环境测试。在这里表格命令与表\ref{tab:first_table_test}的命令相同，只是tabular环境改成了tabu环境。
-\begin{table}[htbp]
+\begin{table}[htb]
 	\centering
 	\caption{tabu环境的编程语言优缺点对比表格}\label{tab:tabu_test_1}
 	\begin{tabu}{lrr}
@@ -156,7 +154,7 @@ p - 表示 float page，浮动页。此类浮动体会尝试单独成页。
 \end{table}
 
 表\ref{tab:tabu_test_2}对tabu to表格的x列模式进行测试。在表格导言区中设置为X[1]X[2]X[2]，表示这三列表格的列宽比值为1:2:2，总的表格宽度由tabu to环境设置，这里设置为0.6\textbackslash linewidth。相比于tabular环境，tabu环境的列宽设置方便许多。
-\begin{table}[htbp]
+\begin{table}[htb]
 	\centering
 	\caption{tabu环境的编程语言优缺点对比表格---X列模式}\label{tab:tabu_test_2}
 	\begin{tabu} to 0.6\linewidth{X[1]X[2]X[2]}

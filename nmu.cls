@@ -36,7 +36,7 @@
 }
 
 % 引用ctexbook: 五号,1.5倍行距
-\LoadClass[UTF8,zihao=5,linespread=1.5]{ctexbook}%1.5行间距
+\LoadClass[UTF8,zihao=5,linespread=1.3]{ctexbook}
 
 %% 预声明
 \RequirePackage{ifthen}       % ifthenelse/equal/isundefined等判断比较命令
@@ -301,7 +301,6 @@
 \ifthenelse{\equal{\@version}{ultimate}}{
 	\def\Show{Y}}{\def\Show{N}}
 
-% 设置目录格式
 \titlecontents{chapter}[0pt]{\songti\zihao{4}}{\thecontentslabel\ }{}
 {\hspace{.5em}\titlerule*[4pt]{$\cdot$}\normalsize\contentspage}
 \titlecontents{section}[2em]{\songti\zihao{-4}}{\thecontentslabel\ }{}
@@ -330,20 +329,20 @@
 
 %% 以下为设置浮动对象和文字之间的距离。
 % 版心顶部或者版心底部浮动体之间的垂直距离，默认为12pt plus 2pt minus 2pt。
-\setlength{\floatsep}{20bp \@plus4pt \@minus1pt}
+\setlength{\floatsep}{12bp \@plus4pt \@minus1pt}
 
 % 文本行之间浮动体（使用h位置选项）与上下文之间的距离，默认为12pt plus 2pt minus
 % 2pt。
-\setlength{\intextsep}{20bp \@plus4pt \@minus2pt}
+\setlength{\intextsep}{12bp \@plus4pt \@minus2pt}
 
 % 版心顶部或底部的浮动体与文本之间的距离，默认为12pt plus 2pt minus 2pt。
-\setlength{\textfloatsep}{20bp \@plus4pt \@minus2pt}
+\setlength{\textfloatsep}{12bp \@plus4pt \@minus2pt}
 
 % 浮动页中，版心顶部的浮动体与版心顶边之间的距离，默认为0pt plus 1fil。
 \setlength{\@fptop}{0bp \@plus1.0fil}
 
 % 浮动页中浮动体直接的距离，默认为8pt plus 2fil。
-\setlength{\@fpsep}{12bp \@plus2.0fil}
+\setlength{\@fpsep}{8bp \@plus2.0fil}
 
 % 浮动页中，版心底部的浮动体与版心底边之间的距离，默认为0pt plus 1fil。
 \setlength{\@fpbot}{0bp \@plus1.0fil}
@@ -354,13 +353,13 @@
 % 而这通常不是我们想要的。我们将这个要求降低到 5%。
 \renewcommand{\textfraction}{0.05}
 % 在一文本页中，被置于版心顶部的所有浮动体的高度与版心高度的最大比值，默认为0.7，
-% 这里修改为0.9，任何造成高度超过版心高度90% 的浮动体都被将阻止置于当前版心顶部。
-\renewcommand{\topfraction}{0.9}
+% 这里修改为0.7，任何造成高度超过版心高度70% 的浮动体都被将阻止置于当前版心顶部。
+\renewcommand{\topfraction}{0.7}
 % 同上，只不过变成了版心底部，默认为0.3.
-\renewcommand{\bottomfraction}{0.8}
+\renewcommand{\bottomfraction}{0.5}
 % 在任意一个“浮动页”中，所有的浮动体高度与版心的高度的最小比值，默认为 0.5，这里
 % 设置成0.85。因此，浮动页中空白与版心的比值不会超过1-\floatpagefraction。
-\renewcommand{\floatpagefraction}{0.85}
+\renewcommand{\floatpagefraction}{0.0}
 
 %设置“图1.1”、“表2.2”为“图1-1”、“表2-2”
 \renewcommand {\thetable} {\thechapter{}-\arabic{table}}
@@ -509,7 +508,7 @@
 			{\xiaoerhao{\NMU@englishtitle\hfill}\\}
       \end{center}}
 			
-	\parbox[t][9cm][c]{\textwidth}{\xiaosan\songti\hspace{2em}
+	\parbox[t][10cm][c]{\textwidth}{\xiaosan\songti\hspace{2em}
 		\begin{tabular}{ccl@{\extracolsep{2em}}l}
 			~~ & 所在学院:& \underline{\makebox[13em]{\qquad {\NMU@institute} \qquad }}\\
 			~~&专业名称:&\underline{\makebox[13em]{\qquad {\NMU@major} \qquad }}\\
@@ -556,7 +555,8 @@
 
    % \extracolsep:将所有列在设定的表格宽度中均匀展开
    % 2em: 1em(当前字体中M的宽度)
-	\parbox[t][10cm][c]{\textwidth}{\sihao\songti\hspace{1em}
+   \begin{spacing}{1.3}
+	\parbox[t][8.5cm][c]{\textwidth}{\sihao\songti\hspace{1em}
  	  \begin{tabular}{ccl@{\extracolsep{2em}}l}
 		~~&学\hfill 位\hfill 申\hfill 请\hfill 人:& \underline{\makebox[13em]{\qquad {\NMU@author} \qquad }}\\
 		~~ & 指\hfill 导\hfill 教\hfill 师:&\underline{\makebox[13em]{\qquad \NMU@supervisor \qquad }}\\
@@ -567,17 +567,17 @@
 		~~ & 论 \hfill 文\hfill 完\hfill 成\hfill 日\hfill 期:&\underline{\makebox[13em]{\qquad {%
 					\NMU@submitdate} \qquad }}\\
 	  \end{tabular}}
-
+   \end{spacing}
   \clearautopage
 }}
 
 \newcommand{\makestatementnmu}{% 北民大声明
 {\pdfbookmark[0]{北民大声明}{makestatementnmu}
  \thispagestyle{empty}%此页不加页眉页脚
-  \begin{center}
-  	
-  	\parbox[t][2cm][c]{\textwidth}{\erhao \heiti \centerline{独 创 性 声 明}} 
-  	
+ \begin{spacing}{1.3}
+  \begin{center}	
+  	\parbox[t][3cm][c]{\textwidth}{\erhao \heiti \centerline{独 创 性 声 明}} 
+  
   	\parbox[t][4cm][c]{\textwidth}{\xiaosi
   		\hspace{2em}本人声明所呈交的论文是我个人在导师指导下进行的研究工作及取得的研究成果。尽我所知，除了文中特别加以标注和致谢的地方外，论文中不包含其他人已经发表或撰写过的研究成果，也不包含为获得北方民族大学或其它教育机构的学位或证书而使用过的材料。与我一同工作的同志对本研究所做的任何贡献均已在论文中作了明确的说明并表示了谢意。}
   	\parbox[t][39pt][c]{\textwidth}{}
@@ -588,32 +588,30 @@
   
   \begin{center}
   	
-  	\parbox[t][2cm][c]{\textwidth}{}
+  	\parbox[t][1cm][c]{\textwidth}{}
   	
-  	\parbox[t][2cm][c]{\textwidth}{ {\erhao \heiti \centerline
-  			{关于学位论文使用授权的说明} } }
+  	\parbox[t][3cm][c]{\textwidth}{ {\erhao \heiti \centerline
+  			{关于论文使用授权的说明} } }
   	
   	\parbox[t][3cm][c]{\textwidth}{\xiaosi
-  		\hspace{2em}本人完全了解北方民族大学有关保留、使用学位论文的规定，即：学校有权保留送交论文的复印件和磁盘，
-  		允许论文被查阅和借阅，可以采用影印、缩印或扫描等复制手段保存、汇编学位论文。同意北方民族大学可以
-  		用不同方式在不同媒体上发表、传播学位论文的全部或部分内容。}
+  		\hspace{2em}本人完全了解北方民族大学有关保留、使用学位论文的规定，即：学校有权保留送交论文的复印件和磁盘，允许论文被查阅和借阅，可以采用影印、缩印或扫描等复制手段保存、汇编学位论文。同意北方民族大学可以用不同方式在不同媒体上发表、传播学位论文的全部或部分内容。}
   	%\songti-----------------------------------------------------------------修改
   	\parbox[t][2cm][c]{\textwidth}{
-  		\hspace{2em}\banxiaosi\textbf{（保密的论文在解密后应遵守此规定）}}
+  		\hspace{2em}\banxiaosi\textbf{（保密的学位论文在解密后应遵守此协议）}}
   	
   	\parbox[t][1cm][b]{\textwidth}{{\songti \xiaosi 
   			研究生签名：\hspace{12em}时间：\hspace{4em}年\hspace{2em}月\hspace{2em}日}}
-  	
+  	\parbox[t][24pt][c]{\textwidth}{}
   	\parbox[t][1cm][b]{\textwidth}{{\songti \xiaosi 
   			导师签名：\hspace{13em}时间：\hspace{4em}年\hspace{2em}月\hspace{2em}日}}
   \end{center}
+ \end{spacing}
   \clearautopage
 }}
 
-
 \newcommand{\abstructkeyword}{% 摘要
 {\pdfbookmark[0]{中英摘要}{abstructkeyword}
-  \begin{spacing}{1.7}%1.5+0.2
+  \begin{spacing}{1.3}
     {\sanhao \heiti  \centerline{摘~~~~要}}
     {\xiaosi \songti ~\par
       \@abstrctcn \par ~\par
@@ -627,14 +625,12 @@
       \@abstrcten \par ~\par
       {\sihao\bfseries Key words:} \@keyworden
     }
-
   \end{spacing}
 
   \ifthenelse{\equal{\@beginright}{off}}{\clearpage}{\clearautopage}
 }\clearpage}
 \newcommand{\makecontextlist}{% 目录
 {\pdfbookmark[0]{目录}{makecontextlist}
-
   \tableofcontents
   \ifthenelse{\isundefined{\@listfigtab}}{}{%
     \ifthenelse{\equal{\@listfigtab}{on}}{%
@@ -649,6 +645,10 @@
   \ifthenelse{\equal{\@beginright}{off}}{\clearpage}{\clearautopage}
 }}
 
+\renewcommand{\baselinestretch}{1.85}%伸展因子。
+\setlength{\baselineskip}{10pt} %行基线间距。
+\setlength{\lineskiplimit}{1pt}%当两行字之间的距离小于\lineskiplimit时，行距自动设为\lineskip。
+\setlength{\parskip}{0pt}%部分段间距。
 
 \newcommand{\chaptera}[1]{%无章号但编入目录
   \ctexset{chapter/numbering=false,chapter/format=\zihao{3} \heiti \centering}
