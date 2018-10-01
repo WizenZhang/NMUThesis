@@ -1,7 +1,7 @@
 % 本LaTeX模板的一般使用说明
 \chapter{说明\footnote{章标题中脚注命令测试}}
 \label{sec:error2}
-Again，这是北方民族大学学位论文\LaTeX{}模板（\CTeX{}-Based）---\NMUThesis{}。
+
 %-----------------------------
 \section{宏包\footnote{节标题中脚注命令测试}使用}
 
@@ -50,23 +50,6 @@ Again，这是北方民族大学学位论文\LaTeX{}模板（\CTeX{}-Based）---
 
 
 %-----------------------------
-\section{选项设置}
-
-\begin{itemize}[leftmargin=3cm]
-  \item[{\tt  $\backslash$refcolor} $\triangleright$]  开启/关闭引用编号颜色，包括参考文献，公式，图，表，算法等\\
-  \texttt{on}：开启 [默认]\\
-  \texttt{off}：关闭
-  \item[{\tt $\backslash$beginright} $\triangleright$]  摘要和正文从右侧开始\\
-  \texttt{on}：开启 [默认]\\
-  \texttt{off}：关闭
-  \item[{\tt $\backslash$emptypageword} $\triangleright$]  空白页留字
-  \item[{\tt $\backslash$Listfigtab} $\triangleright$]  是否使用图标清单目录\\
-  \texttt{on}：开启 [默认]\\
-  \texttt{off}：关闭
-\end{itemize}
-
-
-%-----------------------------
 \section{章节撰写}
 本模板支持一下标题级别标题级别
 
@@ -86,6 +69,23 @@ Again，这是北方民族大学学位论文\LaTeX{}模板（\CTeX{}-Based）---
 \end{tabular}
 
 %-----------------------------
+\section{选项设置}
+
+\begin{itemize}[leftmargin=3cm]
+	\item[{\tt  $\backslash$refcolor} $\triangleright$]  开启/关闭引用编号颜色，包括参考文献，公式，图，表，算法等\\
+	\texttt{on}：开启 [默认]\\
+	\texttt{off}：关闭
+	\item[{\tt $\backslash$beginright} $\triangleright$]  摘要和正文从右侧开始\\
+	\texttt{on}：开启 [默认]\\
+	\texttt{off}：关闭
+	\item[{\tt $\backslash$emptypageword} $\triangleright$]  空白页留字
+	\item[{\tt $\backslash$Listfigtab} $\triangleright$]  是否使用图标清单目录\\
+	\texttt{on}：开启 [默认]\\
+	\texttt{off}：关闭
+\end{itemize}
+
+
+%-----------------------------
 \section{注意事项}
 \begin{itemize}
   \item[$\triangleright$] 暂无中文斜体；
@@ -103,9 +103,38 @@ Again，这是北方民族大学学位论文\LaTeX{}模板（\CTeX{}-Based）---
 \begin{itemize}
   \item[$\triangleright$] 数学环境的行间隔；
   \item[$\triangleright$] 模板选项参数选择；
-  \item[$\triangleright$] 导入BibTeX参考文献库(可通过百度学术、Zotero等方式)；
+  \item[$\triangleright$] 导入BibTeX参考文献库可通过百度学术或Zotero等(例：如图\ref{fig:3-1}、\ref{fig:3-2})；
+  \item[$\triangleright$] 表格、图片可使用TeXstudio向导插入(例：如图\ref{subfig:3a}、\ref{subfig:3b})；
 \end{itemize}
 
+\begin{figure}[tbh!]
+	\centering
+	\includegraphics[width=0.6\linewidth]{figures/sample/3-1}
+	\caption{导入BibTeX参考文献库步骤一}
+	\label{fig:3-1}
+\end{figure}
+
+\begin{figure}[tbh!]
+	\centering
+	\includegraphics[width=0.6\linewidth]{figures/sample/3-2}
+	\caption{导入BibTeX参考文献库步骤二}
+	\label{fig:3-2}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	\begin{subfigure}[b]{.4\textwidth}
+		\centering
+		\includegraphics[width=0.7\linewidth]{3-3.png}
+		\caption{TeXstudio向导}\label{subfig:3a}
+	\end{subfigure}
+	\begin{subfigure}[b]{.4\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{3-4.png}
+		\caption{插入图片}\label{subfig:3b}
+	\end{subfigure}
+	\caption{使用TeXstudio向导插入图片}\label{fig:3}
+\end{figure}
 %-----------------------------
 \section{意见及问题反馈}
 
