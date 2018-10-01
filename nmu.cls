@@ -251,7 +251,7 @@
 % 标题样式修改
 \ctexset{%
   chapter={%章标题 : 三号黑体居中 单倍行距 段前/段后0.5行 另起新页
-    format=\sansan \heiti \centering \thispagestyle{fancy},
+    format=\sansan \heiti \centering \thispagestyle{fancy},%此页添加页眉页脚
     fixskip=true,
     beforeskip=19.27pt,
     afterskip=22.48pt,
@@ -416,7 +416,7 @@
         {\textcolor[rgb]{0.75,0.75,0.75}{\@emptypagewords}}
       \end{center}
       \vspace{\fill}
-      \thispagestyle{empty}
+      \thispagestyle{empty}%此页不加页眉页脚
       \newpage
       \if@twocolumn \hbox{} \newpage \fi
     \fi
@@ -651,22 +651,33 @@
 \setlength{\parskip}{0pt}%部分段间距。
 
 \newcommand{\chaptera}[1]{%无章号但编入目录
-  \ctexset{chapter/numbering=false,chapter/format=\zihao{3} \heiti \centering}
+  \ctexset{chapter/numbering=false,chapter/format=\zihao{3} \heiti \centering
+  	\thispagestyle{fancy}}%此页添加页眉页脚
   \chapter{#1}
 }
 
 \newcommand{\summary}{%结论
-	\ctexset{chapter/numbering=false,chapter/format=\zihao{3} \heiti \centering}
+	\ctexset{chapter/numbering=false,chapter/format=\zihao{3} \heiti \centering
+	\thispagestyle{fancy}}%此页添加页眉页脚
 	\chapter{结论}
 }
 
 \newcommand{\reference}{%参考文献
-	\ctexset{chapter/numbering=false,chapter/format=\sansan \heiti \centering}
+	\ctexset{chapter/numbering=false,chapter/format=\sansan \heiti \centering
+	\thispagestyle{fancy}}%此页添加页眉页脚
+	
+	\ifthenelse{\equal{\@printtype}{twoside}}{% 双面打印
+		\cleardoublepage
+	}{%
+		\clearpage
+	}	
+	\phantomsection%使用了hyperref宏包来生成PDF文件的书签链接
 	\addcontentsline{toc}{chapter}{参考文献}
 }
 
 \renewcommand{\appendix}{% 附录
-  \ctexset{chapter/numbering=false,chapter/format=\sansan \heiti \centering}
+  \ctexset{chapter/numbering=false,chapter/format=\sansan \heiti \centering
+  \thispagestyle{fancy}}%此页添加页眉页脚
   \chapter{附录}
   \setcounter{section}{0}%
   \setcounter{subsection}{0}%
@@ -685,12 +696,14 @@
 }
 
 \newcommand{\acknowledgments}{%致谢	
-	\ctexset{chapter/numbering=false,chapter/format=\sansan \heiti \centering}	
+	\ctexset{chapter/numbering=false,chapter/format=\sansan \heiti \centering
+	\thispagestyle{fancy}}%此页添加页眉页脚
 	\ifthenelse{\equal{\@version}{ultimate}}{%（盲审版不显示）	
 	\chapter{致谢}}{}
 }
 \newcommand{\biography}{%个人简介
-	\ctexset{chapter/numbering=false,chapter/format=\sansan \heiti \centering}
+	\ctexset{chapter/numbering=false,chapter/format=\sansan \heiti \centering
+	\thispagestyle{fancy}}%此页添加页眉页脚
     \ifthenelse{\equal{\@version}{ultimate}}{%（盲审版不显示）  
     \chapter{个人简介}}{}
 }
