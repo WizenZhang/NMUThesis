@@ -35,7 +35,7 @@
  \kern-.26em\raise.5ex\hbox{\rotatebox[origin=c]{180}{S}}%
 }
 
-% 引用ctexbook: 五号,1.5倍行距
+% 引用ctexbook: 五号,1.5倍行距，1.3为与word生成的PDF进行对比所得
 \LoadClass[UTF8,zihao=5,linespread=1.3]{ctexbook}
 
 %% 预声明
@@ -250,22 +250,24 @@
 
 % 标题样式修改
 \ctexset{%
-  chapter={%章标题 : 三号黑体居中 单倍行距 段前/段后0.5行 另起新页
+  chapter={%章标题 : 三号黑体居中 3倍行间距 另起新页
     format=\sansan \heiti \centering \thispagestyle{fancy},%此页添加页眉页脚
     fixskip=true,
-    beforeskip=19.27pt,
-    afterskip=22.48pt,
+    beforeskip=10.5pt,%与word生成的PDF进行对比所得
+    afterskip=28pt,%与word生成的PDF进行对比所得
     break=\clearpage,
   },
-  section={%节标题 : 四号黑体居左 单倍行距 段前/段后0.5行
+  section={%节标题 : 四号黑体居左 2.5倍行间距
     format=\sierwu \heiti \raggedright,
-    beforeskip=8.43pt,
-    afterskip=11.24pt,
+    fixskip=true,
+    beforeskip=24pt,%与word生成的PDF进行对比所得
+    afterskip=24pt,%与word生成的PDF进行对比所得
   },
-  subsection={%条标题 : 小四号黑体居左 单倍行距 段前/段后0.5行
+  subsection={%条标题 : 小四号黑体居左 2倍行间距
     format=\xiaosier \heiti \raggedright,
-    beforeskip=3.61pt,
-    afterskip=3.61pt,
+    fixskip=true,
+    beforeskip=15pt,%与word生成的PDF进行对比所得
+    afterskip=15pt,%与word生成的PDF进行对比所得
   },
   subsubsection={% 附加4级标题 : 小四号宋体加粗居左
     format=\zihao{-4} \songti \raggedright \bfseries,
@@ -555,7 +557,7 @@
 
    % \extracolsep:将所有列在设定的表格宽度中均匀展开
    % 2em: 1em(当前字体中M的宽度)
-   \begin{spacing}{1.3}
+   \begin{spacing}{1.3}%1.5倍行距，1.3为与word生成的PDF进行对比所得
 	\parbox[t][8.5cm][c]{\textwidth}{\sihao\songti\hspace{1em}
  	  \begin{tabular}{ccl@{\extracolsep{2em}}l}
 		~~&学\hfill 位\hfill 申\hfill 请\hfill 人:& \underline{\makebox[13em]{\qquad {\NMU@author} \qquad }}\\
@@ -574,7 +576,7 @@
 \newcommand{\makestatementnmu}{% 北民大声明
 {\pdfbookmark[0]{北民大声明}{makestatementnmu}
  \thispagestyle{empty}%此页不加页眉页脚
- \begin{spacing}{1.3}
+ \begin{spacing}{1.3}%1.5倍行距，1.3为与word生成的PDF进行对比所得
   \begin{center}	
   	\parbox[t][3cm][c]{\textwidth}{\erhao \heiti \centerline{独 创 性 声 明}} 
   
@@ -611,7 +613,7 @@
 
 \newcommand{\abstructkeyword}{% 摘要
 {\pdfbookmark[0]{中英摘要}{abstructkeyword}
-  \begin{spacing}{1.3}
+  \begin{spacing}{1.3}%1.5倍行距，1.3为与word生成的PDF进行对比所得
     {\sanhao \heiti  \centerline{摘~~~~要}}
     {\xiaosi \songti ~\par
       \@abstrctcn \par ~\par
@@ -645,7 +647,7 @@
   \ifthenelse{\equal{\@beginright}{off}}{\clearpage}{\clearautopage}
 }}
 
-\renewcommand{\baselinestretch}{1.85}%伸展因子。
+\renewcommand{\baselinestretch}{1.85}%伸展因子，1.5倍行距，1.3为与word生成的PDF进行对比所得
 \setlength{\baselineskip}{10pt} %行基线间距。
 \setlength{\lineskiplimit}{1pt}%当两行字之间的距离小于\lineskiplimit时，行距自动设为\lineskip。
 \setlength{\parskip}{0pt}%部分段间距。
