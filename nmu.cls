@@ -495,7 +495,7 @@
 			\vspace{1pt}
 			\includegraphics[height=26pt]{master.png}\par	
 		\end{center}		
-
+    \begin{spacing}{1.3}%1.5倍行距，1.3为与word生成的PDF进行对比所得
     \parbox[t][3cm][t]{\textwidth}{
 	  \begin{center}
 		{\erhao\songti {\NMU@title\hfill}\\}
@@ -513,9 +513,8 @@
 			~~ & 完成日期:&\underline{\makebox[13em]{\qquad {%
 						\NMU@submitdate} \qquad }}\\
 		\end{tabular}} 
+    \end{spacing}		
 			
-		
-		
 		\clearautopage
 }}
 
@@ -540,11 +539,12 @@
 	\vspace{5mm}
 	{\xiaoerhao \songti {硕士学位论文}}\par	
   \end{center}
-
+  \begin{spacing}{1.3}%1.5倍行距，1.3为与word生成的PDF进行对比所得
   \parbox[t][3cm][t]{\textwidth}{
 	\begin{center}
 		{\erhao\heiti {\NMU@title\hfill}\\}
     \end{center}}
+
   \parbox[t][3cm][t]{\textwidth}{
 	\begin{center}
 		{\sanhao{\NMU@englishtitle\hfill}\\}
@@ -552,7 +552,7 @@
 
    % \extracolsep:将所有列在设定的表格宽度中均匀展开
    % 2em: 1em(当前字体中M的宽度)
-   \begin{spacing}{1.3}%1.5倍行距，1.3为与word生成的PDF进行对比所得
+  
 	\parbox[t][8.5cm][c]{\textwidth}{\sihao\songti\hspace{1em}
  	  \begin{tabular}{ccl@{\extracolsep{2em}}l}
 		~~&学\hfill 位\hfill 申\hfill 请\hfill 人:& \underline{\makebox[13em]{\qquad {\NMU@author} \qquad }}\\
