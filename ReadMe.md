@@ -7,10 +7,10 @@
 ## 预览
 
 [PDF下载预览](https://raw.githubusercontent.com/WizenZhang/NMUThesis/master/NMUThesis.pdf)
-![](http://m.qpic.cn/psb?/V10qpMXt1Bkto2/r3VADoyZF.Y*LLn4f8xYGMNQk0LRsl4taVki*ySN9Ko!/b/dDYBAAAAAAAA&bo=1ghABrAJ2gYDCdE!&rf=viewer_4)
-![](http://m.qpic.cn/psb?/V10qpMXt1Bkto2/KjoME8twxxdwIPu2nSE3lk3vkMr5mhpYMtOeNNa31YE!/b/dDUBAAAAAAAA&bo=1ghABrAJ2gYDCdE!&rf=viewer_4)   
-![](http://m.qpic.cn/psb?/V10qpMXt1Bkto2/5XBYm1bCOmmBadyvfQiDuJIE2zCyQbCiaK8GJ2etsdA!/b/dC8BAAAAAAAA&bo=1ghABrAJ2gYDSZE!&rf=viewer_4)   
-![](http://m.qpic.cn/psb?/V10qpMXt1Bkto2/WPEL5shQpMn0U3b8er7WayXA6QpZzIoxhvycmiO2tgw!/b/dDYBAAAAAAAA&bo=1ghABrAJ2gYDWYE!&rf=viewer_4)   
+![](figures/NMUThesis_1.png)
+![](figures/NMUThesis_2.png)   
+![](figures/NMUThesis_3.png)   
+![](figures/NMUThesis_4.png)   
 
 ## 下载地址
 
