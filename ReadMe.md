@@ -1,9 +1,7 @@
 # 北方民族大学学位论文LaTeX模板
-[![](https://img.shields.io/badge/version-v3.0-brightgreen.svg)](https://github.com/WizenZhang/NMUThesis/releases)   ![](https://img.shields.io/badge/license-MIT-blue.svg)
+[![](https://img.shields.io/badge/version-v4.0-brightgreen.svg)](https://github.com/WizenZhang/NMUThesis/releases)   ![](https://img.shields.io/badge/license-MIT-blue.svg)
 
-**本模板仅为个人兴趣之作，非官方模板.**
-
-本项目为北方民族大学学位论文模板NMUThesis。模板按照院教字〔2003〕169号《北方民族大学研究生学位论文格式和要求》制定，适用于理工类博士、学术硕士、专业硕士论文（中文）。
+**本项目为北方民族大学学位论文模板NMUThesis。模板按照院教字〔2003〕169号《北方民族大学研究生学位论文格式和要求》制定，适用于理工类博士、学术硕士、专业硕士论文（中文）。本模板仅为个人兴趣之作，供学习交流使用。**
 
 
 ## 预览
@@ -43,6 +41,8 @@
 ## 项目相关
 
 ### 项目环境
+
+使用LaTeX可以选择TexLive+TeXstudio的方式，安装教程可参看[百度经验](https://jingyan.baidu.com/article/b2c186c83c9b40c46ff6ff4f.html)
 
 ![](https://img.shields.io/badge/Windows%207-64bit-blue.svg)   ![](https://img.shields.io/badge/TeXstudio-2.12.8-orange.svg)   ![](https://img.shields.io/badge/Texlive2017-20170524-ff69b4.svg)
 

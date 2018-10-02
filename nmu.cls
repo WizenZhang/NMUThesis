@@ -60,6 +60,7 @@
 \RequirePackage{tabu}         % 制表宏包，推荐使用，不使用其他制表宏包。
 \RequirePackage{caption}      % 标题设置
 \RequirePackage{algorithm2e}  % 算法环境
+\RequirePackage{algorithmic}  % 算法环境
 \RequirePackage{listings}     % 代码环境
 \RequirePackage{amsmath}      % 数学
 \RequirePackage{amsthm}       % 定理
@@ -69,6 +70,7 @@
 \RequirePackage{etoolbox}     % \AtBeginDocument等宏命令
 \RequirePackage{pifont}       % 画五角星
 \RequirePackage{color}        % To provide color for soul
+\RequirePackage{xcolor} 
 \RequirePackage{soul}         % To highlight text
 \RequirePackage[sort&compress]{natbib}              % BibTex
 \DeclareGraphicsExtensions{.eps,.ps,.png,.jpg,.bmp} % 声明使用图像格式
@@ -165,14 +167,7 @@
 }
 
 % 代码环境
-\lstset{
-    basicstyle=\small\ttfamily,
-    xleftmargin=2pc,
-    xrightmargin=2pc,
-    frame=single,
-    columns=flexible,
-    numbers=left,
-}
+\lstset{numbers=left,numberstyle=\small,keywordstyle=\color{black}\bfseries,commentstyle=\color{red!50!green!50!blue!50},frame=shadowbox, rulesepcolor=\color{red!20!green!20!blue!20},escapeinside=``,xleftmargin=2em,xrightmargin=2em, aboveskip=1em}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% 输入
@@ -402,7 +397,7 @@
   bookmarksopen=true,
   pdffitwindow=true, 
   pdfsubject={NMU thesis},
-  pdfcreator={LaTeXed~By~Wizen Zhang}
+  pdfcreator={LaTeXed~By~Wizen Zhang(https://github.com/WizenZhang/NMUThesis)}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

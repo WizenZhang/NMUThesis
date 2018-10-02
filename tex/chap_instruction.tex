@@ -5,34 +5,50 @@
 %-----------------------------
 \section{宏包\footnote{节标题中脚注命令测试}使用}
 
-请将以下文件与此\LaTeX{}文件放在同一目录中\footnote{本模板改写自《北京航空航天大学学术论文\LaTeX{}模板》，部分样例参考《浙江大学研究生硕士(博士)学位论文\LaTeX{}模板》}：
+请将表\ref{tab:tabu_file}中文件清单放在同一目录中，使用\LaTeX{}可以选择TexLive+TeXstudio的方式，安装教程可参看百度经验\footnote{\href{https://jingyan.baidu.com/article/b2c186c83c9b40c46ff6ff4f.html}{https://jingyan.baidu.com/article/b2c186c83c9b40c46ff6ff4f.html}}。
 
-\begin{tabular}{ll}
- \verb|NMUThesis.tex|             & $\triangleright$\LaTeX{}模板(main)\\
- \verb|NMUThesis.pdf|             & $\triangleright$PDF模板样例\\
- \verb|nmu.cls |             & $\triangleright$ \LaTeX{}宏模板文件 \\
- \verb|GBT7714-2005.bst|      & $\triangleright$ 国标参考文献BibTeX样式文件2005 \\
- \verb|GBT7714-2015.bst|      & $\triangleright$ 国标参考文献BibTeX样式文件2015 \\
- \verb|nmu_logo.png|         & $\triangleright$论文封面北方民族大学校标 \\
- \verb|tex/*.tex|             & $\triangleright$LaTeX模板样例中的独立章节\\
- \verb|figures/*|             & $\triangleright$LaTeX模板样例中的插图存放目录\\
- \verb|ref.bib |             & $\triangleright$LaTeX模板中的参考文献Bib文件\\
- \verb|make.bat|             & $\triangleright$生成NMUThesis.pdf\\
- \verb|clean.bat|             & $\triangleright$清理冗余文件\\
-\end{tabular}\\
+\begin{longtable}{|c|>{\raggedright\arraybackslash}p{8cm}|}
+	\caption{北方民族大学学位论文\LaTeX{}模板清单表}\label{tab:tabu_file}
+	\endfirsthead
+	\caption{北方民族大学学位论文\LaTeX{}模板清单表(续)}
+	\endhead
+	\hline 
+	\rule[0ex]{0pt}{2.5ex} \verb|NMUThesis.tex| & $\triangleright$\LaTeX{}模板(main) \\ 
+	\hline 
+	\rule[0ex]{0pt}{2.5ex} \verb|NMUThesis.pdf| & $\triangleright$PDF模板样例\\
+	\hline 
+	\rule[0ex]{0pt}{2.5ex} \verb|nmu.cls |    & $\triangleright$ \LaTeX{}宏模板文件 \\
+	\hline 
+	\rule[0ex]{0pt}{2.5ex} \verb|GBT7714-2005.bst| & $\triangleright$ 国标参考文献BibTeX样式文件2005 \\
+	\hline 
+	\rule[0ex]{0pt}{2.5ex} \verb|GBT7714-2015.bst|  & $\triangleright$ 国标参考文献BibTeX样式文件2015 \\
+	\hline 
+	\rule[0ex]{0pt}{2.5ex} \verb|nmu_logo.png|   & $\triangleright$论文封面北方民族大学校标 \\
+	\hline 
+	\rule[0ex]{0pt}{2.5ex} \verb|tex/*.tex| & $\triangleright$\LaTeX{}模板样例中的独立章节\\
+	\hline 
+	\rule[0ex]{0pt}{2.5ex} \verb|figures/*| & $\triangleright$\LaTeX{}模板样例中的插图存放目录\\
+	\hline 
+	\rule[0ex]{0pt}{2.5ex} \verb|ref.bib |    & $\triangleright$\LaTeX{}模板中的参考文献Bib文件\\
+	\hline 
+	\rule[0ex]{0pt}{2.5ex} \verb|make.bat|    &$\triangleright$生成NMUThesis.pdf\\
+	\hline 
+	\rule[0ex]{0pt}{2.5ex} \verb|clean.bat|  & $\triangleright$清理冗余文件\\
+	\hline 
+\end{longtable}
 
 通过 \verb|\documentclass[<thesis>,<printtype>,<version>]{nmu}|载入宏包：
 \begin{itemize}[leftmargin=3cm]
   \item[{\tt thesis} $\triangleright$]  论文类型(thesis)，可选值：\\
-    a) 学术硕士论文（\verb|master|）[缺省值]\\
+    a) 学术硕士论文（\verb|master|）[缺省值]\hfill
     b) 专业硕士论文（\verb|professional|）\\
     c) 博士论文（\verb|doctor|）
-  \item[{\tt printtype} $\triangleright$] 打印属性(printtype)，可选值： \\
-    a) 单面打印（\verb|onside|）[缺省值]\\
-    b) 双面打印（\verb|twoside|）
   \item[{\tt version} $\triangleright$] 论文版本(version)，可选值： \\
-    a) 盲审版（\verb|blind|）[缺省值]\\
+    a) 盲审版（\verb|blind|）[缺省值]\hfill
     b) 最终版（\verb|ultimate|）
+  \item[{\tt printtype} $\triangleright$] 打印属性(printtype)，可选值： \\
+    a) 单面打印（\verb|onside|）[缺省值]\hfill
+    b) 双面打印（\verb|twoside|）
 \end{itemize}
 
 模板已内嵌\LaTeX{}工具包：
@@ -121,7 +137,7 @@
 	\label{fig:3-2}
 \end{figure}
 
-\begin{figure}[htbp]
+\begin{figure}[htb!]
 	\centering
 	\begin{subfigure}[b]{.4\textwidth}
 		\centering
