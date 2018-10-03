@@ -58,6 +58,7 @@
 \RequirePackage{longtable}    % 长表格
 \RequirePackage{multirow}     % 多行表格
 \RequirePackage{tabu}         % 制表宏包，推荐使用，不使用其他制表宏包。
+\RequirePackage{tikz}         % 流程图
 \RequirePackage{caption}      % 标题设置
 \RequirePackage{algorithm2e}  % 算法环境
 \RequirePackage{algorithmic}  % 算法环境
@@ -168,6 +169,19 @@
 
 % 代码环境
 \lstset{numbers=left,numberstyle=\small,keywordstyle=\color{black}\bfseries,commentstyle=\color{red!50!green!50!blue!50},frame=shadowbox, rulesepcolor=\color{red!20!green!20!blue!20},escapeinside=``,xleftmargin=2em,xrightmargin=2em, aboveskip=1em}
+
+% 流程图
+\usetikzlibrary{arrows,shapes,chains}
+%开始结束框
+\tikzstyle{startstop} = [rectangle,rounded corners, minimum width=3cm,minimum height=1cm,text centered, draw=black]
+%输入输出框
+\tikzstyle{io} = [trapezium, trapezium left angle = 70,trapezium right angle=110,minimum width=3cm,minimum height=1cm,text centered,draw=black]
+%进程框
+\tikzstyle{process} = [rectangle,minimum width=3cm,minimum height=1cm,text centered,text width =3cm,draw=black]
+%判断框
+\tikzstyle{decision} = [diamond,minimum width=3cm,minimum height=1cm,text centered,draw=black]
+%定义箭头
+\tikzstyle{arrow} = [thick,->,>=stealth]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% 输入

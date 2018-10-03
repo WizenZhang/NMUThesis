@@ -350,6 +350,145 @@ listings 宏包默认是不支持包含中文字串的代码显示的，但是�
 
 在 $\backslash$lstset 命令中设置逃逸字串的开始符号与终止符号，推荐使用的符号是左引号，即 “ `”。
 
+\section{流程图}
+
+\subsection{什么是流程图}
+
+流程图是流经一个系统的信息流、观点流或部件流的图形代表。在企业中，流程图主要用来说明某一过程。这种过程既可以是生产线上的工艺流程，也可以是完成一项任务必需的管理过程。流程图是揭示和掌握封闭系统运动状况的有效方式。作为诊断工具，它能够辅助决策制定，让管理者清楚地知道，问题可能出在什么地方，从而确定出可供选择的行动方案。
+
+流程图是表达算法思想最为有效的图形工具。作为计算机专业的学生，我们经常需要在文档中使用流程图来描述算法。在 LaTeX 中使用流程图可以通过 TikZ 或 flowchart 宏包来实现，但从本质上来说 flowchart 宏包也是使用 TikZ 宏包来实现的。flowchart 定义的形状数量比较少，可能满足不了绘制复杂流程图的需要，直接使用TikZ强大的绘图功能来实现流程图的绘制如图\ref{fig:chart}。
+
+\begin{figure}[htb!]
+	\centering
+	\begin{tikzpicture}[node distance=2cm]
+	%定义流程图具体形状
+	\node (start) [startstop] {Start};
+	\node (in1) [io, below of=start] {Input};
+	\node (pro1) [process, below of=in1] {Process 1};
+	\node (dec1) [decision, below of=pro1, yshift=-0.5cm] {Decision 1};
+	\node (pro2a) [process, below of=dec1, yshift=-0.5cm] {Process 2a};
+	\node (pro2b) [process, right of=dec1, xshift=2cm] {Process 2b};
+	\node (out1) [io, below of=pro2a] {Output};
+	\node (stop) [startstop, below of=out1] {Stop};
+	
+	%连接具体形状
+	\draw [arrow](start) -- (in1);
+	\draw [arrow](in1) -- (pro1);
+	\draw [arrow](pro1) -- (dec1);
+	\draw [arrow](dec1) -- (pro2a);
+	\draw [arrow](dec1) -- (pro2b);
+	\draw [arrow](dec1) -- node[anchor=east] {yes} (pro2a);
+	\draw [arrow](dec1) -- node[anchor=south] {no} (pro2b);
+	\draw [arrow](pro2b) |- (pro1);
+	\draw [arrow](pro2a) -- (out1);
+	\draw [arrow](out1) -- (stop);
+	\end{tikzpicture}
+	\caption{直接使用TikZ宏包绘制的流程图}
+	\label{fig:chart}
+\end{figure}
+
+\subsection{流程图的形式}
+流程图常用的形式有两种： 
+（1）上下流程图， 
+上下流程图是最常见的一种流程图，它仅表示上一步与下一步的顺序关系。 
+（2）矩阵流程图， 
+矩阵流程图不仅表示下下关系，还可以看出某一过程的其他关系。最后给一个流程图的例子如图\ref{fig:flowsheet}。流程图的原图来自于Itti的显著性论文。里面基本包含了常用流程图画法中的所有要点。
+\begin{figure}[htb!]
+	\centering
+	%定义形状样式
+	\tikzstyle{startstop} = [rectangle, rounded corners, minimum width = 3cm, minimum height = 0.7cm, text centered, draw = black]
+	\tikzstyle{startstop2} = [rectangle, rounded corners, minimum width = 13cm, minimum height = 0.7cm, text centered, draw = black]
+	\tikzstyle{io} = [trapezium, trapezium left angle = 30, trapezium right angle = 150, minimum width = 3cm, text centered, draw = black, fill = white]
+	\tikzstyle{io2} = [trapezium, trapezium left angle = 30, trapezium right angle = 150, minimum width = 2.5cm, draw = black, fill = white]
+	\tikzstyle{io3} = [trapezium, trapezium left angle = 30, trapezium right angle = 150, minimum width = 2cm, draw = black, fill = white]
+	\tikzstyle{process} = [rectangle, minimum width = 3cm, minimum height = 1cm, text centered, draw = black]
+	\tikzstyle{decision} = [diamond, minimum width = 3cm, minimum height = 1cm, text centered, draw = black]
+	\tikzstyle{arrow} = [thick, -, >= stealth]
+	\tikzstyle{arrow2} = [thick, ->, >= stealth]
+	
+	\begin{tikzpicture}[node distance = 1.5cm]
+	% 定义流程图具体形状
+	\coordinate[label = left:{\small 输入图像}](A) at(-1.5, 0);
+	\node(in1) [io] {};
+	\node(pro1) [startstop, below of = in1] {\small 线性滤波};
+	
+	\node(in2 - 2)[io3, below of = pro1, yshift = -0.6cm]{};
+	\node(in3 - 2)[io3, left of = in2 - 2, xshift = -2.5cm]{};
+	\node(in4 - 2)[io3, right of = in2 - 2, xshift = 2.5cm]{};
+	
+	\node(in2 - 1)[io2, below of = pro1, yshift = -0.3cm]{};
+	\node(in3 - 1)[io2, left of = in2 - 1, xshift = -2.5cm]{};
+	\node(in4 - 1)[io2, right of = in2 - 1, xshift = 2.5cm]{};
+	
+	\node(in2) [io, below of = pro1] {\small 颜色};
+	\node(in3)[io, left of = in2, xshift = -2.5cm]{ \small 亮度 };
+	\node(in4)[io, right of = in2, xshift = 2.5cm]{ \small 方向 };
+	
+	\node(in5)[startstop2, below of = in2 - 2]{ \small Center - Surround差异计算及归一化 };
+	
+	\node(in6 - 2)[io3, below of = in5, yshift = -0.6cm]{};
+	\node(in7 - 2)[io3, left of = in6 - 2, xshift = -2.5cm]{};
+	\node(in8 - 2)[io3, right of = in6 - 2, xshift = 2.5cm]{};
+	
+	\node(in6 - 1)[io2, below of = in5, yshift = -0.3cm]{};
+	\node(in7 - 1)[io2, left of = in6 - 1, xshift = -2.5cm]{};
+	\node(in8 - 1)[io2, right of = in6 - 1, xshift = 2.5cm]{};
+	
+	\node(in6) [io, below of = in5] {};
+	\node(in7)[io, left of = in6, xshift = -2.5cm]{};
+	\node(in8)[io, right of = in6, xshift = 2.5cm]{};
+	
+	\coordinate[label = left:{\small 特征图}](B) at(-1, -6.2);
+	\coordinate[label = left:{\small （12张）}](C) at(-1.5, -7.5);
+	\coordinate[label = left:{\small （6张）}](D) at(2.7, -7.5);
+	\coordinate[label = left:{\small （24张）}](E) at(6.7, -7.5);
+	
+	\node(in9)[startstop2, below of = in6 - 2]{ \small 跨尺度合并及归一化 };
+	
+	\node(in10) [io, below of = in9] {};
+	\node(in11)[io, left of = in10, xshift = -2.5cm]{};
+	\node(in12)[io, right of = in10, xshift = 2.5cm]{};
+	
+	\coordinate[label = left:{\small 醒目图}](F) at(-1, -9.5);
+	\node(in13) [startstop, below of = in10] {\small 线性组合};
+	\node(in14) [io, below of = in13] {};
+	\coordinate[label = left:{\small 显著图}](G) at(-1, -13);
+	
+	\node(in15) [startstop, below of = in14] {\small 赢者取全};
+	\coordinate[label = left:{\small 显著位置}]() at(1, -16.1);
+	\coordinate[label = left:{\small 反馈抑制}]() at(4.5, -14.7);
+	
+	%连线
+	\draw[arrow](pro1) -- (in1);
+	\draw[arrow](pro1) -- (in2);
+	\draw[arrow](pro1) -- (in3);
+	\draw[arrow](pro1) -- (in4);
+	\draw[arrow](0, -4.75) -- (in2 - 2);
+	\draw[arrow](-4, -4.75) -- (in3 - 2);
+	\draw[arrow](4, -4.75) -- (in4 - 2);
+	\draw[arrow](0, -5.45) -- (in6);
+	\draw[arrow](-4, -5.45) -- (in7);
+	\draw[arrow](4, -5.45) -- (in8);
+	\draw[arrow](0, -8.35) -- (in6 - 2);
+	\draw[arrow](-4, -8.35) -- (in7 - 2);
+	\draw[arrow](4, -8.35) -- (in8 - 2);
+	\draw[arrow](0, -9.05) -- (in10);
+	\draw[arrow](-4, -9.05) -- (in11);
+	\draw[arrow](4, -9.05) -- (in12);
+	\draw[arrow](in13) -- (in10);
+	\draw[arrow](in13) -- (in11);
+	\draw[arrow](in13) -- (in12);
+	\draw[arrow](in13) -- (in14);
+	\draw[arrow](in14) -- (in15);
+	\draw[arrow](in15) -- (0, -15.8);
+	\draw[arrow](0, -15.4) -- (2.5, -15.4);
+	\draw[arrow](2.5, -14) -- (2.5, -15.4);
+	\draw[arrow2](2.5, -14) -- (0, -14);
+	\end{tikzpicture}
+	\caption{IT算法流程}
+	\label{fig:flowsheet}
+\end{figure}
+
 \section{数学环境}
 
 \subsection{数学符号}
@@ -383,15 +522,27 @@ listings 宏包默认是不支持包含中文字串的代码显示的，但是�
 \subsection{定理、引理和证明}
 
 \begin{definition}
-	If the integral of function $f$ is measurable and non-negative, we define
-	its (extended) \textbf{Lebesgue integral} by
+	A sigmoid function is a mathematical function having a characteristic "S"-shaped curve or sigmoid curve. Often, sigmoid function refers to the special case of the logistic function shown in the first figure and defined by the formula:
 	\begin{equation}
-	\int f = \sup_g \int g,
+	sigmoid(x) = \frac{1}{1 + e^{-x}}
 	\end{equation}
-	where the supremum is taken over all measurable functions $g$ such that
-	$0 \leq g \leq f$, and where $g$ is bounded and supported on a set of
-	finite measure.
+	
+	\begin{figure}[htb]
+		\centering
+		\begin{tikzpicture}
+		\draw[->](-5.2,0)--(5.2,0)node[left,below]{$x$};
+		\draw[->](0,-0.5)--(0,2)node[right]{$y$};
+		\draw[dashed](-5,1)--(5,1);
+		\foreach \x in {-4,-3,-2,-1,0,1,2,3,4}{\draw(\x,0)--(\x,0.05)node[below,outer sep=2pt,font=\small]at(\x,0){\x};}
+		\foreach \y in {0.5,1}{\draw(0,\y)--(0.05,\y)node[left,outer sep=2pt,font=\small]at(0,\y){\y};}
+		\draw[color=red ,domain=-4:4]plot(\x,{1/(1+(e^(-1*(\x))))});
+		\end{tikzpicture}
+	\end{figure}
+
+	Special cases of the sigmoid function include the Gompertz curve (used in modeling systems that saturate at large values of x) and the ogee curve (used in the spillway of some dams). Sigmoid functions have domain of all real numbers, with return value monotonically increasing most often from 0 to 1 or alternatively from −1 to 1, depending on convention.
 \end{definition}
+
+
 
 \begin{example}
 	Simple examples of functions on $\mathbf{R}^d$ that are integrable
