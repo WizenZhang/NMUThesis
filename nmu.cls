@@ -76,7 +76,6 @@
 \RequirePackage[sort&compress]{natbib}              % BibTex
 \DeclareGraphicsExtensions{.eps,.ps,.png,.jpg,.bmp} % 声明使用图像格式
 \newcommand{\highlight}[1]{\colorbox{yellow}{#1}}   % 高亮注释
-\definecolor{gray}{RGB}{128,128,128}%定义页眉灰色
 %% 选项
 %% 论文类型
 \DeclareOption{master}{\gdef\@thesis{master}}             % 学术硕士论文
@@ -463,7 +462,7 @@
    {\makeblindcover  }%显示盲审版
 
   \def\headrule{}%此页不加页眉
-  \fancyfoot[C]{\textcolor{gray}{\zihao{-5} \uppercase\expandafter{\romannumeral \thepage}}}
+  \fancyfoot[C]{\zihao{-5} \uppercase\expandafter{\romannumeral \thepage}}
   \setcounter{page}{1}
   \abstructkeyword
   
@@ -471,23 +470,22 @@
   
   
   \def\headrule{%页眉底部长条的样式
-	\color{gray}{
-		\hrule\@height\textwidth height 0.8mm\@width\textwidth\vskip0.3mm%粗条宽0.8mm，两条之间的空白0.3mm
+	{\hrule\@height\textwidth height 0.8mm\@width\textwidth\vskip0.3mm%粗条宽0.8mm，两条之间的空白0.3mm
 		\hrule\@height\textwidth height 0.3mm\@width \textwidth\vskip 0pt}}%细条宽0.3mm
  	
   \renewcommand{\headrulewidth}{0.4pt}%页眉设置
   \ifthenelse{\equal{\@printtype}{twoside}}{% 双面打印
   	\fancyfoot[C]{}
-  	\fancyfoot[RO]{\textcolor{gray}{\zihao{5}-\thepage-}}
-  	\fancyfoot[LE]{\textcolor{gray}{\zihao{5}-\thepage-}}
+  	\fancyfoot[RO]{\zihao{5}-\thepage-}
+  	\fancyfoot[LE]{\zihao{5}-\thepage-}
   }{%
-    \fancyfoot[C]{\textcolor{gray}{\zihao{5}-\thepage-}}
+    \fancyfoot[C]{\zihao{5}-\thepage-}
   }
   \ifthenelse{\equal{\@thesis}{master} \OR \equal{\@thesis}{professional}}{%
-      \fancyhead[C]{\textcolor{gray}{\zihao{-5}北方民族大学{\NMU@session}届硕士学位论文\hfill\leftmark}}
+      \fancyhead[C]{\zihao{-5}北方民族大学{\NMU@session}届硕士学位论文\hfill\leftmark}
   }{}
   \ifthenelse{\equal{\@thesis}{doctor}}{%
-      \fancyhead[C]{\textcolor{gray}{\zihao{-5}北方民族大学{\NMU@session}届博士学位论文\hfill\leftmark}}
+      \fancyhead[C]{\zihao{-5}北方民族大学{\NMU@session}届博士学位论文\hfill\leftmark}
   }{}
   \setcounter{page}{1}
 }
