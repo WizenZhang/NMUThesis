@@ -258,24 +258,24 @@
 
 % 标题样式修改
 \ctexset{%
-  chapter={%章标题 : 三号黑体居中 3倍行间距 另起新页
-    format=\sansan \heiti \centering \thispagestyle{fancy},%此页添加页眉页脚
-    fixskip=true,
-    beforeskip=10.5pt,%与word生成的PDF进行对比所得
-    afterskip=28pt,%与word生成的PDF进行对比所得
-    break=\clearpage,
+  	chapter={%章标题 : 三号黑体居中 3倍行间距 另起新页
+  	format=\sansan \heiti \centering \thispagestyle{fancy},%此页添加页眉页脚
+  	fixskip=true,
+  	beforeskip=4pt,%与word生成的PDF进行对比所得
+  	afterskip=28pt,%与word生成的PDF进行对比所得
+  	break=\clearpage,
   },
   section={%节标题 : 四号黑体居左 2.5倍行间距
-    format=\sierwu \heiti \raggedright,
-    fixskip=true,
-    beforeskip=24pt,%与word生成的PDF进行对比所得
-    afterskip=24pt,%与word生成的PDF进行对比所得
+  	format=\sierwu \heiti \raggedright,
+  	fixskip=true,
+  	beforeskip=28pt,%与word生成的PDF进行对比所得
+  	afterskip=24pt,%与word生成的PDF进行对比所得
   },
   subsection={%条标题 : 小四号黑体居左 2倍行间距
-    format=\xiaosier \heiti \raggedright,
-    fixskip=true,
-    beforeskip=15pt,%与word生成的PDF进行对比所得
-    afterskip=15pt,%与word生成的PDF进行对比所得
+  	format=\xiaosier \heiti \raggedright,
+  	fixskip=true,
+  	beforeskip=24pt,%与word生成的PDF进行对比所得
+  	afterskip=20pt,%与word生成的PDF进行对比所得
   },
   subsubsection={% 附加4级标题 : 小四号宋体加粗居左
     format=\zihao{-4} \songti \raggedright \bfseries,
