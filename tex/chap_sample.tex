@@ -356,31 +356,33 @@ listings 宏包默认是不支持包含中文字串的代码显示的，但是�
 
 流程图是流经一个系统的信息流、观点流或部件流的图形代表。在企业中，流程图主要用来说明某一过程。这种过程既可以是生产线上的工艺流程，也可以是完成一项任务必需的管理过程。流程图是揭示和掌握封闭系统运动状况的有效方式。作为诊断工具，它能够辅助决策制定，让管理者清楚地知道，问题可能出在什么地方，从而确定出可供选择的行动方案。
 
-流程图是表达算法思想最为有效的图形工具。作为计算机专业的学生，我们经常需要在文档中使用流程图来描述算法。在 LaTeX 中使用流程图可以通过 TikZ 或 flowchart 宏包来实现，但从本质上来说 flowchart 宏包也是使用 TikZ 宏包来实现的。flowchart 定义的形状数量比较少，可能满足不了绘制复杂流程图的需要，直接使用TikZ强大的绘图功能来实现流程图的绘制如图\ref{fig:chart}。
+流程图是表达算法思想最为有效的图形工具。作为计算机专业的学生，我们经常需要在文档中使用流程图来描述算法。在 LaTeX 中使用流程图可以通过 TikZ 或 flowchart 宏包来实现，但从本质上来说 flowchart 宏包也是使用 TikZ 宏包来实现的。flowchart 定义的形状数量比较少，可能满足不了绘制复杂流程图的需要，直接使用TikZ强大的绘图功能来实现流程图的绘制如图\ref{fig:chart},。
 
 \begin{figure}[htb!]
 	\centering
-	\begin{tikzpicture}[node distance=2cm]
+	\begin{tikzpicture}[node distance=1.8cm]
 	%定义流程图具体形状
 	\node (start) [startstop] {Start};
 	\node (in1) [io, below of=start] {Input};
 	\node (pro1) [process, below of=in1] {Process 1};
 	\node (dec1) [decision, below of=pro1, yshift=-0.5cm] {Decision 1};
-	\node (pro2a) [process, below of=dec1, yshift=-0.5cm] {Process 2a};
-	\node (pro2b) [process, right of=dec1, xshift=2cm] {Process 2b};
-	\node (out1) [io, below of=pro2a] {Output};
+	\node (dec2) [decision, below of=dec1, yshift=-1.5cm] {Decision 2};
+	\node (pro2) [process, right of=dec1, xshift=3cm] {Process 2};
+	\node (out1) [io, below of=dec2, yshift=-0.5cm] {Output};
 	\node (stop) [startstop, below of=out1] {Stop};
-	
+	\coordinate (pointN) at (-3cm, -9.2cm);
 	%连接具体形状
 	\draw [arrow](start) -- (in1);
 	\draw [arrow](in1) -- (pro1);
 	\draw [arrow](pro1) -- (dec1);
-	\draw [arrow](dec1) -- (pro2a);
-	\draw [arrow](dec1) -- (pro2b);
-	\draw [arrow](dec1) -- node[anchor=east] {yes} (pro2a);
-	\draw [arrow](dec1) -- node[anchor=south] {no} (pro2b);
-	\draw [arrow](pro2b) |- (pro1);
-	\draw [arrow](pro2a) -- (out1);
+	\draw [arrow](dec1) -- (dec2);
+	\draw [arrow](dec1) -- (pro2);
+	\draw [arrow](dec1) -- node[anchor=east] {Y} (dec2);
+	\draw [arrow](dec1) -- node[anchor=south] {N} (pro2);
+	\draw [arrow](pro2) |- (pro1);
+	\draw [arrow](dec2) -- node[left] {Y} (out1);
+	\draw (dec2) -- node[above] {N} (pointN);
+	\draw [arrow](pointN) |- (pro1);
 	\draw [arrow](out1) -- (stop);
 	\end{tikzpicture}
 	\caption{直接使用TikZ宏包绘制的流程图}
@@ -388,11 +390,28 @@ listings 宏包默认是不支持包含中文字串的代码显示的，但是�
 \end{figure}
 
 \subsection{流程图的形式}
-流程图常用的形式有两种： 
-（1）上下流程图， 
-上下流程图是最常见的一种流程图，它仅表示上一步与下一步的顺序关系。 
-（2）矩阵流程图， 
+流程图常用的形式有两种：
+ 
+（1）上下流程图 
+
+上下流程图是最常见的一种流程图，它仅表示上一步与下一步的顺序关系。
+ 
+（2）矩阵流程图
+
 矩阵流程图不仅表示下下关系，还可以看出某一过程的其他关系。最后给一个流程图的例子如图\ref{fig:flowsheet}。流程图的原图来自于Itti的显著性论文。里面基本包含了常用流程图画法中的所有要点。
+
+\subsection{\LaTeX{}中插入VISIO图}
+
+1. VISIO原图另存为PDF格式
+
+2. 用Acrobat打开，文档 -- 剪裁页面 -- 删除白边距
+
+3. 将pdf格式文件复制到figures文件夹(盲审封皮：$\backslash$includegraphics\{nmu.pdf\})
+
+4. 或另存为eps格式
+
+5. 将eps格式文件复制到figures文件夹
+
 \begin{figure}[htb!]
 	\centering
 	%定义形状样式

@@ -166,8 +166,8 @@
   \popQED\endtrivlist\@endpefalse
 }
 
-% 代码环境
-\lstset{numbers=left,numberstyle=\small,keywordstyle=\color{black}\bfseries,commentstyle=\color{red!50!green!50!blue!50},frame=shadowbox, rulesepcolor=\color{red!20!green!20!blue!20},escapeinside=``,xleftmargin=2em,xrightmargin=2em, aboveskip=1em}
+% 代码环境 frame=single无阴影
+\lstset{numbers=left,numberstyle=\small,keywordstyle=\color{black}\bfseries,commentstyle=\color{gray},frame=shadowbox,captionpos=b, rulesepcolor=\color{red!20!green!20!blue!20},escapeinside=``,xleftmargin=2em,xrightmargin=2em, aboveskip=1em}
 
 % 流程图
 \usetikzlibrary{arrows,shapes,chains}
@@ -494,7 +494,6 @@
 \newcommand{\makeblindcover}{% 盲审封面
 	{\pdfbookmark[0]{盲审封面}{makeblindcover}
 		\thispagestyle{empty}%此页不加页眉页脚
-		\vspace{14mm}
 		{\begin{center}
 				\xiaosi \songti \noindent
 				\makebox[4\ccwd][s]{盲审代码}：\NMUunderline[70pt]{}%
@@ -503,30 +502,30 @@
 		}
 		\vspace{30mm}
 		\begin{center}
-			\includegraphics[height=36pt]{nmu.png}\par
-			\vspace{1pt}
-			\includegraphics[height=26pt]{master.png}\par	
+			\includegraphics{nmu.pdf}\par
+			\vspace{4.5pt}
+			\includegraphics{thesis.pdf}	
 		\end{center}		
-    \begin{spacing}{1.3}%1.5倍行距，1.3为与word生成的PDF进行对比所得
-    \parbox[t][3cm][t]{\textwidth}{
-	  \begin{center}
-		{\erhao\songti {\NMU@title\hfill}\\}
-	  \end{center}}
-	\parbox[t][3cm][t]{\textwidth}{
-	  \begin{center}
-			{\xiaoerhao{\NMU@englishtitle\hfill}\\}
-      \end{center}}
+		\begin{spacing}{1.3}%1.5倍行距，1.3为与word生成的PDF进行对比所得
+			\parbox[t][3cm][t]{\textwidth}{
+				\begin{center}
+					\bfseries{\erhao\songti {\NMU@title\hfill}\\}
+			\end{center}}
+			\parbox[t][3cm][t]{\textwidth}{
+				\begin{center}
+					{\xiaoerhao{\NMU@englishtitle\hfill}\\}
+			\end{center}}
 			
-	\parbox[t][10cm][c]{\textwidth}{\xiaosan\songti\hspace{2em}
-		\begin{tabular}{ccl@{\extracolsep{2em}}l}
-			~~ & 所在学院:& \underline{\makebox[13em]{\qquad {\NMU@institute} \qquad }}\\
-			~~&专业名称:&\underline{\makebox[13em]{\qquad {\NMU@major} \qquad }}\\
-			~~ & 研究方向:& \underline{\makebox[13em]{\qquad {\NMU@research} \qquad }}\\
-			~~ & 完成日期:&\underline{\makebox[13em]{\qquad {%
-						\NMU@submitdate} \qquad }}\\
-		\end{tabular}} 
-    \end{spacing}		
-			
+			\parbox[t][10cm][c]{\textwidth}{\xiaosan\songti\hspace{2em}
+				\begin{tabular}{ccl@{\extracolsep{2em}}l}
+					~~ & 所在学院:& \underline{\makebox[13em]{\qquad {\NMU@institute} \qquad }}\\
+					~~&专业名称:&\underline{\makebox[13em]{\qquad {\NMU@major} \qquad }}\\
+					~~ & 研究方向:& \underline{\makebox[13em]{\qquad {\NMU@research} \qquad }}\\
+					~~ & 完成日期:&\underline{\makebox[13em]{\qquad {%
+								\NMU@submitdate} \qquad }}\\
+			\end{tabular}} 
+		\end{spacing}		
+		
 		\clearautopage
 }}
 
