@@ -167,7 +167,18 @@
 }
 
 % 代码环境 frame=single无阴影
-\lstset{numbers=left,numberstyle=\small,keywordstyle=\color{black}\bfseries,commentstyle=\color{gray},frame=shadowbox,captionpos=b, rulesepcolor=\color{red!20!green!20!blue!20},escapeinside=``,xleftmargin=2em,xrightmargin=2em, aboveskip=1em}
+\lstset{numbers=left,
+	basicstyle=\small\ttfamily,
+	numberstyle=\tiny,
+	keywordstyle=\color{black}\bfseries,
+	commentstyle=\color{gray},
+	frame=shadowbox,
+	captionpos=b, 
+	rulesepcolor=\color{red!20!green!20!blue!20},
+	escapeinside=``,
+	xleftmargin=2em,
+	xrightmargin=2em, 
+	aboveskip=1em}
 
 % 流程图
 \usetikzlibrary{arrows,shapes,chains}
@@ -311,6 +322,7 @@
 \ifthenelse{\equal{\@version}{ultimate}}{
 	\def\Show{Y}}{\def\Show{N}}
 
+% 目录显示设置：\titlecontents{章节名称}[左端距离]{标题字体、与上文间距等}{标题序号}{空}{引导符和页码}[与下文间距]
 \titlecontents{chapter}[0pt]{\songti\zihao{4}}{\thecontentslabel\ }{}
 {\hspace{.5em}\titlerule*[4pt]{$\cdot$}\normalsize\contentspage}
 \titlecontents{section}[2em]{\songti\zihao{-4}}{\thecontentslabel\ }{}
@@ -321,6 +333,11 @@
 {\hspace{.5em}\titlerule*[4pt]{$\cdot$}\normalsize\contentspage}
 \titlecontents{table}[0pt]{\songti\zihao{-4}}{表~\thecontentslabel\quad}{}
 {\hspace{.5em}\titlerule*[4pt]{$\cdot$}\normalsize\contentspage}
+
+% 设置目录深度，
+% 当深度为1时，对应着2级标题，即章和节 (chapter1 和 1.1、1.2)；
+% 当深度为2时，对应着章、节、小节 (chapter1、1.2、1.2.1)。
+\setcounter{tocdepth}{2}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 浮动体相关定义
