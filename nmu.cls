@@ -334,10 +334,10 @@
 \titlecontents{table}[0pt]{\songti\zihao{-4}}{表~\thecontentslabel\quad}{}
 {\hspace{.5em}\titlerule*[4pt]{$\cdot$}\normalsize\contentspage}
 
-% 设置目录深度，
+% 设置目录深度
 % 当深度为1时，对应着2级标题，即章和节 (chapter1 和 1.1、1.2)；
 % 当深度为2时，对应着章、节、小节 (chapter1、1.2、1.2.1)。
-\setcounter{tocdepth}{2}
+\setcounter{tocdepth}{1}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 浮动体相关定义
