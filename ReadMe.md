@@ -6,7 +6,7 @@
 
 ## 预览
 
-### **PDF下载预览:**[**NMUThesis.pdf**](https://raw.githubusercontent.com/WizenZhang/NMUThesis/master/NMUThesis.pdf) ###
+**PDF下载预览:**[NMUThesis.pdf](https://raw.githubusercontent.com/WizenZhang/NMUThesis/master/NMUThesis.pdf)
 ![](figures/NMUThesis_1.png)
 ![](figures/NMUThesis_2.png)   
 ![](figures/NMUThesis_3.png)   
