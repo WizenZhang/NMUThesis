@@ -4,14 +4,6 @@
 %% %% 论文样式参考自《北方民族大学研究生学位论文格式和要求--院教字〔2003〕169号》
 %% %% 本模板改写自《北京航空航天大学学术论文LaTeX模板》
 %% %% 部分样例参考《浙江大学研究生硕士(博士)学位论文LaTeX模板》
-%% %% 基于ctexbook
-%% %%
-%% %% 初始版本作者:
-%% %%   Wizen Zhang (wizen zhang@163.com)
-%% %%
-%% %% Versions:
-%% %%  	v1.0  Wizen Zhang (08-01-2018)
-%% %%
 %% %% 建议采用等宽字体查看本文档
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -92,6 +84,10 @@
 \DeclareOption{blind}{\gdef\@version{blind}} % 盲审版
 \DeclareOption{ultimate}{\gdef\@version{ultimate}} % 最终版
 
+%% 学科设置（文史类、理工类）
+\DeclareOption{MA}{\gdef\@subject{MA}} % 文史类
+\DeclareOption{MS}{\gdef\@subject{MS}} % 理工类
+
 %% 适应首字母大写
 \DeclareOption{Master}{\gdef\@thesis{master}}
 \DeclareOption{Professional }{\gdef\@thesis{professional }}
@@ -105,7 +101,7 @@
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{ctexbook}}
 
 %% 默认选项配置
-\ExecuteOptions{master,oneside,blind,a4paper,sub4section}
+\ExecuteOptions{master,oneside,blind,MS,a4paper,sub4section}
 \setcounter{secnumdepth}{5}
 \ProcessOptions\relax
 
@@ -268,47 +264,109 @@
 \renewcommand{\contentsname}{\zihao{2} \heiti 目~~~~录}
 
 % 标题样式修改
-\ctexset{%
+\ifthenelse{\equal{\@subject}{MS}}{% 理工类
+  \ctexset{%设置标题的格式
   	chapter={%章标题 : 三号黑体居中 3倍行间距 另起新页
   	format=\sansan \heiti \centering \thispagestyle{fancy},%此页添加页眉页脚
   	fixskip=true,
   	beforeskip=4pt,%与word生成的PDF进行对比所得
   	afterskip=28pt,%与word生成的PDF进行对比所得
   	break=\clearpage,
-  },
-  section={%节标题 : 四号黑体居左 2.5倍行间距
-  	format=\sierwu \heiti \raggedright,
-  	fixskip=true,
-  	beforeskip=28pt,%与word生成的PDF进行对比所得
-  	afterskip=24pt,%与word生成的PDF进行对比所得
-  },
-  subsection={%条标题 : 小四号黑体居左 2倍行间距
-  	format=\xiaosier \heiti \raggedright,
-  	fixskip=true,
-  	beforeskip=24pt,%与word生成的PDF进行对比所得
-  	afterskip=20pt,%与word生成的PDF进行对比所得
-  },
-  subsubsection={% 附加4级标题 : 小四号宋体加粗居左
-    format=\zihao{-4} \songti \raggedright \bfseries,
-  },
-  paragraph={% 附加5级标题 : 小四号宋体居左
-    format=\zihao{-4} \songti \raggedright,
-  },
-  subparagraph={% 附加6级标题 : 小四号宋体居左
-    format=\zihao{-4} \songti \raggedright,
+	},
+	section={%节标题 : 四号黑体居左 2.5倍行间距
+	 	format=\sierwu \heiti \raggedright,
+	 	fixskip=true,
+	 	beforeskip=28pt,%与word生成的PDF进行对比所得
+	 	afterskip=24pt,%与word生成的PDF进行对比所得
+	},
+	subsection={%条标题 : 小四号黑体居左 2倍行间距
+	 	format=\xiaosier \heiti \raggedright,
+	 	fixskip=true,
+	 	beforeskip=24pt,%与word生成的PDF进行对比所得
+	 	afterskip=20pt,%与word生成的PDF进行对比所得
+	},
+	subsubsection={% 附加4级标题 : 五号宋体居左
+	format=\wuhao \songti \raggedright,
+	fixskip=true,
+	beforeskip=20pt,
+	afterskip=20pt,
+	},
+	paragraph={% 附加5级标题 : 五号宋体居左
+	format=\wuhao \songti \raggedright,
+	fixskip=true,
+	beforeskip=20pt,
+	afterskip=20pt,
+	},
+	subparagraph={% 附加6级标题 : 五号宋体居左
+	format=\wuhao \songti \raggedright,
+	fixskip=true,
+	beforeskip=20pt,
+	afterskip=20pt,
+	}
   }
+}{
+  \ifthenelse{\equal{\@subject}{MA}}{% 文史类
+  	\ctexset{%设置标题的格式
+  		chapter={%章标题 : 三号黑体居中 3倍行间距 另起新页
+  			format=\sansan \heiti \centering \thispagestyle{fancy},%此页添加页眉页脚
+  			fixskip=true,
+  			beforeskip=4pt,%与word生成的PDF进行对比所得
+  			afterskip=28pt,%与word生成的PDF进行对比所得
+  			break=\clearpage,
+  		},
+  		section={%节标题 : 四号黑体居左 2.5倍行间距
+  			format=\sierwu \heiti \centering,
+  			name = {第,节},
+  			number = \chinese{section},
+  			fixskip=true,
+  			beforeskip=28pt,%与word生成的PDF进行对比所得
+  			afterskip=24pt,%与word生成的PDF进行对比所得
+  		},
+  		subsection={%条标题 : 小四号黑体居左 2倍行间距
+  			format=\xiaosier \heiti \raggedright,
+  			name = {\hspace{2em},、},%首行缩进2字符
+  			number = \chinese{subsection},
+  			fixskip=true,
+  			beforeskip=24pt,%与word生成的PDF进行对比所得
+  			afterskip=20pt,%与word生成的PDF进行对比所得
+  		},
+		subsubsection={% 附加4级标题 : 五号宋体居左
+		format=\wuhao \songti \raggedright,
+		name = {\hspace{2em}（,）},%首行缩进2字符
+		number = \chinese{subsubsection},
+		fixskip=true,
+		beforeskip=20pt,
+		afterskip=20pt,
+		},
+		paragraph={% 附加5级标题 : 五号宋体居左
+		format=\wuhao \songti \raggedright,
+		name = {\hspace{2em},.},%首行缩进2字符
+		number = \arabic{paragraph},
+		fixskip=true,
+		beforeskip=20pt,
+		afterskip=20pt,
+		},
+		subparagraph={% 附加6级标题 : 五号宋体居左
+		format=\wuhao \songti \raggedright,
+		name = {\hspace{2em}（,）},%首行缩进2字符
+		number = \arabic{subparagraph},
+		fixskip=true,
+		beforeskip=20pt,
+		afterskip=20pt,
+		}
+  	  }
+   }{}
 }
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% 页面设置
 % 设置页面大小
 % A4纸页边距均25mm
 % 打印留边平移5mm
 \geometry{papersize={210mm,297mm}}
-\ifthenelse{\equal{\@printtype}{twoside}}{% 双面面
+\ifthenelse{\equal{\@printtype}{twoside}}{% 双面打印
   \geometry{left=30mm,right=25mm,top=30mm,bottom=25mm}
 }{%
-  \ifthenelse{\equal{\@printtype}{oneside}}{% 单面
+  \ifthenelse{\equal{\@printtype}{oneside}}{% 单面打印
     \geometry{left=25mm,right=25mm,top=30mm,bottom=25mm}
     \geometry{layouthoffset=5mm}}{}
 }
@@ -479,13 +537,19 @@
    {\makeblindcover  }%显示盲审版
 
   \def\headrule{}%此页不加页眉
-  \fancyfoot[C]{\zihao{-5} \uppercase\expandafter{\romannumeral \thepage}}
+    \ifthenelse{\equal{\@printtype}{twoside}}{% 双面打印
+  	\fancyfoot[C]{}
+  	\fancyfoot[RO]{\zihao{-5} \uppercase\expandafter{\romannumeral \thepage}}
+  	\fancyfoot[LE]{\zihao{-5} \uppercase\expandafter{\romannumeral \thepage}}
+  }{%
+  	\fancyfoot[C]{\zihao{-5} \uppercase\expandafter{\romannumeral \thepage}}
+  }
+  
   \setcounter{page}{1}
   \abstructkeyword
-  
+ 
   \makecontextlist
-  
-  
+   
   \def\headrule{%页眉底部长条的样式
 	{\hrule\@height\textwidth height 0.8mm\@width\textwidth\vskip0.3mm%粗条宽0.8mm，两条之间的空白0.3mm
 		\hrule\@height\textwidth height 0.3mm\@width \textwidth\vskip 0pt}}%细条宽0.3mm

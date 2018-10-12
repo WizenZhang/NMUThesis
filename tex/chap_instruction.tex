@@ -13,7 +13,7 @@
 	\caption{北方民族大学学位论文\LaTeX{}模板清单表(续)}
 	\endhead
 	\hline 
-	\rule[0ex]{0pt}{2.5ex} \verb|NMUThesis.tex| & $\triangleright$\LaTeX{}模板(main) \\ 
+	\rule[0ex]{0pt}{2.5ex} \verb|NMUThesis.tex| & $\triangleright$\LaTeX{}模板运行入口(main) \\ 
 	\hline 
 	\rule[0ex]{0pt}{2.5ex} \verb|NMUThesis.pdf| & $\triangleright$PDF模板样例\\
 	\hline 
@@ -37,18 +37,21 @@
 	\hline 
 \end{longtable}
 
-通过 \verb|\documentclass[<thesis>,<printtype>,<version>]{nmu}|载入宏包：
+通过 \verb|\documentclass[<thesis>,<printtype>,<version>,<subject>]{nmu}|载入宏包，可选参数说明如下：
 \begin{itemize}[leftmargin=3cm]
   \item[{\tt thesis} $\triangleright$]  论文类型(thesis)，可选值：\\
     a) 学术硕士论文（\verb|master|）[缺省值]\hfill
     b) 专业硕士论文（\verb|professional|）\\
     c) 博士论文（\verb|doctor|）
-  \item[{\tt version} $\triangleright$] 论文版本(version)，可选值： \\
-    a) 盲审版（\verb|blind|）[缺省值]\hfill
-    b) 最终版（\verb|ultimate|）
   \item[{\tt printtype} $\triangleright$] 打印属性(printtype)，可选值： \\
     a) 单面打印（\verb|onside|）[缺省值]\hfill
     b) 双面打印（\verb|twoside|）
+  \item[{\tt version} $\triangleright$] 论文版本(version)，可选值： \\
+    a) 盲审版（\verb|blind|）[缺省值]\hfill
+    b) 最终版（\verb|ultimate|）
+  \item[{\tt subject} $\triangleright$] 学科设置(subject)，可选值： \\
+    a) 理工类（\verb|MS|）[缺省值]\hfill
+    b) 文史类（\verb|MA|）
 \end{itemize}
 
 模板已内嵌\LaTeX{}工具包：
@@ -63,8 +66,6 @@
  
 请统一使用UTF-8编码。
 
-
-
 %-----------------------------
 \section{章节撰写}
 本模板支持一下标题级别标题级别
@@ -77,11 +78,11 @@
   \verb|\appendix|                 & $\triangleright$ 附录\\
   \verb|\acknowledgments|          & $\triangleright$ 致谢\\
   \verb|\biography|                & $\triangleright$ 个人简介\\
-  \verb|\section{节}|              & $\triangleright$ 1.1 节\\
-  \verb|\subsection{条}|           & $\triangleright$ 1.1.1 条\\
-  \verb|\subsubsection{A}|         & $\triangleright$ 1.1.1.1 A\\
-  \verb|\paragraph{a}|             & $\triangleright$ 1.1.1.1.1 a\\
-  \verb|\subparagraph{a)}|         & $\triangleright$ 1.1.1.1.1.1 a)\\
+  \verb|\section{节}|              & $\triangleright$ 理工类：1.1 节 ~~~~文史类: 第一节 \\
+  \verb|\subsection{条}|           & $\triangleright$ 理工类：1.1.1 条 ~~~~文史类:一、\\
+  \verb|\subsubsection{A}|         & $\triangleright$ 理工类：1.1.1.1 A  ~~~~文史类: （一） ~~A\\
+  \verb|\paragraph{a}|             & $\triangleright$ 理工类：1.1.1.1.1 a  ~~~~文史类: 1. ~~a\\
+  \verb|\subparagraph{a)}|         & $\triangleright$ 理工类：1.1.1.1.1.1 a)  ~~~~文史类: （1） ~~a）\\
 \end{tabular}
 
 %-----------------------------

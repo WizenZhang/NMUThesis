@@ -1,12 +1,12 @@
 # 北方民族大学学位论文LaTeX模板
 [![](https://img.shields.io/badge/version-v4.0-brightgreen.svg)](https://github.com/WizenZhang/NMUThesis/releases)   ![](https://img.shields.io/badge/license-MIT-blue.svg)
 
-**本项目为北方民族大学学位论文模板NMUThesis。模板按照院教字〔2003〕169号《北方民族大学研究生学位论文格式和要求》制定，适用于理工类博士、学术硕士、专业硕士论文（中文）。本模板仅为个人兴趣之作，供学习交流使用。**
+**本项目为北方民族大学学位论文模板NMUThesis。模板按照院教字〔2003〕169号《北方民族大学研究生学位论文格式和要求》制定，适用于文史类和理工类论文(博士、学术硕士、专业硕士)，支持单双面打印以及盲审版、最终版排版。本模板仅为个人兴趣之作，供学习交流使用。**
 
 
 ## 预览
 
-[PDF下载预览](https://raw.githubusercontent.com/WizenZhang/NMUThesis/master/NMUThesis.pdf)
+### **PDF下载预览:**[**NMUThesis.pdf**](https://raw.githubusercontent.com/WizenZhang/NMUThesis/master/NMUThesis.pdf) ###
 ![](figures/NMUThesis_1.png)
 ![](figures/NMUThesis_2.png)   
 ![](figures/NMUThesis_3.png)   
@@ -22,22 +22,25 @@
 
 ### 模式切换
 
-\documentclass[<*thesis*>,<*printtype*>,<*version*>]{nmu}
+\documentclass[<*thesis*>,<*printtype*>,<*version*>,<*subject*>]{nmu}
 
 ##### I.论文类型(thesis)
 + 学术硕士论文（master）<缺省值>
 + 专业硕士论文（professional）
 + 博士论文（doctor）
 
-##### II.打印设置(printtype)
+##### II.打印属性(printtype)
 
 + 单面打印（onside）<缺省值>
 + 双面打印（twoside）
 
-##### III.论文版本设置(version)
+##### III.论文版本(version)
 + 盲审版（blind）<缺省值>
 + 最终版（ultimate）
 
+##### IV.学科设置(subject)
++ 理工类（MS）<缺省值>
++ 文史类（MA）
 ## 项目相关
 
 ### 项目环境
