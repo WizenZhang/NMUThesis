@@ -1,6 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% %% <UTF-8>
-%% %% 北方民族大学学位论文LaTeX模板 - LaTeX 08-01-2018
+%% %% 北方民族大学学位论文LaTeX模板 
 %% %% 论文样式参考自《北方民族大学研究生学位论文格式和要求--院教字〔2003〕169号》
 %% %% 本模板改写自《北京航空航天大学学术论文LaTeX模板》
 %% %% 部分样例参考《浙江大学研究生硕士(博士)学位论文LaTeX模板》
@@ -9,10 +9,10 @@
 
 %% 模板标识
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{num}[2018/08/01 v1.1 NMU thesis class]
-\typeout{This is LaTeX template num, Version 1.1 (based on CTex) 08-01-2018, by Wizen Zhang}
+\ProvidesClass{num}[2018/10/13 v4.0 NMU thesis class]
+\typeout{This is LaTeX template num, Version 4.0 (based on CTex) 2018/10/13, by Wizen Zhang}
 \usepackage{graphicx}
-\def\NMUThesisVer{v1.1 08-01-2018}
+\def\NMUThesisVer{v4.0 2018/10/13}
 \def\NMUThesis{%
  N%
  {\fontsize{0.8em}{\baselineskip}\selectfont
