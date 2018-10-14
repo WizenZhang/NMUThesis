@@ -9,10 +9,10 @@
 
 %% 模板标识
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{num}[2018/10/13 v4.0 NMU thesis class]
-\typeout{This is LaTeX template num, Version 4.0 (based on CTex) 2018/10/13, by Wizen Zhang}
+\ProvidesClass{num}[2018/10/14 v4.0 NMU thesis class]
+\typeout{This is LaTeX template num, Version 4.0 (based on CTex) 2018/10/14, by Wizen Zhang}
 \usepackage{graphicx}
-\def\NMUThesisVer{v4.0 2018/10/13}
+\def\NMUThesisVer{v4.0 2018/10/14}
 \def\NMUThesis{%
  N%
  {\fontsize{0.8em}{\baselineskip}\selectfont

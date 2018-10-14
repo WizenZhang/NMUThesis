@@ -173,51 +173,99 @@ p - 表示 float page，浮动页。此类浮动体会尝试单独成页。
 如表\ref{tab:tabu_test_3}是longtabu环境测试表格。longtabu环境不能用在table浮动体环境中。根据GB/T 7713.1-2006规定：如果某个表需要转页接排，在随后的各页上应重复表的编号。编号后跟标题（可省略）和“（续）”，置于表上方。续表应重复表头。
 
 特别需要注意的是，longtabu是基于longtable宏包开发的，所以在nmu.cls文件中已经插入了longtable宏包。longtable环境的所有功能都可以在longtabu中使用，如\textbackslash endhead，\textbackslash endfirsthead，\textbackslash endfoot，\textbackslash endlastfoot，和\textbackslash caption等。具体用法请参见longtable和tabu宏包的相应文档。
+
+在 9 月份的 TIOBE 编程语言排行榜中，Python 超越 C++，首次进入排行榜 TOP 3。事实上，无论在工业界还是学术界，Python 的使用者越来越多，尤其是近年来 —— 乃至可以预见的未来，在 AI和数据分析这些热门的领域，Python 都将会有大展拳脚的天地。所以反映在 TIOBE 排行榜上就是逐渐上升的排名。
+
+不过在最新的 10 月编程语言排行榜中如表\ref{tab:tabu_test_3}，刚被挤下 TOP 3 的 C++ 反超 Python，以 0.44$\%$ 的微弱优势重新夺回第三的宝座。毕竟 C++ 在服务端、游戏开发和实时体系等应用范畴中，早已有庞大的使用者，而且诞生的时间也比 Python 早。所以未来的排行榜中，我们相信 C++ 和 Python 应该会处于“反超与被反超”这样一种交替超越的状态。
 \begin{longtabu}{cccccc}
-	\caption{2018年6月全球编程语言TIOBE排行榜}\label{tab:tabu_test_3}\\
+	\caption{2018年10月全球编程语言TIOBE排行榜}\label{tab:tabu_test_3}\\
 	\toprule
-	Jun 2018   & Jun 2017 & Change & Programming Language & Ratings &Change\\
+	Oct-18	&	Oct-17	&	Change	&	Programming Language	&	Ratings	&	Change	\\
 	\midrule%
 	\endfirsthead
-	\caption{2018年6月全球编程语言TIOBE排行榜（续）}\\
+	\caption{2018年10月全球编程语言TIOBE排行榜（续）}\\
 	\toprule
-	Jun 2018   & Jun 2017 & Change & Programming Language & Ratings &Change \\
+	Oct-18	&	Oct-17	&	Change	&	Programming Language	&	Ratings	&	Change	\\
 	\midrule%
 	\endhead
 	\bottomrule%
 	\endfoot
-	1	&	1	&		&	Java	&	15.368$\%$	&	+0.88$\%$	\\
-	2	&	2	&		&	C	&	14.936$\%$	&	+8.09$\%$	\\
-	3	&	3	&		&	C++	&	8.337$\%$	&	+2.61$\%$	\\
-	4	&	4	&		&	Python	&	5.761$\%$	&	+1.43$\%$	\\
-	5	&	5	&		&	C$\#$	&	4.314$\%$	&	+0.78$\%$	\\
-	6	&	6	&		&	Visual Basic .NET	&	3.762$\%$	&	+0.65$\%$	\\
-	7	&	8	&	$\uparrow$	&	PHP	&	2.881$\%$	&	+0.11$\%$	\\
-	8	&	7	&	$\downarrow$	&	JavaScript	&	2.495$\%$	&	-0.53$\%$	\\
-	9	&	-	&	$\uparrow$	&	SQL	&	2.339$\%$	&	+2,34$\%$	\\
-	10	&	14	&	$\uparrow$	&	R	&	1.452$\%$	&	-0.70$\%$	\\
-	11	&	11	&		&	Ruby	&	1.253$\%$	&	-0.97$\%$	\\
-	12	&	18	&	$\uparrow$	&	Objective-C	&	1.181$\%$	&	-0.78$\%$	\\
-	13	&	16	&	$\uparrow$	&	Visual Basic	&	1.154$\%$	&	-0.86$\%$	\\
-	14	&	9	&	$\downarrow$	&	Perl	&	1.147$\%$	&	-1.16$\%$	\\
-	15	&	12	&	$\downarrow$	&	Swift	&	1.145$\%$	&	-1.06$\%$	\\
-	16	&	10	&	$\downarrow$	&	Assembly language	&	0.915$\%$	&	-1.34$\%$	\\
-	17	&	17	&		&	MATLAB	&	0.894$\%$	&	-1.10$\%$	\\
-	18	&	15	&	$\downarrow$	&	Go	&	0.879$\%$	&	-1.17$\%$	\\
-	19	&	13	&	$\downarrow$	&	Delphi/Object Pascal	&	0.875$\%$	&	-1.28$\%$	\\
-	20	&	20	&		&	PL/SQL	&	0.848$\%$	&	-0.72$\%$	\\
-	21	&		&		&	SAS	&	1.102$\%$	&		\\
-	22	&		&		&	Dart	&	0.799$\%$	&		\\
-	23	&		&		&	COBOL	&	0.685$\%$	&		\\
-	24	&		&		&	D	&	0.545$\%$	&		\\
-	25	&		&		&	Lua	&	0.519$\%$	&		\\
-	26	&		&		&	ABAP	&	0.463$\%$	&		\\
-	27	&		&		&	Fortran	&	0.459$\%$	&		\\
-	28	&		&		&	Transact-SQL	&	0.427$\%$	&		\\
-	29	&		&		&	Scratch	&	0.398$\%$	&		\\
-	30	&		&		&	Scala	&	0.377$\%$	&		\\
-\end{longtabu}%
+	1	&	1	&		&	Java	&	17.801$\%$	&	5.37$\%$	\\
+	2	&	2	&		&	C	&	15.376$\%$	&	7$\%$	\\
+	3	&	3	&		&	C++	&	7.593$\%$	&	2.59$\%$	\\
+	4	&	5	&	$\uparrow$	&	Python	&	7.156$\%$	&	3.35$\%$	\\
+	5	&	8	&	$\uparrow$	&	Visual Basic .NET	&	5.884$\%$	&	3.15$\%$	\\
+	6	&	4	&	$\downarrow$	&	C$\#$	&	3.485$\%$	&	-0.37$\%$	\\
+	7	&	7	&		&	PHP	&	2.794$\%$	&	0$\%$	\\
+	8	&	6	&	$\downarrow$	&	JavaScript	&	2.28$\%$	&	-0.73$\%$	\\
+	9	&	-	&	$\uparrow$	&	SQL	&	2.038$\%$	&	2.04$\%$	\\
+	10	&	16	&	$\uparrow$	&	Swift	&	1.5$\%$	&	-0.17$\%$	\\
+	11	&	13	&	$\uparrow$	&	MATLAB	&	1.317$\%$	&	-0.56$\%$	\\
+	12	&	20	&	$\uparrow$	&	Go	&	1.253$\%$	&	-0.1$\%$	\\
+	13	&	9	&		&	Assembly language	&	1.245$\%$	&	-1.13$\%$	\\
+	14	&	15	&	$\uparrow$	&	R	&	1.214$\%$	&	-0.47$\%$	\\
+	15	&	17	&	$\uparrow$	&	Objective-C	&	1.202$\%$	&	-0.31$\%$	\\
+	16	&	12	&	$\downarrow$	&	Perl	&	1.168$\%$	&	-0.8$\%$	\\
+	17	&	11	&	$\downarrow$	&	Delphi/Object Pascal	&	1.154$\%$	&	-1.03$\%$	\\
+	18	&	10	&	$\downarrow$	&	Ruby	&	1.108$\%$	&	-1.22$\%$	\\
+	19	&	19	&		&	PL/SQL	&	0.779$\%$	&	-0.63$\%$	\\
+	20	&	18	&	$\downarrow$	&	Visual Basic	&	0.652$\%$	&	-0.77$\%$	\\
+	21	&		&		&	D	&	0.643$\%$	&		\\
+	22	&		&		&	SAS	&	0.609$\%$	&		\\
+	23	&		&		&	Dart	&	0.543$\%$	&		\\
+	24	&		&		&	Scratch	&	0.496$\%$	&		\\
+	25	&		&		&	COBOL	&	0.478$\%$	&		\\
+	26	&		&		&	Scala	&	0.454$\%$	&		\\
+	27	&		&		&	F$\#$	&	0.438$\%$	&		\\
+	28	&		&		&	Groovy	&	0.435$\%$	&		\\
+	29	&		&		&	Lua	&	0.405$\%$	&		\\
+	30	&		&		&	ABAP	&	0.396$\%$	&		\\
+\end{longtabu}
 
+另外值得关注的还有 Swift，按照 TIOBE 的说法，“Swift 正在敲开 TIOBE 排行榜前 10 名的大门”。根据观察，排行榜中 TOP 9 的编程语言已基本稳定，唯独第 10 名每个月都会有变化。在本月中，Swift 的排名就上升到了第 10 的位置，且试图成为 TIOBE TOP 10 的固定成员。与此同时，Ruby 和 Perl 也正在争夺这个位置。不过 TIOBE 认为，按照此前的趋势来看，目前编程语言 TOP 10 的候选人似乎有 3 位：Swift、Go 和 R，但它们也并不一定能够成功站稳，原因如下：
+
+\begin{itemize}
+	\item Swift 显然是开发 iOS 移动应用程序的头号编程语言。但由于它仅适用于 iOS 而不适用于 Android，因此程序员更多的是选择采用“一次编写到处运行”的框架。
+	\item 编程语言 R 正在受到新贵 Python 的碾压性竞争。
+	\item Go 语言，与其他编程语言相比，并没有过于亮眼的优点，所以还不清楚是什么让它脱颖而出。
+\end{itemize}
+
+话虽如此，但我们依然有理由相信，Go 依然是一只优质的“潜力股”，且不说它一直保持上升的趋势，在日益火热的云服务领域，Go 语言基本上已是事实上的“龙头”地位。
+
+需要注意的是，SQL 自 2018 年 2 月起被重新添加到了TIOBE排行榜中，由于没有以往的数据可以对比，所以会给人 SQL 语言指数突然暴涨的错觉,历史排名如表\ref{tab:tabu_test_4}所示:
+
+\begin{longtabu}{lccccccc}
+	\caption{历史排名（1988-2018/每5年）}\label{tab:tabu_test_4}\\
+	\toprule
+	Programming Language	&	2018	&	2013	&	2008	&	2003	&	1998	&	1993	&	1988	\\	
+	\midrule%
+	\endfirsthead
+	\caption{历史排名（1988-2018/每5年）（续）}\\
+	\toprule
+	Programming Language	&	2018	&	2013	&	2008	&	2003	&	1998	&	1993	&	1988	\\
+	\midrule%
+	\endhead
+	\bottomrule%
+	\endfoot
+	Java	&	1	&	2	&	1	&	1	&	17	&	-	&	-	\\
+	C	&	2	&	1	&	2	&	2	&	1	&	1	&	1	\\
+	C++	&	3	&	4	&	3	&	3	&	2	&	2	&	4	\\
+	Python	&	4	&	7	&	6	&	11	&	24	&	13	&	-	\\
+	C$\#$	&	5	&	5	&	7	&	8	&	-	&	-	&	-	\\
+	Visual Basic .NET	&	6	&	11	&	-	&	-	&	-	&	-	&	-	\\
+	PHP	&	7	&	6	&	4	&	5	&	-	&	-	&	-	\\
+	JavaScript	&	8	&	9	&	8	&	7	&	21	&	-	&	-	\\
+	Ruby	&	9	&	10	&	9	&	18	&	-	&	-	&	-	\\
+	R	&	10	&	23	&	48	&	-	&	-	&	-	&	-	\\
+	Objective-C	&	14	&	3	&	40	&	50	&	-	&	-	&	-	\\
+	Perl	&	16	&	8	&	5	&	4	&	3	&	9	&	22	\\
+	Ada	&	29	&	19	&	18	&	15	&	12	&	5	&	3	\\
+	Lisp	&	30	&	12	&	16	&	13	&	8	&	6	&	2	\\
+	Fortran	&	31	&	24	&	21	&	12	&	6	&	3	&	15	\\
+\end{longtabu}
+TIOBE 编程社区指数（The TIOBE Programming Community index）是编程语言流行度的指标，该榜单每月更新一次，指数基于全球技术工程师、课程和第三方供应商的数量。包括流行的搜索引擎，如谷歌、必应、雅虎、维基百科、亚马逊、YouTube 和百度都用于指数计算。具体的计算方式见这里：\href{https://www.tiobe.com/tiobe-index/programming-languages-definition/}{https://www.tiobe.com/tiobe-index/programming-languages-definition/}。
+
+值得注意的是，TIOBE 指数并不代表语言的好坏，开发者可以使用该榜单检查自身的编程技能是否需要更新，或者在开始构建新软件时对某一语言做出选择。
 \subsection{子图}
 这里子图的排版推荐使用subcaption宏包，不再推荐使用subfig宏包，更不推荐使用subfigure宏包。值得注意的是，在nmu.cls文件中已经写入了subcaption宏包，而且subcaption宏包与subfigure和subfig宏包是相互冲突的。因此，如果你还想使用subfig宏包而不想使用subcaption宏包，请自己到nmu.cls文件的相关位置更改，具体的使用及修改方法参见相应的宏包说明文档。不过在这里还是不推荐直接去更改nmu.cls文档，除非你对\LaTeX{} 的相关命令很清楚，知道自己在改什么，并且不会对其他格式产生影响。
 
