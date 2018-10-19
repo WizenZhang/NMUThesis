@@ -704,7 +704,7 @@
     {\sanhao \heiti  \centerline{摘~~~~要}}
     {\xiaosi \songti ~\par
       \@abstrctcn \par ~\par
-      {\sihao \bfseries{\songti 关键字：}} \@keywordcn
+      \noindent {\sihao \bfseries{\songti 关键字：}} \@keywordcn %关键词行不缩进
     }
     
     \clearpage
@@ -712,7 +712,7 @@
     {\zihao{3} \bfseries  \centerline{{Abstract}}}
     {\xiaosi  ~\par
       \@abstrcten \par ~\par
-      {\sihao\bfseries Key words:} \@keyworden
+      \noindent {\sihao\bfseries Key words:} \@keyworden %关键词行不缩进
     }
   \end{spacing}
 

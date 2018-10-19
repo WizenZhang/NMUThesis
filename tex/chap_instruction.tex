@@ -105,8 +105,8 @@
 %-----------------------------
 \section{注意事项}
 \begin{itemize}
-  \item[$\triangleright$] 暂无中文斜体；
   \item[$\triangleright$] 中文粗体将转换为楷体；
+  \item[$\triangleright$] 论文题目只占一行注意更改nmu.cls中591和635行:\verb|\parbox[t][3cm->1cm][t]{\textwidth}|；
   \item[$\triangleright$] 目录中仅出现两级标题，通过\verb|\setcounter{tocdepth}{1}|设置两级标题目录深度；
   \item[$\triangleright$] 若某文献标题中含有特定含义大写字母（“ISODATA”等,详见\cite{Li2017An}），应特别用第二重｛｝将其括起来才可使其正常表示；
   \item[$\triangleright$] 切换论文版本后，重新生成目录需两次编译；

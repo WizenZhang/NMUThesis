@@ -53,7 +53,7 @@
 
 ```
 BUAAThesis
- |- NMUThesis.tex         // LaTeX模板(main)
+ |- NMUThesis.tex         // LaTeX模板运行入口(main)
  |- NMUThesis.pdf         // PDF模板样例
  |- nmu.cls               // LaTeX宏模板文件
  |- GBT7714-2005.bst      // 国标参考文献BibTeX样式文件2005版
