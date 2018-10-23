@@ -5,7 +5,7 @@
 %-----------------------------
 \section{宏包\footnote{节标题中脚注命令测试}使用}
 
-请将表\ref{tab:tabu_file}中文件清单放在同一目录中，使用\LaTeX{}可以选择TexLive+TeXstudio的方式，安装教程可参看百度经验\footnote{\href{https://jingyan.baidu.com/article/b2c186c83c9b40c46ff6ff4f.html}{安装教程请参看 : https://jingyan.baidu.com/article/b2c186c83c9b40c46ff6ff4f.html}}。
+请将表\ref{tab:tabu_file}中文件清单放在同一目录中，Windows系统可以选择TexLive+TeXstudio的方式，安装教程可参看百度经验\footnote{\href{https://jingyan.baidu.com/article/b2c186c83c9b40c46ff6ff4f.html}{安装教程请参看 : https://jingyan.baidu.com/article/b2c186c83c9b40c46ff6ff4f.html}}。
 
 \begin{longtable}{|c|>{\raggedright\arraybackslash}p{8cm}|}
 	\caption{北方民族大学学位论文\LaTeX{}模板清单表}\label{tab:tabu_file}
@@ -106,6 +106,7 @@
 \section{注意事项}
 \begin{itemize}
   \item[$\triangleright$] 中文粗体将转换为楷体；
+  \item[$\triangleright$] 调整表格行间距可使用\verb|\rule[0ex]{0pt}{2.5ex}|，具例参看表\ref{tab:tabu_file}格式；
   \item[$\triangleright$] 论文题目只占一行注意更改nmu.cls中591和635行:\verb|\parbox[t][3cm->1cm][t]{\textwidth}|；
   \item[$\triangleright$] 目录中仅出现两级标题，通过\verb|\setcounter{tocdepth}{1}|设置两级标题目录深度；
   \item[$\triangleright$] 若某文献标题中含有特定含义大写字母（“ISODATA”等,详见\cite{Li2017An}），应特别用第二重｛｝将其括起来才可使其正常表示；
@@ -114,6 +115,7 @@
   \item[$\triangleright$] \verb|\label{<text>}|中不能使用中文；
   \item[$\triangleright$] 浮动体与正文之间的距离是弹性的；
   \item[$\triangleright$] 命令符与汉字之间请注意加空格以避免undefined错误（pdfLaTeX下好像一般不存在这个问题，主要在XeLaTeX编译环境下发生）；
+  \item[$\triangleright$] Mac系统可采用MacTex+TeXstudio的安装方式，请注意添加常用字库（宋体、黑体等）以避免\verb|Undefined control sequence. \begin{document}|错误
 \end{itemize}
 
 %-----------------------------
@@ -122,6 +124,7 @@
   \item[$\triangleright$] 模板选项参数选择(例：\verb|\documentclass[master,oneside,ultimate,MS]{nmu}|)；
   \item[$\triangleright$] 导入BibTeX参考文献库可通过百度学术或Zotero等(例：如图\ref{fig:3-1}、\ref{fig:3-2})；
   \item[$\triangleright$] 表格、图片可使用TeXstudio向导插入(例：如图\ref{subfig:3a}、\ref{subfig:3b})；
+
 \end{itemize}
 
 \begin{figure}[tbh!]

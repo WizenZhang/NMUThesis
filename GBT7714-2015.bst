@@ -925,7 +925,7 @@ FUNCTION {format.address.publisher}
         { format.publisher empty$ not
 %           { format.sine.loco ": " * format.publisher * }
             {  format.publisher }
-            { format.sine.loco.sine.nomine }
+            { "" }
           if$
         }
         { format.publisher empty$ not

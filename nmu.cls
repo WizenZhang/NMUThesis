@@ -583,7 +583,7 @@
 		}
 		\vspace{30mm}
 		\begin{center}
-			\includegraphics{nmu.pdf}\par
+			\includegraphics{nmu-blind.pdf}\par
 			\vspace{4.5pt}
 			\includegraphics{thesis.pdf}	
 		\end{center}		
@@ -626,9 +626,9 @@
   \vspace{3mm}
   \begin{center}
 	\includegraphics[width=25.4mm]{nmu_logo}\par
-	\vspace{7.4mm}
-	\chuhao \lishu{北方民族大学}\par
-	\vspace{5mm}
+	\vspace{10mm}
+	\includegraphics{nmu-ultimate.pdf}\par
+	\vspace{10mm}
 	{\xiaoerhao \songti {硕士学位论文}}\par	
   \end{center}
   \begin{spacing}{1.3}%1.5倍行距，1.3为与word生成的PDF进行对比所得
