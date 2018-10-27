@@ -318,7 +318,7 @@ TIOBE 编程社区指数（The TIOBE Programming Community index）是编程语�
 
 \section{算法环境}
 
-模板中使用 \texttt{algorithm2e} 宏包实现算法环境。关于该宏包的具体用法请阅读宏包的官方文档。
+模板中使用 \texttt{algorithm2e} 宏包实现算法 \ref{alg:partition}，关于该宏包的具体用法请阅读宏包的官方文档。
 
 \begin{algorithm}[!h]
 	%\SetAlgoLined
@@ -379,6 +379,7 @@ TIOBE 编程社区指数（The TIOBE Programming Community index）是编程语�
 \RestyleAlgo{boxruled}
 \begin{algorithm}[!h]
 	\caption{PARTITION$(A,p,r)$ (boxruled)}%算法标题
+	\label{alg:partition}
 	\KwData{this text}
 	\KwResult{how to write algorithm with \LaTeX2e{} }
 	\begin{algorithmic}[1]%一行一个标行号
@@ -394,7 +395,7 @@ TIOBE 编程社区指数（The TIOBE Programming Community index）是编程语�
 
 \section{代码环境}
 \subsection{全局设置}
-listings 是专用于代码排版的\LaTeX{}宏包，可对关键词、注释和字符串等使用不同的字体和颜色或颜色，也可以为代码添加边框、背景等风格。很多时候需要对文档中的代码进行解释，只有带有行号的代码才可以让解释更清晰，因为你只需要说第 x行代码有什么作用即可。如果没有行号，那对读者而言就太残忍了，他们不得不从你的文字叙述中得知行号信息，然后去一行一行的查到相应代码行。listings 宏包通过参数 numbers 来设定行号，该参数的值有两个，分别是 left 与right，表示行号显示在代码的左侧还是右侧。下面给出一份用于排版C语言程序代码样例如图\ref{fig:code}所示：
+listings 是专用于代码排版的\LaTeX{}宏包，可对关键词、注释和字符串等使用不同的字体和颜色或颜色，也可以为代码添加边框、背景等风格。很多时候需要对文档中的代码进行解释，只有带有行号的代码才可以让解释更清晰，因为你只需要说第 x行代码有什么作用即可。如果没有行号，那对读者而言就太残忍了，他们不得不从你的文字叙述中得知行号信息，然后去一行一行的查到相应代码行。listings 宏包通过参数 numbers 来设定行号，该参数的值有两个，分别是 left 与right，表示行号显示在代码的左侧还是右侧。下面给出一份用于排版C语言程序代码样例如图\ref{fig:code}所示。
 \begin{figure}[htb!]
 	\centering
 	\begin{lstlisting}[language={[ANSI]C}] 
@@ -475,6 +476,8 @@ listings 宏包默认是不支持包含中文字串的代码显示的，但是�
 4. 或另存为eps格式
 
 5. 将eps格式文件复制到figures文件夹
+
+6. 类似插入图片的方式将图插入
 
 \begin{figure}[htb!]
 	\centering

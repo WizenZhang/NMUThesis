@@ -21,6 +21,7 @@
 %% %%-----------
 %% %% 请统一使用UTF-8编码.
 %% %%=================================================================
+%% %%LaTeX安装配置教程请参看：https://jingyan.baidu.com/article/b2c186c83c9b40c46ff6ff4f.html
 %% %%LaTeX入门视频教程请参看：https://blog.csdn.net/so_geili/article/details/51702564
 %=================================================================
 \documentclass[master,oneside,ultimate,MS]{nmu}
@@ -92,10 +93,7 @@
 % 夹，存放正文及附录中要用到的所有的图片，在figures 文件夹中的子文件夹就是存放各
 % 个章节图片的文件夹，一般命名与相应章节的名字相同，如chap_sample章节用到的图片全放在
 % 了sample这个子文件夹下。
-\graphicspath{%
-	{./figures/sample/},
-	{./figures/}
-}
+\graphicspath{{./figures/sample/},{./figures/}}
 %%=================================================================
 % 论文标题
 \title{北方民族大学研究生学位论文\LaTeX{}模板\\ \NMUThesis{}}
@@ -206,3 +204,4 @@
 \input{tex/chap_biography}
 
 \end{document}
+%%=================================================================
