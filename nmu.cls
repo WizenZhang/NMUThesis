@@ -704,7 +704,7 @@
     {\sanhao \heiti  \centerline{摘~~~~要}}
     {\xiaosi \songti ~\par
       \@abstrctcn \par ~\par
-      \noindent {\sihao \bfseries{\songti 关键字：}} \@keywordcn %关键词行不缩进
+      \noindent {\sihao \bfseries{\songti 关键词：}} \@keywordcn %关键词行不缩进
     }
     
     \clearpage
