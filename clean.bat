@@ -1,5 +1,4 @@
-﻿del *.aux /s
-del *.bak /s
+﻿del *.bak /s
 del *.log /s
 del *.bbl /s
 del *.dvi /s
@@ -13,3 +12,4 @@ del *.lot /s
 del *.synctex.gz /s
 del *.synctex.gz(busy) /s
 del *.fdb_latexmk /s
+del *.aux /s

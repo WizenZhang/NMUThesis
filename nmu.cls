@@ -575,11 +575,9 @@
 \newcommand{\makeblindcover}{% 盲审封面
 	{\pdfbookmark[0]{盲审封面}{makeblindcover}
 		\thispagestyle{empty}%此页不加页眉页脚
-		{\begin{center}
-				\xiaosi \songti \noindent
-				\makebox[4\ccwd][s]{盲审代码}：\NMUunderline[70pt]{}%
-				\hfill 密级：\NMUunderline[70pt]{}   
-			\end{center}   
+		{\xiaosi \songti 
+		\makebox[4\ccwd][s]{盲审代码}：\NMUunderline[70pt]{} \hfill 密级：\NMUunderline[70pt]{}   
+ 
 		}
 		\vspace{30mm}
 		\begin{center}
@@ -614,21 +612,17 @@
 \newcommand{\makecovercn}{% 中文封面
 {\pdfbookmark[0]{中文封面}{makecovercn}
  \thispagestyle{empty}%此页不加页眉页脚
-  {\begin{center}
-  	\wuhao \songti \noindent
-  	\makebox[3\ccwd][s]{分类号}：{\NMU@classification}%
-  	\hfill 单位代码：\makebox[8\ccwd][s]{\NMU@serialnumber}    
-  	\\
-  	\makebox[3\ccwd][s]{密级}：\NMU@secretlevel
-  	\hfill \makebox[4\ccwd][s]{学号}：\makebox[8\ccwd][s]{\NMU@studentnumber}
-  \end{center}   
+  {\wuhao \songti 
+  	\makebox[3\ccwd][s]{分类号}：{\enspace\NMU@classification} \hspace*{25em} 单位代码：\makebox[8\ccwd][s]{\enspace\NMU@serialnumber}    
+
+  	\makebox[3\ccwd][s]{密级}：\enspace\NMU@secretlevel \hphantom{\NMU@classification} \hspace*{23em} \makebox[4\ccwd][s]{学号}：\makebox[8\ccwd][s]{\enspace\NMU@studentnumber} 
   }
-  \vspace{3mm}
+  \vspace{1mm}
   \begin{center}
 	\includegraphics[width=25.4mm]{nmu_logo}\par
 	\vspace{10mm}
 	\includegraphics{nmu-ultimate.pdf}\par
-	\vspace{10mm}
+	\vspace{2mm}
 	{\xiaoerhao \songti {硕士学位论文}}\par	
   \end{center}
   \begin{spacing}{1.3}%1.5倍行距，1.3为与word生成的PDF进行对比所得
