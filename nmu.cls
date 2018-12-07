@@ -575,36 +575,33 @@
 \newcommand{\makeblindcover}{% 盲审封面
 	{\pdfbookmark[0]{盲审封面}{makeblindcover}
 		\thispagestyle{empty}%此页不加页眉页脚
+		\vspace*{0ex}
 		{\xiaosi \songti 
 		\makebox[4\ccwd][s]{盲审代码}：\NMUunderline[70pt]{} \hfill 密级：\NMUunderline[70pt]{}   
- 
 		}
-		\vspace{30mm}
+		\vspace{22ex}
 		\begin{center}
 			\includegraphics{nmu-blind.pdf}\par
 			\vspace{4.5pt}
 			\includegraphics{thesis.pdf}	
 		\end{center}		
-		\begin{spacing}{1.3}%1.5倍行距，1.3为与word生成的PDF进行对比所得
-			\parbox[t][3cm][t]{\textwidth}{
-				\begin{center}
-					\bfseries{\erhao\songti {\NMU@title\hfill}\\}
-			\end{center}}
-			\parbox[t][3cm][t]{\textwidth}{
-				\begin{center}
-					{\xiaoerhao{\NMU@englishtitle\hfill}\\}
-			\end{center}}
-			
-			\parbox[t][10cm][c]{\textwidth}{\xiaosan\songti\hspace{2em}
-				\begin{tabular}{ccl@{\extracolsep{2em}}l}
-					~~ & 所在学院:& \underline{\makebox[13em]{\qquad {\NMU@institute} \qquad }}\\
-					~~&专业名称:&\underline{\makebox[13em]{\qquad {\NMU@major} \qquad }}\\
-					~~ & 研究方向:& \underline{\makebox[13em]{\qquad {\NMU@research} \qquad }}\\
-					~~ & 完成日期:&\underline{\makebox[13em]{\qquad {%
-								\NMU@submitdate} \qquad }}\\
-			\end{tabular}} 
+		\begin{spacing}{1.4}%1.4倍行距，与word生成的PDF进行对比所得
+	
+		\begin{center}
+			{\bfseries \erhao\songti {\NMU@title\hfill}\\}
+			{\xiaoerhao{\NMU@englishtitle\hfill}\\}
+		\end{center}
+		\vfill
+		\centering\xiaosan\songti\hspace{1em}
+			\begin{tabular}{ccl@{\extracolsep{2em}}l}
+				~~ & 所在学院:& \underline{\makebox[13em]{\qquad {\NMU@institute} \qquad }}\\
+				~~&专业名称:&\underline{\makebox[13em]{\qquad {\NMU@major} \qquad }}\\
+				~~ & 研究方向:& \underline{\makebox[13em]{\qquad {\NMU@research} \qquad }}\\
+				~~ & 完成日期:&\underline{\makebox[13em]{\qquad {%
+							\NMU@submitdate} \qquad }}\\
+			\end{tabular}
 		\end{spacing}		
-		
+		\vspace*{9ex}
 		\clearautopage
 }}
 
@@ -613,33 +610,28 @@
 {\pdfbookmark[0]{中文封面}{makecovercn}
  \thispagestyle{empty}%此页不加页眉页脚
   {\wuhao \songti 
-  	\makebox[3\ccwd][s]{分类号}：{\enspace\NMU@classification} \hspace*{25em} 单位代码：\makebox[8\ccwd][s]{\enspace\NMU@serialnumber}    
+  	\makebox[3\ccwd][s]{分类号}：{\enspace\NMU@classification} \hspace*{24em} 单位代码：\makebox[8\ccwd][s]{\enspace\NMU@serialnumber}    
 
-  	\makebox[3\ccwd][s]{密级}：\enspace\NMU@secretlevel \hphantom{\NMU@classification} \hspace*{23em} \makebox[4\ccwd][s]{学号}：\makebox[8\ccwd][s]{\enspace\NMU@studentnumber} 
+  	\makebox[3\ccwd][s]{密级}：\enspace\NMU@secretlevel \hphantom{\NMU@classification} \hspace*{22em} \makebox[4\ccwd][s]{学号}：\makebox[8\ccwd][s]{\enspace\NMU@studentnumber} 
   }
-  \vspace{1mm}
+  \vspace{5ex}
   \begin{center}
 	\includegraphics[width=25.4mm]{nmu_logo}\par
-	\vspace{10mm}
+	\vspace{5ex}
 	\includegraphics{nmu-ultimate.pdf}\par
-	\vspace{2mm}
+	\vspace{2ex}
 	{\xiaoerhao \songti {硕士学位论文}}\par	
   \end{center}
-  \begin{spacing}{1.3}%1.5倍行距，1.3为与word生成的PDF进行对比所得
-  \parbox[t][3cm][t]{\textwidth}{
+  \begin{spacing}{1.3}%1.3倍行距，与word生成的PDF进行对比所得
 	\begin{center}
-		{\erhao\heiti {\NMU@title\hfill}\\}
-    \end{center}}
-
-  \parbox[t][3cm][t]{\textwidth}{
-	\begin{center}
-		{\sanhao{\NMU@englishtitle\hfill}\\}
-    \end{center}}
+		{\erhao\heiti {\NMU@title}\\}
+		{\sanhao{\NMU@englishtitle}\\}
+    \end{center}
 
    % \extracolsep:将所有列在设定的表格宽度中均匀展开
    % 2em: 1em(当前字体中M的宽度)
-  
-	\parbox[t][8.5cm][c]{\textwidth}{\sihao\songti\hspace{1em}
+    \vfill
+	\sihao\songti\hspace{1em}
  	  \begin{tabular}{ccl@{\extracolsep{2em}}l}
 		~~&学\hfill 位\hfill 申\hfill 请\hfill 人:& \underline{\makebox[13em]{\qquad {\NMU@author} \qquad }}\\
 		~~ & 指\hfill 导\hfill 教\hfill 师:&\underline{\makebox[13em]{\qquad \NMU@supervisor \qquad }}\\
@@ -649,8 +641,9 @@
 		~~ & 所\hfill 在\hfill 学\hfill 院:& \underline{\makebox[13em]{\qquad {\NMU@institute} \qquad }}\\
 		~~ & 论 \hfill 文\hfill 完\hfill 成\hfill 日\hfill 期:&\underline{\makebox[13em]{\qquad {%
 					\NMU@submitdate} \qquad }}\\
-	  \end{tabular}}
+	  \end{tabular}
    \end{spacing}
+   \vspace*{10ex}
   \clearautopage
 }}
 
