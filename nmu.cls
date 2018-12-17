@@ -401,16 +401,19 @@
 % 浮动体相关定义
 % 设置浮动环境标题的字体大小。根据学位论文格式要求，插图和表格标题字体需要比正文
 % 字体略小。
-\captionsetup{%
-	format=hang,
+\captionsetup[figure]{
+	position=bottom, margin=0mm, format=hang,
 	labelsep=quad,		% 去掉图表号后的冒号。图序与图名文字之间空一个汉字宽度。
-	skip=10pt,			% 标题与图标之间空10pt距离。
-	font=small,			% 标题字体比正文小一号，这里取small。
-	width=.75\textwidth}% 标题最大宽度为0.75倍正文宽度。
-
-% 根据学位论文格式要求，表格的标题必须位于表格上方，插图的标题必须位于插图下方。
-\captionsetup[table]{position=above}
-\captionsetup[figure]{position=below}
+	skip=9pt,			% 标题与图标之间空9pt距离。
+	font=small,		
+	aboveskip=9pt, belowskip=-9pt, justification=centerlast}
+\captionsetup[subfigure]{belowskip=0pt}
+\captionsetup[table]{
+	position=top, margin=0mm, format=hang,
+	labelsep=quad,		% 去掉图表号后的冒号。图序与图名文字之间空一个汉字宽度。
+	skip=9pt,			% 标题与图标之间空9pt距离。
+	font=small,
+	aboveskip=9pt, belowskip=9pt}
 
 %% 以下为设置浮动对象和文字之间的距离。
 % 版心顶部或者版心底部浮动体之间的垂直距离，默认为12pt plus 2pt minus 2pt。
@@ -418,7 +421,7 @@
 
 % 文本行之间浮动体（使用h位置选项）与上下文之间的距离，默认为12pt plus 2pt minus
 % 2pt。
-\setlength{\intextsep}{12bp \@plus4pt \@minus2pt}
+\setlength{\intextsep}{4bp \@plus4pt \@minus2pt}
 
 % 版心顶部或底部的浮动体与文本之间的距离，默认为12pt plus 2pt minus 2pt。
 \setlength{\textfloatsep}{12bp \@plus4pt \@minus2pt}
