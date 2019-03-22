@@ -51,6 +51,8 @@
 \RequirePackage{multirow}     % 多行表格
 \RequirePackage{tabu}         % 制表宏包，推荐使用，不使用其他制表宏包。
 \RequirePackage{tikz}         % 流程图
+\RequirePackage{pgfplots}     % 使用pgfplots绘图工具包
+\RequirePackage{pgfplotstable}  % 使用pgfplots绘图线性回归包
 \RequirePackage{caption}      % 标题设置
 \RequirePackage{algorithm2e}  % 算法环境
 \RequirePackage{algorithmic}  % 算法环境

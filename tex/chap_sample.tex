@@ -735,3 +735,231 @@ listings 宏包默认是不支持包含中文字串的代码显示的，但是�
 \begin{proof}[A concise proof]
 	Obvious.
 \end{proof}
+
+\section{绘图\footnote{\href{http://www.latexstudio.net/archives/9400.html}{GFPlots绘图简易教程：http://www.latexstudio.net/archives/9400.html}}}
+
+以下内容为转载内容，原版请参看脚注。PGFPlots就是一个功能强大的绘图宏集，比较擅长绘制由数据生成的图，比如曲线图 (line plot)、散点图 (scatter plot)、柱状图 (bar plot)等，本身其基于TiKZ开发的，语法方面与TiKZ非常一致，在这篇文章中，我们介绍一些 PGFPlots 的基本绘图功能。
+
+\subsection{绘制统计图}
+统计图常被用于数据分析。下面给出一些用 PGFPlots 绘制统计图的示例。
+
+\subsubsection{线图}
+线图有折线图和光滑折线图两种，我们用一个例子来演示两种线图的画法。如图\ref{fig:curve}所示给出一组数据 {(0,4),(1,1),(2,2),(3,5),(4,6),(5,1)}，绘制经过这些点的两种线图。
+
+\begin{figure}[htb]
+	\centering
+	\begin{subfigure}[b]{.45\textwidth}
+		\centering
+		\begin{tikzpicture}
+		\begin{axis}[width=7cm, height=6.7cm, 
+		xlabel={x轴$(t)$}, ylabel={y轴$(m)$},
+		xmin=-0.5,xmax=5.5,ymin=0,ymax=6.5,
+		xtick={-0.5,1,2,3,4,5},
+		ytick={0,1,2,3,4,5,6}]                        % 添加坐标
+		\addplot+[sharp plot]               % 调用绘图函数，并设置绘图的类型是折线图
+		coordinates                         % 声明是在迪卡尔坐标系中的数据
+		{                                   % 输入数据
+			(0,4) (1,1) (2,2)
+			(3,5) (4,6) (5,1)
+		};
+		\end{axis}                         % 结束坐标
+		\end{tikzpicture}	
+		\caption{有折线图}\label{subfig:nosmooth}
+	\end{subfigure}
+	\qquad  
+	\begin{subfigure}[b]{.45\textwidth}
+		\centering
+		\begin{tikzpicture}
+		\begin{axis}[width=7cm, height=6.7cm, 
+		xlabel={x轴$(t)$}, ylabel={y轴$(m)$},
+		xmin=-0.5,xmax=5.5,ymin=0,ymax=6.5,
+		xtick={-0.5,1,2,3,4,5},
+		ytick={0,1,2,3,4,5,6}] 
+		\addplot+[smooth]                    % 设置绘图的类型是光滑线图
+		coordinates
+		{
+			(0,4) (1,1) (2,2)
+			(3,5) (4,6) (5,1)
+		};
+		\end{axis}
+		\end{tikzpicture}
+		\caption{光滑折线图}\label{subfig:smooth}
+	\end{subfigure}
+	\caption{线图}\label{fig:curve}
+\end{figure}	
+
+
+\subsubsection{条形图}
+条形图常用于展示各项目间的比较结果。如图\ref{subfig:strip1}所示给出一组数据 {(0,4),(1,1),(2,2),(3,5),(4,6),(5,1)}，绘制一般条形图。如图\ref{subfig:strip2}所示根据数据 {(0,4),(1,1),(2,2),(3,5),(4,6),(5,1)} 绘制蓝色边界、红色填充的条形图；同时，根据数据{(0,3),(1,4),(2,2),(3,9),(4,6),(5,2)} 绘制黑色边界、蓝色填充的条形图。
+\begin{figure}[htb]
+	\centering
+	\begin{subfigure}[b]{.45\textwidth}
+		\centering
+		\begin{tikzpicture}
+		\begin{axis}
+		\addplot+[ybar]                      % 绘制关于y坐标的条形图
+		coordinates
+		{
+			(0,4) (1,1) (2,2)
+			(3,5) (4,6) (5,1)
+		};
+		\end{axis}
+		\end{tikzpicture}	
+		\caption{一般条形图}\label{subfig:strip1}
+	\end{subfigure}
+	\qquad  \qquad
+	\begin{subfigure}[b]{.45\textwidth}
+		\centering
+		\begin{tikzpicture}
+		\begin{axis}[ybar,enlargelimits=0.15] %绘制关于y坐标的条形图，条形之间的最大间隔是0.15cm
+		\addplot[draw=blue,fill=red]           % 蓝色边界、红色填充
+		coordinates
+		{
+			(0,4) (1,1) (2,2)
+			(3,5) (4,6) (5,1)
+		};
+		\addplot[draw=black,fill=blue]         % 黑色边界、蓝色填充
+		coordinates
+		{
+			(0,3) (1,4) (2,2)
+			(3,9) (4,6) (5,2)
+		};
+		\end{axis}
+		\end{tikzpicture}
+		\caption{填充条形图}\label{subfig:strip2}
+	\end{subfigure}
+	\caption{条形图}\label{fig:strip}
+\end{figure}
+
+\subsubsection{直方图}
+
+直方图又称为质量分布图，是最常用统计图之一。直方图的绘制方式与前面两种统计图略有不同，它依赖于 PGFPlots自身的计算功能。如图\ref{fig:histogram}所示绘制数据 {1,2,1,5,4,10,7,10,9,8,9,9} 的直方图。
+
+\begin{figure}[htb]
+	\centering
+	\begin{tikzpicture}
+	\begin{axis}[ybar interval]   % 绘制y条形图，并且分隔出区间
+	\addplot[hist={bins=3}]       % 绘制图像设置为直方图，组距为3
+	table[row sep=\\,y index=0]   % 设置表的行以"\\"分隔，y的从0开始
+	{
+		data\\                       % 输入数据
+		1\\ 2\\ 1\\ 5\\ 4\\ 10\\
+		7\\ 10\\ 9\\ 8\\ 9\\ 9\\
+	};
+	\end{axis}
+	\end{tikzpicture}
+	\caption{直方图}
+	\label{fig:histogram}
+\end{figure}
+
+\subsection{ 线性回归}
+
+在 PGFPlots 中只能拟合一次函数，不能拟合更高次数的函数。下面给出一个示例。如图\ref{fig:regression}所示绘制数据 {(1,1),(2,4),(3,9),(4,16),(5,25),(6,36)} 的线性回归绘图。
+
+\begin{figure}[htb]
+	\centering
+	\begin{tikzpicture}
+	\begin{axis}[legend pos=outer north east] % 将图例放在图外，位于图的东北角
+	\addplot 
+	table                               % 绘制原始数据的折线图
+	{           		                % X，Y的原始数据
+		X Y
+		1 1
+		2 4
+		3 9
+		4 16 
+		5 25
+		6 36
+	};
+	\addplot
+	table[y={create col/linear regression={y=Y}}] % 对输入的数据作线性回归
+	{   				
+		X Y
+		1 1
+		2 4
+		3 9
+		4 16 
+		5 25
+		6 36
+	};
+	\addlegendentry{$y(x)$}          % 给第一个图像添加图例，即原始函数y(x)
+	\addlegendentry{                 % 给第二个图像添加图例，即线性回归结果a*x+b
+		$\pgfmathprintnumber{\pgfplotstableregressiona} \cdot x
+		\pgfmathprintnumber[print sign]{\pgfplotstableregressionb}$}
+	\end{axis}
+	\end{tikzpicture}
+	\caption{线性回归}
+	\label{fig:regression}
+\end{figure}
+
+\subsection{绘制函数图像}
+PGFPlots 最重要的功能是绘制函数图像，用它绘制二维和三维函数图像非常的简单。接下来，我们将分别展示一些基本函数图像的绘制。
+\subsubsection{二维显式函数图像}
+如图\ref{fig:two}所示绘制三角函数 f(x)=sinx 和 g(x)=cosx 在定义域 [0,2π] 上的图像。
+
+\begin{figure}[htb]
+	\centering
+	\begin{tikzpicture}
+	\begin{axis}
+	\addplot+[domain=0:2*pi]          % 设置函数的定义域
+	{sin(deg(x))};                   % 输入显式函数
+	\addplot+[domain=0:2*pi]          % 设置函数的定义域
+	{cos(deg(x))};                   % 输入显式函数
+	\end{axis}
+	\end{tikzpicture}
+	\caption{二维显式函数图像}
+	\label{fig:two}
+\end{figure}
+
+\subsubsection{三维显式函数图像}
+如图\ref{fig:regression}所示绘制函数$ f(x,y)=x^2+y^2$ 的三维函数图像。
+
+\begin{figure}[htb]
+	\centering
+	\begin{tikzpicture}
+	\begin{axis}[colorbar]         % 绘制坐标，并设置一个彩色指示条
+	\addplot3[surf]                % 绘制三维图
+	{x^2+y^2};                    % 输入二元显式函数
+	\end{axis}
+	\end{tikzpicture}
+	\caption{三维显式函数图像}
+	\label{fig:three}
+\end{figure}
+我们也可以绘制一些漂亮而“复杂”的三维图像，如图\ref{fig:hat}所示的“帽子图”。
+\begin{figure}[htb]
+	\centering
+	\begin{tikzpicture}
+	\begin{axis}[
+	title=Example using the mesh parameter, %图像的标题
+	hide axis,                              %隐藏坐标
+	colormap/cool,                          %颜色风格
+	]
+	\addplot3[
+	mesh,                                   %绘制的三维图像是网格
+	samples=50,                             %定义域分割数量
+	domain=-8:8,                            %定义域
+	]
+	{sin(deg(sqrt(x^2+y^2)))/sqrt(x^2+y^2)};    %二元显式函数
+	\addlegendentry{$\frac{sin(r)}{r}$}         %添加图例
+	\end{axis}
+	\end{tikzpicture}
+	\caption{三维帽子图}
+	\label{fig:hat}
+\end{figure}
+
+\subsubsection{隐式函数图像}
+隐式函数图像的绘制非常复杂。（在 Matlab 中，我们可以利用 isosurface 函数直接绘制隐式函数图像。）接下来，我们给出一个具体的在 PGFPlots 中绘制隐式函数的示例。如图\ref{fig:regression}所示绘制隐函数 x\^{}2/100+y\^{}2=1 的函数图像。我们将该隐函数转化为参数方程：x=10cost,y=sint，t定义域为 [0,2π]。
+
+\begin{figure}[htb]
+	\centering
+	\begin{tikzpicture}
+	\begin{axis}[width=12cm,height=6cm,trig format plots=rad,variable=t]
+	\addplot[red,thick,domain=-2*pi:2*pi,samples=200]
+	({10*cos(t)},{sin(t)});
+	\draw (0,1) -- (0,-1) (-10,0) -- (10,0);
+	\end{axis}
+	\end{tikzpicture}
+	\caption{隐式函数图像}
+	\label{fig:hide}
+\end{figure}
+
