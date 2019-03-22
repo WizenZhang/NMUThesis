@@ -58,6 +58,7 @@
 \RequirePackage{algorithmic}  % 算法环境
 \RequirePackage{listings}     % 代码环境
 \RequirePackage{amsmath}      % 数学
+\RequirePackage{amssymb}      % 数学特殊符号
 \RequirePackage{amsthm}       % 定理
 \RequirePackage{titletoc}     % 目录
 \RequirePackage{remreset}     % 计数器设置
