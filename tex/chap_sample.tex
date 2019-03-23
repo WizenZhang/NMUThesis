@@ -294,7 +294,7 @@ TIOBE 编程社区指数（The TIOBE Programming Community index）是编程语�
 
 如图\ref{fig:subfig_test2}是有四张子图的模式，对子图进行交叉引用，如图\ref{subfig:2a}、图\ref{subfig:2b}、图\ref{subfig:2c}和图\ref{subfig:2d}。
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
 	\centering
 	\begin{subfigure}[b]{.4\textwidth}
 		\centering
@@ -386,6 +386,7 @@ TIOBE 编程社区指数（The TIOBE Programming Community index）是编程语�
 	\KwData{this text}
 	\KwResult{how to write algorithm with \LaTeX2e{} }
 	\begin{algorithmic}[1]%一行一个标行号
+		\WHILE {not at end of this document}
 		\STATE $i=p$
 		\FOR{$j=p$ to $r$}
 		\IF{$A[j]<=0$}
@@ -393,6 +394,7 @@ TIOBE 编程社区指数（The TIOBE Programming Community index）是编程语�
 		\STATE $i=i+1$
 		\ENDIF
 		\ENDFOR
+		\ENDWHILE
 	\end{algorithmic}
 \end{algorithm}
 
@@ -565,17 +567,15 @@ listings 宏包默认是不支持包含中文字串的代码显示的，但是�
 \end{figure}
 \subsection{\LaTeX{}中插入VISIO图}
 
-1. VISIO原图另存为PDF格式
+1. VISIO原图另存为PDF格式；
 
-2. 用Acrobat打开，文档 -- 剪裁页面 -- 删除白边距
+2. 用Acrobat打开，文档 -- 剪裁页面 -- 删除白边距；
 
-3. 将pdf格式文件复制到figures文件夹(盲审封皮文字：\verb|\includegraphics\{nmu-blind.pdf\}|)
+3. 将pdf格式文件复制到figures文件夹；
 
-4. 或另存为eps格式
+  \qquad (例如盲审封皮文字： \verb|\includegraphics\{nmu-blind.pdf\}|)；
 
-5. 将eps格式文件复制到figures文件夹
-
-6. 类似插入图片的方式将图插入
+4. 或另存为eps格式，将eps格式文件复制到figures文件夹，类似插入图片的方式将图插入。
 
 \section{数学环境}
 

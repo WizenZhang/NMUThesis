@@ -142,6 +142,9 @@
 \renewcommand{\proofname}{证明}
 \renewcommand{\lstlistingname}{代码}
 \renewcommand{\algorithmcfname}{算法}
+%算法输入输出设置
+\SetKwInOut{KwData}{输入}
+\SetKwInOut{KwResult}{输出}
 
 \newtheorem{theorem}                {\theoremname}     [chapter]
 \newtheorem{assertion}  [theorem]   {\assertionname}
@@ -700,7 +703,7 @@
       \noindent {\sihao \bfseries{\songti 关键词：}} \@keywordcn %关键词行不缩进
     }
     
-    \clearpage
+    \newpage
     %\ifthenelse{\equal{\@beginright}{off}}{\clearpage}{\clearautopage}
     {\zihao{3} \bfseries  \centerline{{Abstract}}}
     {\xiaosi  ~\par

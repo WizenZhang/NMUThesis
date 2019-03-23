@@ -7,35 +7,38 @@
 
 请将表\ref{tab:tabu_file}中文件清单放在同一目录中，Windows系统可以选择TexLive+TeXstudio的方式，安装教程可参看百度经验\footnote{\href{https://jingyan.baidu.com/article/b2c186c83c9b40c46ff6ff4f.html}{安装教程请参看 : https://jingyan.baidu.com/article/b2c186c83c9b40c46ff6ff4f.html}}。
 
-\begin{longtable}{|c|>{\raggedright\arraybackslash}p{8cm}|}
+\begin{table}[htb]
+	\centering \def\arraystretch{1.5}   %表格间距
+	\begin{longtable}{|c|>{\raggedright\arraybackslash}p{8cm}|}
 	\caption{北方民族大学学位论文\LaTeX{}模板清单表}\label{tab:tabu_file}
 	\endfirsthead
 	\caption{北方民族大学学位论文\LaTeX{}模板清单表(续)}
 	\endhead
 	\hline 
-	\rule[0ex]{0pt}{2.5ex} \verb|NMUThesis.tex| & $\triangleright$\LaTeX{}模板运行入口(main) \\ 
+	 \verb|NMUThesis.tex| & $\triangleright$\LaTeX{}模板运行入口(main) \\ 
 	\hline 
-	\rule[0ex]{0pt}{2.5ex} \verb|NMUThesis.pdf| & $\triangleright$PDF模板样例\\
+	\verb|NMUThesis.pdf| & $\triangleright$PDF模板样例\\
 	\hline 
-	\rule[0ex]{0pt}{2.5ex} \verb|nmu.cls |    & $\triangleright$ \LaTeX{}宏模板文件 \\
+	\verb|nmu.cls |    & $\triangleright$ \LaTeX{}宏模板文件 \\
 	\hline 
-	\rule[0ex]{0pt}{2.5ex} \verb|GBT7714-2005.bst| & $\triangleright$ 国标参考文献BibTeX样式文件2005 \\
+	\verb|GBT7714-2005.bst| & $\triangleright$ 国标参考文献BibTeX样式文件2005 \\
 	\hline 
-	\rule[0ex]{0pt}{2.5ex} \verb|GBT7714-2015.bst|  & $\triangleright$ 国标参考文献BibTeX样式文件2015 \\
+	\verb|GBT7714-2015.bst|  & $\triangleright$ 国标参考文献BibTeX样式文件2015 \\
 	\hline 
-	\rule[0ex]{0pt}{2.5ex} \verb|nmu_logo.png|   & $\triangleright$论文封面北方民族大学校标 \\
+	 \verb|nmu_logo.png|   & $\triangleright$论文封面北方民族大学校标 \\
 	\hline 
-	\rule[0ex]{0pt}{2.5ex} \verb|tex/*.tex| & $\triangleright$\LaTeX{}模板样例中的独立章节\\
+	\verb|tex/*.tex| & $\triangleright$\LaTeX{}模板样例中的独立章节\\
 	\hline 
-	\rule[0ex]{0pt}{2.5ex} \verb|figures/*| & $\triangleright$\LaTeX{}模板样例中的插图存放目录\\
+	 \verb|figures/*| & $\triangleright$\LaTeX{}模板样例中的插图存放目录\\
 	\hline 
-	\rule[0ex]{0pt}{2.5ex} \verb|ref.bib |    & $\triangleright$\LaTeX{}模板中的参考文献Bib文件\\
+	 \verb|ref.bib |    & $\triangleright$\LaTeX{}模板中的参考文献Bib文件\\
 	\hline 
-	\rule[0ex]{0pt}{2.5ex} \verb|make.bat|    &$\triangleright$生成NMUThesis.pdf\\
+	 \verb|make.bat|    &$\triangleright$生成NMUThesis.pdf\\
 	\hline 
-	\rule[0ex]{0pt}{2.5ex} \verb|clean.bat|  & $\triangleright$清理冗余文件\\
+	 \verb|clean.bat|  & $\triangleright$清理冗余文件\\
 	\hline 
-\end{longtable}
+	\end{longtable}
+\end{table}
 
 通过 \verb|\documentclass[<thesis>,<printtype>,<version>,<subject>]{nmu}|载入宏包，可选参数说明如下：
 \begin{itemize}[leftmargin=3cm]
@@ -72,8 +75,8 @@
 
 \begin{tabular}{ll}
   \verb|\chapter{章}|              & $\triangleright$ 第一章 \\
-  \verb|\chapter*{无章号章}|       & $\triangleright$ 无章号章 \\
-  \verb|\chaptera{无章有目录章}|   & $\triangleright$ 无章有目录章 \\
+  \verb|\chapter*{无章号无目录章}|       & $\triangleright$ 无章号无目录章 \\
+  \verb|\chaptera{无章号有目录章}|   & $\triangleright$ 无章号有目录章 \\
   \verb|\summary|                  & $\triangleright$ 总结\\
   \verb|\appendix|                 & $\triangleright$ 附录\\
   \verb|\acknowledgments|          & $\triangleright$ 致谢\\
@@ -105,15 +108,16 @@
 %-----------------------------
 \section{注意事项}
 \begin{itemize}
-  \item[$\triangleright$] 中文粗体将转换为楷体；
-  \item[$\triangleright$] 调整表格行间距可使用\verb|\rule[0ex]{0pt}{2.5ex}|，具例参看表\ref{tab:tabu_file}格式；
-  \item[$\triangleright$] 论文题目只占一行注意更改nmu.cls中591和635行:\verb|\parbox[t][3cm->1cm][t]{\textwidth}|；
-  \item[$\triangleright$] 目录中仅出现两级标题，通过\verb|\setcounter{tocdepth}{1}|设置两级标题目录深度；
-  \item[$\triangleright$] 若某文献标题中含有特定含义大写字母（“ISODATA”等,详见\cite{Li2017An}），应特别用第二重｛｝将其括起来才可使其正常表示；
+  \item[$\triangleright$] 若绪论不作为第一章，节中加星取消编号，内容自定义，如：\verb|“\section*{1. 概述}”|，章中内容\verb|“\chapter{绪论}+内容”|修改为
+  \verb|“{\chaptera{绪论}+内容}”|，切记章中的外括号不能省略，否则通篇都没有章号；
+  \item[$\triangleright$] 当出现未知错误时，请先\verb|工具（T）->清理辅助文件|或点击主文件目录下\verb|clean.bat|，进行清理后再行运行；
+  \item[$\triangleright$] 目录中仅出现两级标题，通过nmu.cls中404行\verb|\setcounter{tocdepth}{1}|设置两级标题目录深度；
+  \item[$\triangleright$] 若某参考文献标题中含有特定含义大写字母（“ISODATA”等,详见\cite{Li2017An}），应特别用第二重｛｝将其括起来才可使其正常表示；
   \item[$\triangleright$] 切换论文版本后，重新生成目录需两次编译；
   \item[$\triangleright$] 行末针对标点的断行不好，例如\ref{sec:error1}处的有个“、”被断在了句首；
   \item[$\triangleright$] \verb|\label{<text>}|中不能使用中文；
   \item[$\triangleright$] 浮动体与正文之间的距离是弹性的；
+  \item[$\triangleright$] 中文粗体将转换为楷体；
   \item[$\triangleright$] 命令符与汉字之间请注意加空格以避免undefined错误（pdfLaTeX下好像一般不存在这个问题，主要在XeLaTeX编译环境下发生）；
   \item[$\triangleright$] Mac系统可采用MacTex+TeXstudio的安装方式，请注意添加常用字库（宋体、黑体等）以避免\verb|Undefined control sequence. \begin{document}|错误
 \end{itemize}
