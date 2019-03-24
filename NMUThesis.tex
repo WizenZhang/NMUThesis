@@ -64,7 +64,8 @@
 \beginright{on} % 开启: on<默认>; 关闭: off;
 % 空白页
 \emptypagewords{}
-
+% 图表目录
+\Listfigtab{off} % 启用: on<默认>; 关闭: off;
 %=================================================================
 % nmu模板已内嵌以下LaTeX工具包:
 %--------------------
@@ -95,15 +96,20 @@
 % 了sample这个子文件夹下。
 \graphicspath{{./figures/sample/},{./figures/}}
 %%=================================================================
+% 英文封面是否启用
+\Entitle{off}% 启用: on; 关闭: off<默认>;
+
 % 论文标题
 \title{北方民族大学研究生学位论文\LaTeX{}模板\\ \NMUThesis{}}
 % 根据ulem的文档第五页说明，通过宏或者命令传递到uline 命令中的英文句子是被盒子装
 % 起来的，如果不特殊处理，则句子无法断行，但是\\，\ ，和 \- 还是可以起作用，因此
 % 须在\englishtitle命令中的句子的适当位置添加"\"，使句子可以断行。中文则不存在此
 % 问题。 
-
 \englishtitle{\LaTeX{} Template For The Academic Dissertaion Of North Minzu University}
+%作者姓名（中文）
 \author{学生姓名}
+%作者姓名（英文），不显示英文封面时，可不填
+\authoren{Name of Student}
 % 分类号
 \classification{TP277}
 % 单位代码
@@ -114,16 +120,22 @@
 \studentnumber{20160000}
 % 指导教师(空格：~)
 \supervisor{导师一教授~~导师二教授}
+% 指导教师（英文），不显示英文封面时，可不填
+\supervisoren{Name of Supervisor}
 % 申请的学位门类
 \applyclass{工学硕士}
-% 专业名称
+% 专业名称（中文）
 \major{计算机系统结构}
+% 专业名称（英文），不显示英文封面时，可不填
+\majoren{Master of Science in Computer System Architecture}
 % 研究方向
 \research{学位论文\LaTeX{}编程研究}
 % 所在学院
 \institute{计算机科学与工程学院}
-% 提交日期
+% 提交日期（中文）
 \submitdate{2019年3月}
+% 提交日期（英文），不显示英文封面时，可不填
+\submitdateen{March,2019}
 % 毕业届（页眉）
 \session{2019}
 %%=================================================================
@@ -162,9 +174,7 @@
     NMUThesis,Dissertaion,Doctor,Master,Professional,\LaTeX{}Template
 }
 
-% 图标目录
 
-\Listfigtab{off} % 启用: on<默认>; 关闭: off;
 
 \begin{document}
 

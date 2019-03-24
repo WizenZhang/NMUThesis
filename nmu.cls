@@ -207,22 +207,27 @@
 \newcommand{\Keyword}[2]{\gdef\@keywordcn{#1} \gdef\@keyworden{#2}}
 \newcommand{\Listfigtab}[1]{\gdef\@listfigtab{#1}} % on/off
 \newcommand{\Abbreviations}[1]{\gdef\@abbreviations{#1}}
+\newcommand{\Entitle}[1]{\gdef\@entitle{#1}}
 
 
 % 封面
-\renewcommand*\title[1]{\gdef\NMU@title{#1}}					% 论文中文标题
-\newcommand*\englishtitle[1]{\long\gdef\NMU@englishtitle{#1}}	% 论文英文标题
-\renewcommand*\author[1]{\gdef\NMU@author{#1}}					% 作者姓名
+\renewcommand*\title[1]{\gdef\NMU@title{#1}}					% 论文标题（中文）
+\newcommand*\englishtitle[1]{\long\gdef\NMU@englishtitle{#1}}	% 论文标题（英文）
+\renewcommand*\author[1]{\gdef\NMU@author{#1}}					% 作者姓名（中文）
+\newcommand*\authoren[1]{\gdef\NMU@authoren{#1}}				% 作者姓名（英文）
 \newcommand*\classification[1]{\gdef\NMU@classification{#1}}	% 分类号
 \newcommand*\serialnumber[1]{\gdef\NMU@serialnumber{#1}}		% 单位代码
 \newcommand*\secretlevel[1]{\gdef\NMU@secretlevel{#1}}			% 密级
 \newcommand*\studentnumber[1]{\gdef\NMU@studentnumber{#1}}		% 学号
-\newcommand*\supervisor[1]{\gdef\NMU@supervisor{#1}}			% 指导教师
+\newcommand*\supervisor[1]{\gdef\NMU@supervisor{#1}}			% 指导教师（中文）
+\newcommand*\supervisoren[1]{\gdef\NMU@supervisoren{#1}}		% 指导教师（英文）
 \newcommand*\applyclass[1]{\gdef\NMU@applyclass{#1}}		    % 申请的学位门类
-\newcommand*\major[1]{\gdef\NMU@major{#1}}						% 专业名称
+\newcommand*\major[1]{\gdef\NMU@major{#1}}						% 专业名称（中文）
+\newcommand*\majoren[1]{\gdef\NMU@majoren{#1}}			    	% 专业名称（英文）
 \newcommand*\research[1]{\gdef\NMU@research{#1}}				% 研究方向
 \newcommand*\institute[1]{\gdef\NMU@institute{#1}}				% 所在学院
-\newcommand*\submitdate[1]{\gdef\NMU@submitdate{#1}}			% 提交日期
+\newcommand*\submitdate[1]{\gdef\NMU@submitdate{#1}}			% 提交日期（中文）
+\newcommand*\submitdateen[1]{\gdef\NMU@submitdateen{#1}}		% 提交日期（英文）
 % 页眉
 \newcommand*\session[1]{\gdef\NMU@session{#1}}			% 毕业届
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -542,6 +547,7 @@
 \AfterEndPreamble{%
   \ifthenelse{\equal{\Show{}}{\show{}}}{ 
 	\makecovercn
+	\ifthenelse{\equal{\@entitle}{on}}{\makecoveren}{}
 	\makestatementnmu}%显示最终版
    {\makeblindcover  }%显示盲审版
 
@@ -656,6 +662,44 @@
   \clearautopage
 }}
 
+\newcommand{\makecoveren}{% 英文封面
+{\pdfbookmark[0]{英文封面}{makecoveren}
+	\thispagestyle{empty}%此页不加页眉页脚
+	\centering 	
+	\begin{spacing}{2.0}\xiaoerhao
+		\NMU@englishtitle
+	
+		\vfill
+		
+     	A Thesis Submitted to
+        	
+		{\bfseries North Minzu University }
+		
+		~\\
+		
+		In Partial Fulfillment of the Requirement \\
+			for the Degree of
+		
+		{\bfseries \NMU@majoren }	
+			
+		by
+		
+		{\bfseries \NMU@authoren }		
+			
+		~\\
+			
+		Dissertation Supervisor：\NMU@supervisoren
+		
+		\vfill
+			
+		{\bfseries	\NMU@submitdateen }
+		
+		\vspace*{10ex}	
+	\end{spacing}
+	
+	\clearautopage
+}}
+
 \newcommand{\makestatementnmu}{% 北民大声明
 {\pdfbookmark[0]{北民大声明}{makestatementnmu}
  \thispagestyle{empty}%此页不加页眉页脚
@@ -702,9 +746,9 @@
       \@abstrctcn \par ~\par
       \noindent {\sihao \bfseries{\songti 关键词：}} \@keywordcn %关键词行不缩进
     }
+
+    \ifthenelse{\equal{\@beginright}{off}}{\clearpage}{\clearautopage}
     
-    \newpage
-    %\ifthenelse{\equal{\@beginright}{off}}{\clearpage}{\clearautopage}
     {\zihao{3} \bfseries  \centerline{{Abstract}}}
     {\xiaosi  ~\par
       \@abstrcten \par ~\par
@@ -714,6 +758,7 @@
 
   \ifthenelse{\equal{\@beginright}{off}}{\clearpage}{\clearautopage}
 }\clearpage}
+
 \newcommand{\makecontextlist}{% 目录
 {\pdfbookmark[0]{目录}{makecontextlist}
   \tableofcontents
