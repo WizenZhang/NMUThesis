@@ -356,7 +356,7 @@ FUNCTION {format.names}
   #1 'nameptr :=
   s num.names$ 'numnames :=
   numnames 'namesleft :=
-    { namesleft #0 > nameptr #4 < and }
+    { namesleft #0 > nameptr #7 < and }
     { s nameptr "{vv~}{ll}{, jj}{, ff}" format.name$ 't :=
       t get.str.lang 'name.lang :=
       name.lang lang.en =
@@ -375,7 +375,7 @@ FUNCTION {format.names}
               if$
             }
           if$
-          nameptr #3 = namesleft #1 > and
+          nameptr #6 = namesleft #1 > and
             { ", " * format.et.al * }
             'skip$
           if$
