@@ -1,5 +1,5 @@
 # 北方民族大学学位论文LaTeX模板
-[![](https://img.shields.io/badge/version-v4.0-brightgreen.svg)](https://github.com/WizenZhang/NMUThesis/releases)   ![](https://img.shields.io/badge/license-MIT-blue.svg)
+[![](https://img.shields.io/badge/version-v5.0-brightgreen.svg)](https://github.com/WizenZhang/NMUThesis/releases)   ![](https://img.shields.io/badge/license-MIT-blue.svg)
 
 **本项目为北方民族大学学位论文模板NMUThesis。模板按照院教字〔2003〕169号《北方民族大学研究生学位论文格式和要求》制定，适用于文史类和理工类论文(博士、学术硕士、专业硕士)，支持单双面打印以及盲审版、最终版排版。本模板为个人兴趣之作，仅供学习交流使用。**
 

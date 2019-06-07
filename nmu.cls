@@ -142,6 +142,13 @@
 \renewcommand{\proofname}{证明}
 \renewcommand{\lstlistingname}{代码}
 \renewcommand{\algorithmcfname}{算法}
+
+	
+%矩阵（省略号）
+\newcommand{\adots}{\mathinner{\mkern2mu%
+		\raisebox{0.1em}{.}\mkern2mu\raisebox{0.4em}{.}%
+		\mkern2mu\raisebox{0.7em}{.}\mkern1mu}}
+	
 %算法输入输出设置
 \SetKwInOut{KwData}{输入}
 \SetKwInOut{KwResult}{输出}
@@ -168,13 +175,13 @@
   \popQED\endtrivlist\@endpefalse
 }
 
-% 代码环境 frame=single无阴影
+% 代码环境 frame=shadowbox无阴影
 \lstset{numbers=left,
 	basicstyle=\small\ttfamily,
 	numberstyle=\tiny,
 	keywordstyle=\color{black}\bfseries,
-	commentstyle=\color{gray},
-	frame=shadowbox,
+	commentstyle=\color{black},
+	frame=single,
 	captionpos=b, 
 	rulesepcolor=\color{red!20!green!20!blue!20},
 	escapeinside=``,
@@ -208,7 +215,7 @@
 \newcommand{\Listfigtab}[1]{\gdef\@listfigtab{#1}} % on/off
 \newcommand{\Abbreviations}[1]{\gdef\@abbreviations{#1}}
 \newcommand{\Entitle}[1]{\gdef\@entitle{#1}}
-
+\newcommand{\HideNMU}[1]{\gdef\@hideNMU{#1}}
 
 % 封面
 \renewcommand*\title[1]{\gdef\NMU@title{#1}}					% 论文标题（中文）
@@ -403,11 +410,6 @@
 \titlecontents{table}[0pt]{\songti\zihao{-4}}{表~\thecontentslabel\quad}{}
 {\hspace{.5em}\titlerule*[4pt]{$\cdot$}\normalsize\contentspage}
 
-% 设置目录深度
-% 当深度为1时，对应着2级标题，即章和节 (chapter1 和 1.1、1.2)；
-% 当深度为2时，对应着章、节、小节 (chapter1、1.2、1.2.1)。
-\setcounter{tocdepth}{1}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 浮动体相关定义
 % 设置浮动环境标题的字体大小。根据学位论文格式要求，插图和表格标题字体需要比正文
@@ -425,7 +427,7 @@
 	skip=9pt,			% 标题与图标之间空9pt距离。
 	font=small,
 	aboveskip=9pt, belowskip=9pt}
-
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}} % 单元格换行
 %% 以下为设置浮动对象和文字之间的距离。
 % 版心顶部或者版心底部浮动体之间的垂直距离，默认为12pt plus 2pt minus 2pt。
 \setlength{\floatsep}{12bp \@plus4pt \@minus1pt}
@@ -548,8 +550,8 @@
   \ifthenelse{\equal{\Show{}}{\show{}}}{ 
 	\makecovercn
 	\ifthenelse{\equal{\@entitle}{on}}{\makecoveren}{}
-	\makestatementnmu}%显示最终版
-   {\makeblindcover  }%显示盲审版
+	\makestatementnmu}%最终版显示独创性声明
+   {\makeblindcover  }%盲审版显示盲审封皮
 
   \def\headrule{}%此页不加页眉
     \ifthenelse{\equal{\@printtype}{twoside}}{% 双面打印
@@ -578,7 +580,11 @@
     \fancyfoot[C]{\zihao{5}-\thepage-}
   }
   \ifthenelse{\equal{\@thesis}{master} \OR \equal{\@thesis}{professional}}{%
-      \fancyhead[C]{\zihao{-5}北方民族大学{\NMU@session}届硕士学位论文\hfill\leftmark}
+  	\ifthenelse{\equal{\@hideNMU}{on}}{
+  		\fancyhead[C]{\zihao{-5}\hfill\leftmark}
+  	}{
+  		\fancyhead[C]{\zihao{-5}北方民族大学{\NMU@session}届硕士学位论文\hfill\leftmark}
+    }     
   }{}
   \ifthenelse{\equal{\@thesis}{doctor}}{%
       \fancyhead[C]{\zihao{-5}北方民族大学{\NMU@session}届博士学位论文\hfill\leftmark}
@@ -596,7 +602,7 @@
 		}
 		\vspace{22ex}
 		\begin{center}
-			\includegraphics{nmu-blind.pdf}\par
+			\ifthenelse{\equal{\@hideNMU}{on}}{}{\includegraphics{nmu-blind.pdf}\par}
 			\vspace{4.5pt}
 			\includegraphics{thesis.pdf}	
 		\end{center}		

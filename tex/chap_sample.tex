@@ -1,93 +1,10 @@
+% [示例]
 % 本LaTeX模板的使用示例
-\chapter{示例}
-\label{sec:sample}
-%==============================
-\section{参考文献引用}
-参考文献类型：专著[M]，会议论文集[C]，报纸文章[N]，期刊文章[J]，学位论文[D]，报告[R]，标准[S]，专利[P]，论文集中的析出文献[A]。测试一下上标引用\upcite{Le2016Multiple}，引用\cite{Le2016Multiple,Kaya2015,tf2017}，还有其它引用\upcite{Li2017An,Le2016Multiple,tf2017}.
-%--------------------------------
-\subsection{数字标注}
-\noindent
-\begin{tabular}{l@{\quad$\Rightarrow$\quad}l}
-	\verb|\cite{Li2017An}| & \cite{Li2017An}\\
-	\verb|\citet{Li2017An}| & \citet{Li2017An}\\
-	\verb|\citet[chap.~2]{Li2017An}| & \citet[chap.~2]{Li2017An}\\[0.5ex]
-	\verb|\citep{Li2017An}| & \citep{Li2017An}\\
-	\verb|\citep[chap.~2]{Li2017An}| & \citep[chap.~2]{Li2017An}\\
-	\verb|\citep[see][]{Li2017An}| & \citep[see][]{Li2017An}\\
-	\verb|\citep[see][chap.~2]{Li2017An}| & \citep[see][chap.~2]{Li2017An}\\[0.5ex]
-	\verb|\citet*{Li2017An}| & \citet*{Li2017An}\\
-	\verb|\citep*{Li2017An}| & \citep*{Li2017An}\\
-\end{tabular}
-\par\noindent
-\begin{tabular}{l@{\quad$\Rightarrow$\quad}l}
-	\verb|\citet{Li2017An,Kaya2015}| & \citet{Li2017An,Kaya2015}\\
-	\verb|\citep{Li2017An,Kaya2015}| & \citep{Li2017An,Kaya2015}\\
-	\verb|\cite{Li2017An,lamport1994}| & \cite{Li2017An,lamport1994}\\
-	\verb|\upcite{Li2017An,lamport1994}| & \upcite{Li2017An,lamport1994}\\
-	\verb|\citet{Li2017An,lamport1994}| & \citet{Li2017An,lamport1994}\\
-	\verb|\citep{Li2017An,lamport1994}| & \citep{Li2017An,lamport1994}\\
-	\verb|\cite{Li2017An,lamport1994,Kaya2015}| & \cite{Li2017An,lamport1994,Kaya2015}\\
-\end{tabular}
+\chapter{示例}\label{chap:sample}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%--------------------------------
-\subsection{数字标注-上标形式}
-\noindent
-\begin{tabular}{l@{\quad$\Rightarrow$\quad}l}
-	\verb|\upcite{Li2017An}| & \upcite{Li2017An}\\
-	\verb|\upcite{Li2017An,lamport1994,Kaya2015}| & \upcite{Li2017An,lamport1994,Kaya2015}\\
-\end{tabular}
-\par\noindent
-实现源码：\verb|\newcommand{\upcite}[1]{\textsuperscript{\cite{#1}}}|。
-
-
-%--------------------------------
-\subsection{著者-出版年制标}
-\citestyle{authoryear}
-\noindent
-\begin{tabular}{l@{\quad$\Rightarrow$\quad}l}
-	\verb|\cite{Li2017An}| & \cite{Li2017An}\\
-	\verb|\citet{Li2017An}| & \citet{Li2017An}\\
-	\verb|\citet[chap.~2]{Li2017An}| & \citet[chap.~2]{Li2017An}\\[0.5ex]
-	\verb|\citep{Li2017An}| & \citep{Li2017An}\\
-	\verb|\citep[chap.~2]{Li2017An}| & \citep[chap.~2]{Li2017An}\\
-	\verb|\citep[see][]{Li2017An}| & \citep[see][]{Li2017An}\\
-	\verb|\citep[see][chap.~2]{Li2017An}| & \citep[see][chap.~2]{Li2017An}\\[0.5ex]
-	\verb|\citet*{Li2017An}| & \citet*{Li2017An}\\
-	\verb|\citep*{Li2017An}| & \citep*{Li2017An}\\
-\end{tabular}
-\par\noindent
-\begin{tabular}{l@{\quad$\Rightarrow$\quad}l}
-	\verb|\citet{Li2017An,Kaya2015}| & \citet{Li2017An,Kaya2015}\\
-	\verb|\citep{Li2017An,Kaya2015}| & \citep{Li2017An,Kaya2015}\\
-	\verb|\cite{Li2017An,lamport1994}| & \cite{Li2017An,lamport1994}\\
-	\verb|\citet{Li2017An,lamport1994}| & \citet{Li2017An,lamport1994}\\
-	\verb|\citep{Li2017An,lamport1994}| & \citep{Li2017An,lamport1994}\\
-\end{tabular}
-\citestyle{numbers}
-
-%--------------------------------
-\subsection{其他形式的标注}
-\noindent
-\begin{tabular}{l@{\quad$\Rightarrow$\quad}l}
-	\verb|\citealt{Kaya2015}| & \citealt{Kaya2015}\\
-	\verb|\citealt*{Kaya2015}| & \citealt*{Kaya2015}\\
-	\verb|\citealp{Kaya2015}| & \citealp{Kaya2015}\\
-	\verb|\citealp*{Kaya2015}| & \citealp*{Kaya2015}\\
-	\verb|\citealp{Kaya2015,Li2017An}| & \citealp{Kaya2015,Li2017An}\\
-	\verb|\citealp[pg.~32]{Kaya2015}| & \citealp[pg.~32]{Kaya2015}\\
-	\verb|\citenum{Kaya2015}| & \citenum{Kaya2015}\\
-	\verb|\citetext{priv.\ comm.}| & \citetext{priv.\ comm.}\\
-\end{tabular}
-
-\noindent
-\begin{tabular}{l@{\quad$\Rightarrow$\quad}l}
-	\verb|\citeauthor{Kaya2015}| & \citeauthor{Kaya2015}\\
-	\verb|\citeauthor*{Kaya2015}| & \citeauthor*{Kaya2015}\\
-	\verb|\citeyear{Kaya2015}| & \citeyear{Kaya2015}\\
-	\verb|\citeyearpar{Kaya2015}| & \citeyearpar{Kaya2015}\\
-\end{tabular}
-
-\section{浮动体\footnote{样例参考《浙江大学研究生硕士(博士)学位论文\LaTeX{}模板》}}
+%%================================================================
+\section{浮动体\footnote{部分样例参考《浙江大学研究生硕士(博士)学位论文\LaTeX{}模板》}}
 在实际撰写文稿的过程中，我们可能会碰到一些占据篇幅较大，但同时又不方便分页的内容。（比如图片和表格，通常属于这样的类型）此时，我们通常会希望将它们放在别的地方，避免页面空间不够而强行置入这些内容导致 overfull vbox 或者大片的空白。此外，因为被放在别的地方，所以，我们通常需要对这些内容做一个简单的描述，确保读者在看到这些大块的内容时，不至于无从下手去理解。同时，因为此类内容被放在别的地方，所以在文中引述它们时，我们无法用「下图」、「上表」之类的相对位置来引述他们。于是，我们需要对它们进行编号，方便在文中引用。
 
 在 \LaTeX{} 中，默认有 figure 和 table 两种浮动体。（当然，你还可以自定义其他类型的浮动体）在这些环境中，可以用 $\backslash$caption\{\} 命令生成上述简短的描述。至于编号，也是用 $\backslash$caption\{\} 生成的。这类编号遵循了 TeX 对于编号处理的传统：它们会自动编号，不需要用户操心具体的编号数值。 至于「别的地方」是哪里，\LaTeX{} 为浮动体启用了所谓「位置描述符」的标记。基本来说，包含以下几种：
@@ -100,19 +17,34 @@ b - 表示 bottom。此类浮动体会尝试放在一页的底部。
 
 p - 表示 float page，浮动页。此类浮动体会尝试单独成页。
 
-\LaTeX{} 会将浮动体与文本流分离，而后按照位置描述符，根据相应的算法插入 \LaTeX{} 认为合适的位置。
+\LaTeX{} 会将浮动体与文本流分离，而后按照位置描述符，根据相应的算法插入 \LaTeX{} 认为合适的位置，浮动体与正文之间的距离是弹性的。表格、图片也可使用TeXstudio向导插入(例：如图\ref{subfig:3a}、\ref{subfig:3b})。
 
+\begin{figure}[htb!]
+	\centering
+	\begin{subfigure}[b]{.4\textwidth}
+		\centering
+		\includegraphics[width=0.7\linewidth]{3-3.png}
+		\caption{TeXstudio向导}\label{subfig:3a}
+	\end{subfigure}
+	\begin{subfigure}[b]{.4\textwidth}
+		\centering
+		\includegraphics[width=0.8\linewidth]{3-4.png}
+		\caption{插入图片}\label{subfig:3b}
+	\end{subfigure}
+	\caption{使用TeXstudio向导插入图片}\label{fig:3}
+\end{figure}
+
+%%----------------------------------------------------------------
 \subsection{插图测试}
-如图\ref{fig:first_image_tset}是对此模版的第一张插图测试。
+
+如图\ref{fig:first_image_test}是对此模版的第一张插图测试。以下是一段对这些插图来历的介绍，引用自知乎专栏All about TeXnique中夏晓昊的文章\href{http://zhuanlan.zhihu.com/LaTeX/19669122}{《The TeXbook导读：从那头（多图杀猫的）狮子说起》}。
 
 \begin{figure}[htb]
 	\centering
-	\includegraphics[width = 8cm]{Chapter1.png}
+	\includegraphics[scale=0.6]{Chapter1.png}
 	\caption{第一张插图测试}
-	\label{fig:first_image_tset}
+	\label{fig:first_image_test}
 \end{figure}
-
-以下是一段对这些插图来历的介绍，引用自知乎专栏All about TeXnique中夏晓昊的文章\href{http://zhuanlan.zhihu.com/LaTeX/19669122}{《The TeXbook导读：从那头（多图杀猫的）狮子说起》}。
 
 在The TeXbook中，有着一系列的以狮子为主题的插图。这些插图的作者是Duane Bibby。也是从The TeXbook开始，不少TeX书也采取了以狮子为主的插图，作者也是Duane Bibby。另外，每年的TUG（TeX Users Group）年会都会有一张以狮子为主题的logo，这只狮子已经是社区的吉祥物了。
 
@@ -120,18 +52,72 @@ p - 表示 float page，浮动页。此类浮动体会尝试单独成页。
 
 作为插图，首要的一点就是贴切，然后是有趣。在TeX社区里面，have fun是一个很重要的词组，也有人说Happy TeXing。我知道有不少人不喜欢TeX，但是能有什么理由呢？如果你用不到它，那么浅尝辄止即可。如果你会用到很频繁，最好慢慢修炼做到精通。如果你只是偶尔用到，那么可以搬个模版什么的，甚至也可以找人帮你（不要指望别人会用足够的空闲时间来帮你，他没有这个义务，请支付报酬，最少也得请吃个饭吧）。下面的插图，是TeX TeXbook中的，我也希望这个假期，能有人有空来看看这本书。即使不能把所有的东西都看懂，那么也会对TeX的设计有了一定的了解，拿到扳手就好。
 
+\subsection{子图}
+这里子图的排版推荐使用subcaption宏包，不再推荐使用subfig宏包，更不推荐使用subfigure宏包。值得注意的是，在nmu.cls文件中已经写入了subcaption宏包，而且subcaption宏包与subfigure和subfig宏包是相互冲突的。
+
+因此，如果你还想使用subfig宏包而不想使用subcaption宏包，请自己到nmu.cls文件的相关位置更改，具体的使用及修改方法参见相应的宏包说明文档。不过在这里还是不推荐直接去更改nmu.cls文档，除非你对\LaTeX{} 的相关命令很清楚，知道自己在改什么，并且不会对其他格式产生影响。
+
+具体的subcaption宏包使用方法我这里不仔细介绍，以下只是对subcaption进行一些简单的测试，主要是格式调整和交叉引用。
+
+如图\ref{fig:subfig_test1}是有两张子图的模式，对子图进行交叉引用，如图\ref{subfig:1a}和图\ref{subfig:1b}。
+
+\begin{figure}[htb]
+	\centering
+	\begin{subfigure}[b]{.35\textwidth}
+		\centering
+		\includegraphics[width = \textwidth]{Chapter2.png}
+		\caption{书籍排版与普通排版}\label{subfig:1a}
+	\end{subfigure}
+	\quad
+	\begin{subfigure}[b]{.35\textwidth}
+		\centering
+		\includegraphics[width = \textwidth]{Chapter3.png}
+		\caption{\TeX 的控制系列}\label{subfig:1b}
+	\end{subfigure}
+	\caption{子图模式测试1:2张图}\label{fig:subfig_test1}
+\end{figure}
+
+如图\ref{fig:subfig_test2}是有四张子图的模式，对子图进行交叉引用，如图\ref{subfig:2a}、图\ref{subfig:2b}、图\ref{subfig:2c}和图\ref{subfig:2d}。
+
+\begin{figure}[htb]
+	\centering
+	\begin{subfigure}[b]{.35\textwidth}
+		\centering
+		\includegraphics[width = \textwidth]{Chapter4.png}
+		\caption{字体}\label{subfig:2a}
+	\end{subfigure}
+	\begin{subfigure}[b]{.35\textwidth}
+		\centering
+		\includegraphics[width = \textwidth]{Chapter5.png}
+		\caption{编组}\label{subfig:2b}
+	\end{subfigure}
+	\begin{subfigure}[b]{.35\textwidth}
+		\centering
+		\includegraphics[width = \textwidth]{Chapter6.png}
+		\caption{运行\TeX}\label{subfig:2c}
+	\end{subfigure}
+	\begin{subfigure}[b]{.35\textwidth}
+		\centering
+		\includegraphics[width = \textwidth]{Chapter7.png}
+		\caption{\TeX 工作原理}\label{subfig:2d}
+	\end{subfigure}
+	\caption{子图模式测试2:4张图}\label{fig:subfig_test2}
+\end{figure}
+
+%%----------------------------------------------------------------
 \subsection{表格测试}
 在这里推荐制表采用功能强大的tabu宏包以取代其它制表宏包。具体tabu宏包的使用说明参见tabu宏包的说明文档。
 
 以下节分别用来测试各种表格环境如，tabular，tabu，longtabu等，还有对caption格式的修改和测试。以下表格样式全部采用三线表。
 
+%%----------------------------------------------------------------
 \subsection{array宏包tabular表格环境测试}
 如表\ref{tab:first_table_test}是对array宏包的tabular表格环境测试。
 
 \begin{table}[htb]
 	\centering
 	\caption{tabular环境的编程语言优缺点对比表格}\label{tab:first_table_test}
-	\begin{tabular}{lrr}
+	\begin{tabular}{ccc}%l:左对齐；c:居中；r:右对齐
 		\toprule
 		\textbf{编程语言}     & \textbf{优势} & \textbf{劣势} \\
 		\midrule
@@ -142,12 +128,16 @@ p - 表示 float page，浮动页。此类浮动体会尝试单独成页。
 	\end{tabular}%
 \end{table}
 
+%%----------------------------------------------------------------
 \subsection{tabu宏包表格环境测试}
 如表\ref{tab:tabu_test_1}是对tabu宏包的tabu表格环境测试。在这里表格命令与表\ref{tab:first_table_test}的命令相同，只是tabular环境改成了tabu环境。
+
+表\ref{tab:tabu_test_2}对tabu to表格的x列模式进行测试。在表格导言区中设置为X[1]X[2]X[2]，表示这三列表格的列宽比值为1:2:2，总的表格宽度由tabu to环境设置，这里设置为0.6\textbackslash linewidth。相比于tabular环境，tabu环境的列宽设置方便许多。
+
 \begin{table}[htb]
 	\centering
 	\caption{tabu环境的编程语言优缺点对比表格}\label{tab:tabu_test_1}
-	\begin{tabu}{lrr}
+	\begin{tabu}{lcc}%l:左对齐；c:居中；r:右对齐
 		\toprule
 		\textbf{编程语言}     & \textbf{优势} & \textbf{劣势} \\
 		\midrule
@@ -158,7 +148,7 @@ p - 表示 float page，浮动页。此类浮动体会尝试单独成页。
 	\end{tabu}%
 \end{table}
 
-表\ref{tab:tabu_test_2}对tabu to表格的x列模式进行测试。在表格导言区中设置为X[1]X[2]X[2]，表示这三列表格的列宽比值为1:2:2，总的表格宽度由tabu to环境设置，这里设置为0.6\textbackslash linewidth。相比于tabular环境，tabu环境的列宽设置方便许多。
+
 \begin{table}[htb]
 	\centering
 	\caption{tabu环境的编程语言优缺点对比表格---X列模式}\label{tab:tabu_test_2}
@@ -180,7 +170,7 @@ p - 表示 float page，浮动页。此类浮动体会尝试单独成页。
 在 9 月份的 TIOBE 编程语言排行榜中，Python 超越 C++，首次进入排行榜 TOP 3。事实上，无论在工业界还是学术界，Python 的使用者越来越多，尤其是近年来 —— 乃至可以预见的未来，在 AI和数据分析这些热门的领域，Python 都将会有大展拳脚的天地。所以反映在 TIOBE 排行榜上就是逐渐上升的排名。
 
 不过在最新的 10 月编程语言排行榜中如表\ref{tab:tabu_test_3}，刚被挤下 TOP 3 的 C++ 反超 Python，以 0.44$\%$ 的微弱优势重新夺回第三的宝座。毕竟 C++ 在服务端、游戏开发和实时体系等应用范畴中，早已有庞大的使用者，而且诞生的时间也比 Python 早。所以未来的排行榜中，我们相信 C++ 和 Python 应该会处于“反超与被反超”这样一种交替超越的状态。
-\begin{longtabu}{cccccc}
+\begin{longtabu}{cccccc}%l:左对齐；c:居中；r:右对齐
 	\caption{2018年10月全球编程语言TIOBE排行榜}\label{tab:tabu_test_3}\\
 	\toprule
 	Oct-18	&	Oct-17	&	Change	&	Programming Language	&	Ratings	&	Change	\\
@@ -223,6 +213,8 @@ p - 表示 float page，浮动页。此类浮动体会尝试单独成页。
 	28	&		&		&	Groovy	&	0.435$\%$	&		\\
 	29	&		&		&	Lua	&	0.405$\%$	&		\\
 	30	&		&		&	ABAP	&	0.396$\%$	&		\\
+	31	&		&		&	Fortran	&	0.372$\%$	&		\\
+	32	&		&		&	Lisp	&	0.322$\%$	&		\\
 \end{longtabu}
 
 另外值得关注的还有 Swift，按照 TIOBE 的说法，“Swift 正在敲开 TIOBE 排行榜前 10 名的大门”。根据观察，排行榜中 TOP 9 的编程语言已基本稳定，唯独第 10 名每个月都会有变化。在本月中，Swift 的排名就上升到了第 10 的位置，且试图成为 TIOBE TOP 10 的固定成员。与此同时，Ruby 和 Perl 也正在争夺这个位置。不过 TIOBE 认为，按照此前的趋势来看，目前编程语言 TOP 10 的候选人似乎有 3 位：Swift、Go 和 R，但它们也并不一定能够成功站稳，原因如下：
@@ -237,7 +229,7 @@ p - 表示 float page，浮动页。此类浮动体会尝试单独成页。
 
 需要注意的是，SQL 自 2018 年 2 月起被重新添加到了TIOBE排行榜中，由于没有以往的数据可以对比，所以会给人 SQL 语言指数突然暴涨的错觉,历史排名如表\ref{tab:tabu_test_4}所示。
 
-\begin{longtabu}{lccccccc}
+\begin{longtabu}{lccccccc} %l:左对齐；c:居中；r:右对齐
 	\caption{历史排名（1988-2018/每5年）}\label{tab:tabu_test_4}\\
 	\toprule
 	Programming Language	&	2018	&	2013	&	2008	&	2003	&	1998	&	1993	&	1988	\\	
@@ -266,169 +258,51 @@ p - 表示 float page，浮动页。此类浮动体会尝试单独成页。
 	Lisp	&	30	&	12	&	16	&	13	&	8	&	6	&	2	\\
 	Fortran	&	31	&	24	&	21	&	12	&	6	&	3	&	15	\\
 \end{longtabu}
-TIOBE 编程社区指数（The TIOBE Programming Community index）是编程语言流行度的指标，该榜单每月更新一次，指数基于全球技术工程师、课程和第三方供应商的数量。包括流行的搜索引擎，如谷歌、必应、雅虎、维基百科、亚马逊、YouTube 和百度都用于指数计算。具体的计算方式见这里：\href{https://www.tiobe.com/tiobe-index/programming-languages-definition/}{https://www.tiobe.com/tiobe-index/programming-languages-definition/}。
+TIOBE 编程社区指数（The TIOBE Programming Community index）是编程语言流行度的指标，该榜单每月更新一次，指数基于全球技术工程师、课程和第三方供应商的数量。包括流行的搜索引擎，如谷歌、必应、雅虎、维基百科、亚马逊、YouTube 和百度都用于指数计算。具体的计算方式见这里：\href{https://www.tiobe.com/tiobe-index/programming-languages-definition/}{https://www.tiobe.com/tiobe-index/programming-languages-definition/}。值得注意的是，TIOBE 指数并不代表语言的好坏，开发者可以使用该榜单检查自身的编程技能是否需要更新，或者在开始构建新软件时对某一语言做出选择。
 
-值得注意的是，TIOBE 指数并不代表语言的好坏，开发者可以使用该榜单检查自身的编程技能是否需要更新，或者在开始构建新软件时对某一语言做出选择。
-\subsection{子图}
-这里子图的排版推荐使用subcaption宏包，不再推荐使用subfig宏包，更不推荐使用subfigure宏包。值得注意的是，在nmu.cls文件中已经写入了subcaption宏包，而且subcaption宏包与subfigure和subfig宏包是相互冲突的。因此，如果你还想使用subfig宏包而不想使用subcaption宏包，请自己到nmu.cls文件的相关位置更改，具体的使用及修改方法参见相应的宏包说明文档。不过在这里还是不推荐直接去更改nmu.cls文档，除非你对\LaTeX{} 的相关命令很清楚，知道自己在改什么，并且不会对其他格式产生影响。
+%%----------------------------------------------------------------
+\subsection{单元格合并\footnote{\href{https://blog.csdn.net/juechenyi/article/details/77116011}{更多表格请参看 : https://blog.csdn.net/juechenyi/article/details/77116011}}}\label{sec:unit}
 
-具体的subcaption宏包使用方法我这里不仔细介绍，以下只是对subcaption进行一些简单的测试，主要是格式调整和交叉引用。
+整个table是由大小一致的单元格组成的，在这个基础上，我们通过合并单元格（行/列）的方式，实现整个table的设计。
 
-如图\ref{fig:subfig_test1}是有两张子图的模式，对子图进行交叉引用，如图\ref{subfig:1a}和图\ref{subfig:1b}。
+\begin{table}[htb]
+	\centering  \def\arraystretch{1.5}   %表格间距
+	\caption{单元格合并示例表}\label{tab:unit}
+	\begin{tabular}{|c|c|c|c|c|c|c|}  %l:左对齐；c:居中；r:右对齐
+		\hline		
+		\multicolumn{2}{|c|}{ \multirow{2}*{$S_i$} }& \multicolumn{4}{c|}{列合并} &\multirow{2}*{max}\\
+		\cline{3-6}
+		\multicolumn{2}{|c|}{}&50&100&150&200&\\
+		\hline
+		\multirow{4}*{\tabincell{c}{行合并\\单元格\\内换行}}&50&0&100&200&300&300\\
+		\cline{2-7}
+		&100&100&0&100&200&200\\
+		\cline{2-7}
+		&150&200&100&0&100&200\\
+		\cline{2-7}
+		&200&300&200&100&0&300\\
+		\hline
+	\end{tabular}
+\end{table}
+\begin{itemize}
+	\item 竖线用“|”，横线用“\verb|\hline|”和“\verb|\cline|”。
+	\item 列合并用“\verb|\multicolumn|”，行合并用“\verb|\multirow|”。
+	\item 表格间距设置使用“\verb|\def\arraystretch{1.5}|”。
+\end{itemize}
 
-\begin{figure}[htbp]
-	\centering
-	\begin{subfigure}[b]{.4\textwidth}
-		\centering
-		\includegraphics[width = \textwidth]{Chapter2.png}
-		\caption{书籍排版与普通排版}\label{subfig:1a}
-	\end{subfigure}
-	\quad
-	\begin{subfigure}[b]{.4\textwidth}
-		\centering
-		\includegraphics[width = \textwidth]{Chapter3.png}
-		\caption{\TeX 的控制系列}\label{subfig:1b}
-	\end{subfigure}
-	\caption{子图模式测试1:2张图}\label{fig:subfig_test1}
-\end{figure}
+若表格中文字很长需要换行时，单元格内换行使用“\verb|\tabincell{c}{文本\\文本}|”（可参考表\ref{tab:unit}中示例，切勿直接使用“\verb|\\|”换行，否则将报错）。
 
-如图\ref{fig:subfig_test2}是有四张子图的模式，对子图进行交叉引用，如图\ref{subfig:2a}、图\ref{subfig:2b}、图\ref{subfig:2c}和图\ref{subfig:2d}。
-
-\begin{figure}[htb]
-	\centering
-	\begin{subfigure}[b]{.4\textwidth}
-		\centering
-		\includegraphics[width = \textwidth]{Chapter4.png}
-		\caption{字体}\label{subfig:2a}
-	\end{subfigure}
-	\begin{subfigure}[b]{.4\textwidth}
-		\centering
-		\includegraphics[width = \textwidth]{Chapter5.png}
-		\caption{编组}\label{subfig:2b}
-	\end{subfigure}
-	\begin{subfigure}[b]{.4\textwidth}
-		\centering
-		\includegraphics[width = \textwidth]{Chapter6.png}
-		\caption{运行\TeX}\label{subfig:2c}
-	\end{subfigure}
-	\begin{subfigure}[b]{.4\textwidth}
-		\centering
-		\includegraphics[width = \textwidth]{Chapter7.png}
-		\caption{\TeX 工作原理}\label{subfig:2d}
-	\end{subfigure}
-	\caption{子图模式测试2:4张图}\label{fig:subfig_test2}
-\end{figure}
-
-\section{算法环境}
-
-模板中使用 \texttt{algorithm2e} 宏包实现算法 \ref{alg:partition}，关于该宏包的具体用法请阅读宏包的官方文档。
-
-\begin{algorithm}[!h]
-	%\SetAlgoLined
-	%\SetAlgoVlined
-	\caption{A How to (plain).}
-	\KwData{this text}
-	\KwResult{how to write algorithm with \LaTeX2e{} }
-	
-	initialization\;
-	\While{not at end of this document}{
-		read current\;
-		\eIf{understand}{
-			go to next section\;
-			current section becomes this one\;
-		}{
-			go back to the beginning of current section\;
-		}
-	}
-\end{algorithm}
-
-\RestyleAlgo{ruled}
-\begin{algorithm}[!h]
-	\caption{A How to (ruled).}
-	\KwData{this text}
-	\KwResult{how to write algorithm with \LaTeX2e{} }
-	
-	initialization\;
-	\While{not at end of this document}{
-		read current\;
-		\eIf{understand}{
-			go to next section\;
-			current section becomes this one\;
-		}{
-			go back to the beginning of current section\;
-		}
-	}
-\end{algorithm}
-
-
-\RestyleAlgo{boxed}
-\begin{algorithm}[!h]
-	\caption{A How to (boxed).}
-	\KwData{this text}
-	\KwResult{how to write algorithm with \LaTeX2e{} }
-	
-	initialization\;
-	\While{not at end of this document}{
-		read current\;
-		\eIf{understand}{
-			go to next section\;
-			current section becomes this one\;
-		}{
-			go back to the beginning of current section\;
-		}
-	}
-\end{algorithm}
-
-\RestyleAlgo{boxruled}
-\begin{algorithm}[!h]
-	\caption{PARTITION$(A,p,r)$ (boxruled)}%算法标题
-	\label{alg:partition}
-	\KwData{this text}
-	\KwResult{how to write algorithm with \LaTeX2e{} }
-	\begin{algorithmic}[1]%一行一个标行号
-		\WHILE {not at end of this document}
-		\STATE $i=p$
-		\FOR{$j=p$ to $r$}
-		\IF{$A[j]<=0$}
-		\STATE $swap(A[i],A[j])$
-		\STATE $i=i+1$
-		\ENDIF
-		\ENDFOR
-		\ENDWHILE
-	\end{algorithmic}
-\end{algorithm}
-
-\section{代码环境}
-\subsection{全局设置}
-listings 是专用于代码排版的\LaTeX{}宏包，可对关键词、注释和字符串等使用不同的字体和颜色或颜色，也可以为代码添加边框、背景等风格。很多时候需要对文档中的代码进行解释，只有带有行号的代码才可以让解释更清晰，因为你只需要说第 x行代码有什么作用即可。如果没有行号，那对读者而言就太残忍了，他们不得不从你的文字叙述中得知行号信息，然后去一行一行的查到相应代码行。listings 宏包通过参数 numbers 来设定行号，该参数的值有两个，分别是 left 与right，表示行号显示在代码的左侧还是右侧。下面给出一份用于排版C语言程序代码样例如图\ref{fig:code}所示。
-\begin{figure}[htb!]
-	\centering
-	\begin{lstlisting}[language={[ANSI]C}] 
-int main(int argc, char ** argv) 
-{ 
-    /*格式化并输出结果到标准输出*/
-    printf("`我爱TeXing`! \n"); 
-    return 0; 
-} 
-	\end{lstlisting} 
-	\caption{C语言程序代码样例}
-	\label{fig:code}
-\end{figure}
-
-\subsection{显示中文}
-listings 宏包默认是不支持包含中文字串的代码显示的，但是可以使用 “逃逸” 字串来显示中文。
-
-在 \verb|\lstset| 命令中设置逃逸字串的开始符号与终止符号，推荐使用的符号是左引号，即 “ `”。
-
+%%================================================================
 \section{流程图}
 
+%%----------------------------------------------------------------
 \subsection{流程图概述}
 
 流程图是流经一个系统的信息流、观点流或部件流的图形代表。在企业中，流程图主要用来说明某一过程。这种过程既可以是生产线上的工艺流程，也可以是完成一项任务必需的管理过程。流程图是揭示和掌握封闭系统运动状况的有效方式。作为诊断工具，它能够辅助决策制定，让管理者清楚地知道，问题可能出在什么地方，从而确定出可供选择的行动方案。
 
-流程图是表达算法思想最为有效的图形工具。作为计算机专业的学生，我们经常需要在文档中使用流程图来描述算法。在 LaTeX 中使用流程图可以通过 TikZ 或 flowchart 宏包来实现，但从本质上来说 flowchart 宏包也是使用 TikZ 宏包来实现的。flowchart 定义的形状数量比较少，可能满足不了绘制复杂流程图的需要，直接使用TikZ强大的绘图功能来实现流程图的绘制如图\ref{fig:chart},。
+流程图是表达算法思想最为有效的图形工具。作为计算机专业的学生，我们经常需要在文档中使用流程图来描述算法。在 LaTeX 中使用流程图可以通过 TikZ 或 flowchart 宏包来实现，但从本质上来说 flowchart 宏包也是使用 TikZ 宏包来实现的。flowchart 定义的形状数量比较少，可能满足不了绘制复杂流程图的需要，直接使用TikZ强大的绘图功能来实现流程图的绘制如图\ref{fig:chart}。
 
-\begin{figure}
+\begin{figure}[htb]
 	\centering
 	\begin{tikzpicture}[node distance=1.8cm]
 	%定义流程图具体形状
@@ -459,18 +333,19 @@ listings 宏包默认是不支持包含中文字串的代码显示的，但是�
 	\label{fig:chart}
 \end{figure}
 
+%%----------------------------------------------------------------
 \subsection{流程图的形式}
 流程图常用的形式有两种：
- 
+
 （1）上下流程图 
 
 上下流程图是最常见的一种流程图，它仅表示上一步与下一步的顺序关系。
- 
+
 （2）矩阵流程图
 
 矩阵流程图不仅表示下下关系，还可以看出某一过程的其他关系。最后给一个流程图的例子如图\ref{fig:flowsheet}。流程图的原图来自于Itti的显著性论文。里面基本包含了常用流程图画法中的所有要点。
 
-\begin{figure}
+\begin{figure}[htb]
 	\centering
 	%定义形状样式
 	\tikzstyle{startstop} = [rectangle, rounded corners, minimum width = 3cm, minimum height = 0.7cm, text centered, draw = black]
@@ -565,41 +440,375 @@ listings 宏包默认是不支持包含中文字串的代码显示的，但是�
 	\caption{图形图像处理模型流程图}
 	\label{fig:flowsheet}
 \end{figure}
-\subsection{\LaTeX{}中插入VISIO图}
 
-1. VISIO原图另存为PDF格式；
+%%----------------------------------------------------------------
+\subsection{\LaTeX{}中插入Visio图}
 
-2. 用Acrobat打开，文档 -- 剪裁页面 -- 删除白边距；
+Office Visio 是office软件系列中的负责绘制流程图和示意图的软件，是一款便于IT和商务人员就复杂信息、系统和流程进行可视化处理、分析和交流的软件。使用具有专业外观的 Office Visio 图表，可以促进对系统和流程的了解，深入了解复杂信息并利用这些知识做出更好的业务决策。\LaTeX{}中不能直接插入Visio图，需要将Visio图转为pdf格式后再行加入，具体操作步骤如下。
 
-3. 将pdf格式文件复制到figures文件夹；
+\begin{enumerate}[label=\arabic*)]
+	\item Visio原图另存为pdf格式：
+	
+	\qquad（Visio图的字体大小设置为“9pt”对应正文五号字，无需再对图进行缩放）；
+		
+	\item 用Adobe Acrobat DC打开上步生成的pdf文件：
+	
+	\qquad 工具栏 -- 剪裁页面 -- 删除白边距 -- 保存；
+	
+	\item 将保存好的pdf格式文件复制到figures文件夹：
+	
+	\qquad （例如封面文字（隶书：北方民族大学）的pdf文件插入： 
+	
+    \qquad	（\verb|\includegraphics{nmu-ultimate.pdf}|）；
+		
+	\item 或另存为eps格式，将eps格式文件复制到figures文件夹，类似插入图片的方式将图插入。
+\end{enumerate}
 
-  \qquad (例如盲审封皮文字： \verb|\includegraphics\{nmu-blind.pdf\}|)；
 
-4. 或另存为eps格式，将eps格式文件复制到figures文件夹，类似插入图片的方式将图插入。
+%%================================================================
+\section{函数图\footnote{\href{http://www.latexstudio.net/archives/9400.html}{GFPlots绘图简易教程：http://www.latexstudio.net/archives/9400.html}}}
 
+以下内容为转载内容，原版请参看脚注。PGFPlots就是一个功能强大的绘图宏集，比较擅长绘制由数据生成的图，比如曲线图 (line plot)、散点图 (scatter plot)、柱状图 (bar plot)等，本身其基于TiKZ开发的，语法方面与TiKZ非常一致，在这篇文章中，我们介绍一些 PGFPlots 的基本绘图功能。
+
+%%----------------------------------------------------------------
+\subsection{绘制统计图}
+统计图常被用于数据分析。下面给出一些用 PGFPlots 绘制统计图的示例。
+
+\subsubsection{线图}
+线图有折线图和光滑折线图两种，我们用一个例子来演示两种线图的画法。如图\ref{fig:curve}所示给出一组数据 {(0,4),(1,1),(2,2),(3,5),(4,6),(5,1)}，绘制经过这些点的两种线图。
+
+\begin{figure}[htb]
+	\centering
+	\begin{subfigure}[b]{.45\textwidth}
+		\centering
+		\begin{tikzpicture}
+		\begin{axis}[width=7cm, height=6.7cm, 
+		xlabel={x轴$(t)$}, ylabel={y轴$(m)$},
+		xmin=-0.5,xmax=5.5,ymin=0,ymax=6.5,
+		xtick={-0.5,1,2,3,4,5},
+		ytick={0,1,2,3,4,5,6}]                        % 添加坐标
+		\addplot+[sharp plot]               % 调用绘图函数，并设置绘图的类型是折线图
+		coordinates                         % 声明是在迪卡尔坐标系中的数据
+		{                                   % 输入数据
+			(0,4) (1,1) (2,2)
+			(3,5) (4,6) (5,1)
+		};
+		\end{axis}                         % 结束坐标
+		\end{tikzpicture}	
+		\caption{有折线图}\label{subfig:nosmooth}
+	\end{subfigure}
+	\qquad  
+	\begin{subfigure}[b]{.45\textwidth}
+		\centering
+		\begin{tikzpicture}
+		\begin{axis}[width=7cm, height=6.7cm, 
+		xlabel={x轴$(t)$}, ylabel={y轴$(m)$},
+		xmin=-0.5,xmax=5.5,ymin=0,ymax=6.5,
+		xtick={-0.5,1,2,3,4,5},
+		ytick={0,1,2,3,4,5,6}] 
+		\addplot+[smooth]                    % 设置绘图的类型是光滑线图
+		coordinates
+		{
+			(0,4) (1,1) (2,2)
+			(3,5) (4,6) (5,1)
+		};
+		\end{axis}
+		\end{tikzpicture}
+		\caption{光滑折线图}\label{subfig:smooth}
+	\end{subfigure}
+	\caption{线图}\label{fig:curve}
+\end{figure}	
+
+
+\subsubsection{条形图}
+条形图常用于展示各项目间的比较结果。如图\ref{subfig:strip1}所示给出一组数据 {(0,4),(1,1),(2,2),(3,5),(4,6),(5,1)}，绘制一般条形图。如图\ref{subfig:strip2}所示根据数据 {(0,4),(1,1),(2,2),(3,5),(4,6),(5,1)} 绘制蓝色边界、红色填充的条形图；同时，根据数据{(0,3),(1,4),(2,2),(3,9),(4,6),(5,2)} 绘制黑色边界、蓝色填充的条形图。
+
+\begin{figure}[htb]
+	\centering
+	\begin{subfigure}[b]{.45\textwidth}
+		\centering
+		\begin{tikzpicture}
+		\begin{axis}
+		\addplot+[ybar]                      % 绘制关于y坐标的条形图
+		coordinates
+		{
+			(0,4) (1,1) (2,2)
+			(3,5) (4,6) (5,1)
+		};
+		\end{axis}
+		\end{tikzpicture}	
+		\caption{一般条形图}\label{subfig:strip1}
+	\end{subfigure}
+	\qquad  \qquad
+	\begin{subfigure}[b]{.45\textwidth}
+		\centering
+		\begin{tikzpicture}
+		\begin{axis}[ybar,enlargelimits=0.15] %绘制关于y坐标的条形图，条形之间的最大间隔是0.15cm
+		\addplot[draw=blue,fill=red]           % 蓝色边界、红色填充
+		coordinates
+		{
+			(0,4) (1,1) (2,2)
+			(3,5) (4,6) (5,1)
+		};
+		\addplot[draw=black,fill=blue]         % 黑色边界、蓝色填充
+		coordinates
+		{
+			(0,3) (1,4) (2,2)
+			(3,9) (4,6) (5,2)
+		};
+		\end{axis}
+		\end{tikzpicture}
+		\caption{填充条形图}\label{subfig:strip2}
+	\end{subfigure}
+	\caption{条形图}\label{fig:strip}
+\end{figure}
+
+\subsubsection{直方图}
+
+直方图又称为质量分布图，是最常用统计图之一。直方图的绘制方式与前面两种统计图略有不同，它依赖于 PGFPlots自身的计算功能。如图\ref{fig:histogram}所示绘制数据 {1,2,1,5,4,10,7,10,9,8,9,9} 的直方图。
+
+\begin{figure}[htb]
+	\centering
+	\begin{tikzpicture}
+	\begin{axis}[ybar interval]   % 绘制y条形图，并且分隔出区间
+	\addplot[hist={bins=3}]       % 绘制图像设置为直方图，组距为3
+	table[row sep=\\,y index=0]   % 设置表的行以"\\"分隔，y的从0开始
+	{
+		data\\                       % 输入数据
+		1\\ 2\\ 1\\ 5\\ 4\\ 10\\
+		7\\ 10\\ 9\\ 8\\ 9\\ 9\\
+	};
+	\end{axis}
+	\end{tikzpicture}
+	\caption{直方图}
+	\label{fig:histogram}
+\end{figure}
+
+%%----------------------------------------------------------------
+\subsection{ 线性回归}
+
+在 PGFPlots 中只能拟合一次函数，不能拟合更高次数的函数。下面给出一个示例。如图\ref{fig:regression}所示绘制数据 {(1,1),(2,4),(3,9),(4,16),(5,25),(6,36)} 的线性回归绘图。
+
+\begin{figure}[htb]
+	\centering
+	\begin{tikzpicture}
+	\begin{axis}[legend pos=outer north east] % 将图例放在图外，位于图的东北角
+	\addplot 
+	table                               % 绘制原始数据的折线图
+	{           		                % X，Y的原始数据
+		X Y
+		1 1
+		2 4
+		3 9
+		4 16 
+		5 25
+		6 36
+	};
+	\addplot
+	table[y={create col/linear regression={y=Y}}] % 对输入的数据作线性回归
+	{   				
+		X Y
+		1 1
+		2 4
+		3 9
+		4 16 
+		5 25
+		6 36
+	};
+	\addlegendentry{$y(x)$}          % 给第一个图像添加图例，即原始函数y(x)
+	\addlegendentry{                 % 给第二个图像添加图例，即线性回归结果a*x+b
+		$\pgfmathprintnumber{\pgfplotstableregressiona} \cdot x
+		\pgfmathprintnumber[print sign]{\pgfplotstableregressionb}$}
+	\end{axis}
+	\end{tikzpicture}
+	\caption{线性回归}
+	\label{fig:regression}
+\end{figure}
+
+%%----------------------------------------------------------------
+\subsection{绘制函数图像}
+PGFPlots 最重要的功能是绘制函数图像，用它绘制二维和三维函数图像非常的简单。接下来，我们将分别展示一些基本函数图像的绘制。
+~\\
+\subsubsection{二维显式函数图像}
+如图\ref{fig:two}所示绘制三角函数 f(x)=sinx 和 g(x)=cosx 在定义域 [0,2π] 上的图像。
+
+\begin{figure}[htb]
+	\centering
+	\begin{tikzpicture}
+	\begin{axis}
+	\addplot+[domain=0:2*pi]          % 设置函数的定义域
+	{sin(deg(x))};                   % 输入显式函数
+	\addplot+[domain=0:2*pi]          % 设置函数的定义域
+	{cos(deg(x))};                   % 输入显式函数
+	\end{axis}
+	\end{tikzpicture}
+	\caption{二维显式函数图像}
+	\label{fig:two}
+\end{figure}
+
+\subsubsection{三维显式函数图像}
+如图\ref{fig:regression}所示绘制函数$ f(x,y)=x^2+y^2$ 的三维函数图像。
+
+\begin{figure}[htb]
+	\centering
+	\begin{tikzpicture}
+	\begin{axis}[colorbar]         % 绘制坐标，并设置一个彩色指示条
+	\addplot3[surf]                % 绘制三维图
+	{x^2+y^2};                    % 输入二元显式函数
+	\end{axis}
+	\end{tikzpicture}
+	\caption{三维显式函数图像}
+	\label{fig:three}
+\end{figure}
+我们也可以绘制一些漂亮而“复杂”的三维图像，如图\ref{fig:hat}所示的“帽子图”。
+\begin{figure}[htb]
+	\centering
+	\begin{tikzpicture}
+	\begin{axis}[
+	title=Example using the mesh parameter, %图像的标题
+	hide axis,                              %隐藏坐标
+	colormap/cool,                          %颜色风格
+	]
+	\addplot3[
+	mesh,                                   %绘制的三维图像是网格
+	samples=50,                             %定义域分割数量
+	domain=-8:8,                            %定义域
+	]
+	{sin(deg(sqrt(x^2+y^2)))/sqrt(x^2+y^2)};    %二元显式函数
+	\addlegendentry{$\frac{sin(r)}{r}$}         %添加图例
+	\end{axis}
+	\end{tikzpicture}
+	\caption{三维帽子图}
+	\label{fig:hat}
+\end{figure}
+
+\subsubsection{隐式函数图像}
+隐式函数图像的绘制非常复杂。（在 Matlab 中，我们可以利用 isosurface 函数直接绘制隐式函数图像。）接下来，我们给出一个具体的在 PGFPlots 中绘制隐式函数的示例。如图\ref{fig:regression}所示绘制隐函数 x\^{}2/100+y\^{}2=1 的函数图像。我们将该隐函数转化为参数方程：x=10cost,y=sint，t定义域为 [0,2π]。
+
+\begin{figure}[htb]
+	\centering
+	\begin{tikzpicture}
+	\begin{axis}[width=12cm,height=6cm,trig format plots=rad,variable=t]
+	\addplot[red,thick,domain=-2*pi:2*pi,samples=200]
+	({10*cos(t)},{sin(t)});
+	\draw (0,1) -- (0,-1) (-10,0) -- (10,0);
+	\end{axis}
+	\end{tikzpicture}
+	\caption{隐式函数图像}
+	\label{fig:hide}
+\end{figure}
+
+%%================================================================
+\section{算法环境}
+
+\begin{algorithm}[htb]
+	%\SetAlgoLined
+	%\SetAlgoVlined
+	\caption{A How to (plain).}
+	\KwData{this text}
+	\KwResult{how to write algorithm with \LaTeX2e{} }
+	
+	initialization\;
+	\While{not at end of this document}{
+		read current\;
+		\eIf{understand}{
+			go to next section\;
+			current section becomes this one\;
+		}{
+			go back to the beginning of current section\;
+		}
+	}
+\end{algorithm}
+
+\RestyleAlgo{ruled}
+\begin{algorithm}[htb]
+	\caption{A How to (ruled).}
+	\KwData{this text}
+	\KwResult{how to write algorithm with \LaTeX2e{} }
+	
+	initialization\;
+	\While{not at end of this document}{
+		read current\;
+		\eIf{understand}{
+			go to next section\;
+			current section becomes this one\;
+		}{
+			go back to the beginning of current section\;
+		}
+	}
+\end{algorithm}
+
+
+\RestyleAlgo{boxed}
+\begin{algorithm}[htb]
+	\caption{A How to (boxed).}
+	\KwData{this text}
+	\KwResult{how to write algorithm with \LaTeX2e{} }
+	
+	initialization\;
+	\While{not at end of this document}{
+		read current\;
+		\eIf{understand}{
+			go to next section\;
+			current section becomes this one\;
+		}{
+			go back to the beginning of current section\;
+		}
+	}
+\end{algorithm}
+
+\RestyleAlgo{boxruled}
+\begin{algorithm}[htb]
+	\caption{PARTITION$(A,p,r)$ (boxruled)}%算法标题
+	\label{alg:partition}
+	\KwData{this text}
+	\KwResult{how to write algorithm with \LaTeX2e{} }
+	\begin{algorithmic}[1]%一行一个标行号
+		\WHILE {not at end of this document}
+		\STATE $i=p$
+		\FOR{$j=p$ to $r$}
+		\IF{$A[j]<=0$}
+		\STATE $swap(A[i],A[j])$
+		\STATE $i=i+1$
+		\ENDIF
+		\ENDFOR
+		\ENDWHILE
+	\end{algorithmic}
+\end{algorithm}
+
+%%================================================================
+\section{代码环境}
+
+%%----------------------------------------------------------------
+\subsection{全局设置}
+listings 是专用于代码排版的\LaTeX{}宏包，可对关键词、注释和字符串等使用不同的字体和颜色或颜色，也可以为代码添加边框、背景等风格。很多时候需要对文档中的代码进行解释，只有带有行号的代码才可以让解释更清晰，因为你只需要说第 x行代码有什么作用即可。如果没有行号，那对读者而言就太残忍了，他们不得不从你的文字叙述中得知行号信息，然后去一行一行的查到相应代码行。listings 宏包通过参数 numbers 来设定行号，该参数的值有两个，分别是 left 与right，表示行号显示在代码的左侧还是右侧。下面给出一份用于排版C语言程序代码样例如图\ref{fig:code}所示。
+\begin{figure}[htb!]
+	\centering
+	\begin{lstlisting}[language={[ANSI]C}] 
+int main(int argc, char ** argv) 
+{ 
+    /*格式化并输出结果到标准输出*/
+    printf("`我爱TeXing`! \n"); 
+    return 0; 
+} 
+	\end{lstlisting} 
+	\caption{C语言程序代码样例}
+	\label{fig:code}
+\end{figure}
+
+%%----------------------------------------------------------------
+\subsection{显示中文}
+listings 宏包默认是不支持包含中文字串的代码显示的，但是可以使用 “逃逸” 字串来显示中文。
+
+在 \verb|\lstset| 命令中设置逃逸字串的开始符号与终止符号，推荐使用的符号是左引号，即 “ `”。
+
+%%================================================================
 \section{数学环境}
 
-\subsection{特殊符号}
-
-更多参看\href{https://blog.csdn.net/caiandyong/article/details/53351737}{LaTex常用特殊符号对应表：https://blog.csdn.net/caiandyong/article/details/53351737}
-\begin{center}
-	\begin{tabular}{cc|cc|cc|cc}
-		\toprule
-		符号  & 命令 &符号 & 命令 &符号 & 命令 &符号 & 命令  \\
-		\midrule
-		尖号\^{} & \verb|\^{}|  & $\pm$ & \verb|\pm|  & $\bigodot$ & \verb|\bigodot|  & $\neq$ & \verb|\neq| \\
-		对号$\surd$  & \verb|\surd|  & $\times$ & \verb|\times|  & $\bigotimes$ & \verb|\bigotimes| & $\approx$ & \verb|\approx|\\
- 		大点$\bullet$  & \verb|\bullet| & $\div$ & \verb|\div|  & $\bigoplus$ & \verb|\bigoplus| & $\equiv$ & \verb|\equiv|\\
-		小点$\cdot$  & \verb|\cdot|    & $\sum$ & \verb|\sum| & $\ast$ & \verb|\ast| & $\leqslant$ & \verb|\leqslant|\\
-		省略$\cdots$  & \verb|\cdots|  & $\prod$ & \verb|\prod| & $\mid$ & \verb|\mid| & $\geqslant$ & \verb|\geqslant|\\
-		属于 $\in$ & \verb|\in|    & $\because$ & \verb|\because|   & $\forall$ & \verb|\forall|  & $\alpha$ & \verb|\alpha|\\
-		不属于$\notin$ & \verb|\notin| & $\therefore$ & \verb|\therefore| & $\exists$ & \verb|\exists|  & $\beta$ & \verb|\beta|\\
-		\bottomrule
-	\end{tabular}
-\end{center}
-
-更多的例子：
-\begin{equation}
+%%----------------------------------------------------------------
+\subsection{自动编号公式}
+欧拉公式如式\ref{eq:Euler}所示。
+\begin{equation}\label{eq:Euler}
 \eu^{\iu\pi} + 1 = 0
 \end{equation}
 \begin{equation}
@@ -609,6 +818,26 @@ listings 宏包默认是不支持包含中文字串的代码显示的，但是�
 \argmin_x f(x)
 \end{equation}
 
+%%----------------------------------------------------------------
+\subsection{特殊符号\footnote{\href{https://blog.csdn.net/caiandyong/article/details/53351737}{更多参看LaTex常用特殊符号对应表：https://blog.csdn.net/caiandyong/article/details/53351737}}}\label{subsec:sysmbol}
+
+\begin{center}
+	\begin{tabular}{cc|cc|cc|cc}
+		\toprule
+		符号  & 命令 &符号 & 命令 &符号 & 命令 &符号 & 命令  \\
+		\midrule
+		$\ast$ & \verb|\ast| & $\pm$ & \verb|\pm|  & $\bigodot$ & \verb|\bigodot|  & $\neq$ & \verb|\neq| \\
+		$\surd$  & \verb|\surd|  & $\times$ & \verb|\times|  & $\bigotimes$ & \verb|\bigotimes| & $\approx$ & \verb|\approx|\\
+ 		$\bullet$  & \verb|\bullet| & $\div$ & \verb|\div|  & $\bigoplus$ & \verb|\bigoplus| & $\equiv$ & \verb|\equiv|\\
+		$\cdot$  & \verb|\cdot|    & $\sum$ & \verb|\sum| & \textbackslash & \verb|\textbackslash|  & $\leqslant$ & \verb|\leqslant|\\
+		$\cdots$  & \verb|\cdots|  & $\prod$ & \verb|\prod| & $\mid$ & \verb|\mid| & $\geqslant$ & \verb|\geqslant|\\
+		 $\in$ & \verb|\in|    & $\alpha$ & \verb|\alpha| & $\forall$ & \verb|\forall|  & $\because$ & \verb|\because|\\
+		$\notin$ & \verb|\notin| & $\beta$ & \verb|\beta| & $\exists$ & \verb|\exists|  & $\therefore$ & \verb|\therefore|\\
+		\bottomrule
+	\end{tabular}
+\end{center}
+
+%%----------------------------------------------------------------
 \subsection{定理、引理和证明}
 
 \begin{definition}
@@ -705,7 +934,7 @@ listings 宏包默认是不支持包含中文字串的代码显示的，但是�
 	Trivial.
 \end{proof}
 
-
+%%----------------------------------------------------------------
 \subsection{自定义}
 
 \newtheorem*{axiomofchoice}{Axiom of choice}
@@ -738,243 +967,163 @@ listings 宏包默认是不支持包含中文字串的代码显示的，但是�
 	Obvious.
 \end{proof}
 
-\section{绘图\footnote{\href{http://www.latexstudio.net/archives/9400.html}{GFPlots绘图简易教程：http://www.latexstudio.net/archives/9400.html}}}
+\newpage
 
-以下内容为转载内容，原版请参看脚注。PGFPlots就是一个功能强大的绘图宏集，比较擅长绘制由数据生成的图，比如曲线图 (line plot)、散点图 (scatter plot)、柱状图 (bar plot)等，本身其基于TiKZ开发的，语法方面与TiKZ非常一致，在这篇文章中，我们介绍一些 PGFPlots 的基本绘图功能。
+%%----------------------------------------------------------------
+\subsection{矩阵}
 
-\subsection{绘制统计图}
-统计图常被用于数据分析。下面给出一些用 PGFPlots 绘制统计图的示例。
+	\[
+	\begin{matrix}
+	0 & 1 \\
+	1 & 0
+	\end{matrix}
+	% pmatrix环境
+	\begin{pmatrix}
+	0 & -i \\
+	i & 0
+	\end{pmatrix} \qquad
+	% pmatrix环境	
+	\begin{bmatrix}
+	0 & -1 \\
+	1 & 0
+	\end{bmatrix} \qquad
+	% Bmatrix环境
+	\begin{Bmatrix}
+	1 & 0 \\
+	0 & -1
+	\end{Bmatrix} \qquad
+	% vmatrix环境
+	\begin{vmatrix}
+	a & b \\
+	c & d
+	\end{vmatrix} \qquad
+	% Vmatrix环境
+	\begin{Vmatrix}
+	i & 0 \\
+	0 & -i
+	\end{Vmatrix} \qquad
+	\]
+	
+	%可以使用上下标
+	\[
+	A = \begin{pmatrix}
+	a_{11}^2 & a_{12}^2 & a_{13}^2 \\
+	0 & a_{22} & a_{23} \\
+	0 & 0 & a_{33}
+	\end{pmatrix} \qquad	
+	%常用省略号：\dots、\vdots、$\ddots$	
+	A= \begin{bmatrix}
+	a_{11} & \dots & a_{1n} \\
+	\adots & \ddots & \vdots \\
+	0 & & a_{nn}
+	\end{bmatrix}_{n \times n}
+	\]
+	
+	%分块矩阵（矩阵嵌套）
+	\[
+	\begin{pmatrix}
+	\begin{matrix} 1&0\\0&1\end{matrix}
+	& \text{\Large 0} \\
+	\text{\Large 0} & \begin{matrix}
+	1&0\\0&-1 \end{matrix}
+	\end{pmatrix} \qquad
+	%三角矩阵
+	\begin{pmatrix}
+	a_{11} & a_{12} & \cdots & a_{1n} \\
+	& a_{22} & \cdots &a_{2n} \\
+	&        & \ddots & \vdots \\
+	\multicolumn{2}{c}{\raisebox{1.3ex}[0 pt]{\Huge 0}}
+	&        &a_{nn}
+	\end{pmatrix}
+	\]
+	
+	% 跨列的省略号：\hdotsfor{<列数>}
+	\[
+	\begin{pmatrix}
+	1 & \frac 12 & \dots & \frac 1n \\
+	\hdotsfor{4} \\
+	m & \frac m2 & \dots &\frac mn
+	\end{pmatrix}
+	\]
+	
+	% 行内小矩阵 (smallmatrix)环境
+	复数 $z = (x,y)$ 也可用矩阵
+	\begin{math}
+	\left(% 需要手动加上左括号
+	\begin{smallmatrix}
+	x & -y \\ y & x
+	\end{smallmatrix}
+	\right)% 需要手动加上右括号
+	\end{math}来表示。		
+	
+	% array环境（类似于表格环境tabular）
+	\[
+	\begin{array}{r|r}
+	\frac12 & 0 \\
+	\hline
+	0 & -\frac a{bc} \\
+	\end{array}
+	\]
+	
+	% 用array环境构造复杂矩阵
+	\[
+	% @{<内容>}--添加任意内容，不占表项计数
+	% 此处添加一个负数空白，表示向左移-5pt的距离
+	\begin{array}{c@{\hspace{-5pt}}l}
+	\left(
+	\begin{array}{ccc|ccc}
+	a & \cdots & a & b & \cdots & b\\
+	& \ddots & \vdots & \vdots & \adots\\
+	&        & a & b \\ \hline
+	&        &   & c & \cdots & c\\
+	&        &   & \vdots & & \vdots\\
+	\multicolumn{3}{c|}{\raisebox{2ex}[0pt]{\Huge 0}}
+	& c & \cdots & c 
+	\end{array}
+	\right)
+	&
+	% 第1行第2列
+	\begin{array}{l}
+	%\left.仅表示与\right\}配对，什么都不输出
+	\left.\rule{0mm}{7mm}\right\}p\\
+	\\
+	\left.\rule{0mm}{7mm}\right\}q
+	\end{array}
+	\\[-5pt]
+	% 第2行第1列
+	\begin{array}{cc}
+	\underbrace{\rule{17mm}{0mm}}_m &
+	\underbrace{\rule{17mm}{0mm}}_m
+	\end{array}
+	& % 第2行第2列
+	\end{array}
+	\]
 
-\subsubsection{线图}
-线图有折线图和光滑折线图两种，我们用一个例子来演示两种线图的画法。如图\ref{fig:curve}所示给出一组数据 {(0,4),(1,1),(2,2),(3,5),(4,6),(5,1)}，绘制经过这些点的两种线图。
+%%================================================================
+\section{参考文献}
+参考文献类型：专著[M]，会议论文集[C]，报纸文章[N]，期刊文章[J]，学位论文[D]，报告[R]，标准[S]，专利[P]，论文集中的析出文献[A]。测试一下上标引用\upcite{Le2016Multiple}，引用\cite{Le2016Multiple,Kaya2015,tf2017}，还有其它引用\upcite{Li2017An,Le2016Multiple,tf2017}。
 
-\begin{figure}[htb]
+\begin{itemize}
+	\item[$\triangleright$] 导入BibTeX参考文献库可通过百度学术或Zotero等（例：如图\ref{fig:3-1}、\ref{fig:3-2}）；
+	\item[$\triangleright$] 若某参考文献标题中含有特定含义大写字母（“ISODATA”等,详见\cite{Li2017An}），应特别用第二重｛｝将其括起来才可使其正常表示；
+	\item[$\triangleright$] 若某参考文献中有特殊字符（如：\& ），切记加入转义符，否则将报错:
+	
+	\verb|Misplaced alignment tab character &.|
+
+	修正完清理辅助文件后再重新运行。
+	
+\end{itemize}
+
+\begin{figure}[tbh]
 	\centering
-	\begin{subfigure}[b]{.45\textwidth}
-		\centering
-		\begin{tikzpicture}
-		\begin{axis}[width=7cm, height=6.7cm, 
-		xlabel={x轴$(t)$}, ylabel={y轴$(m)$},
-		xmin=-0.5,xmax=5.5,ymin=0,ymax=6.5,
-		xtick={-0.5,1,2,3,4,5},
-		ytick={0,1,2,3,4,5,6}]                        % 添加坐标
-		\addplot+[sharp plot]               % 调用绘图函数，并设置绘图的类型是折线图
-		coordinates                         % 声明是在迪卡尔坐标系中的数据
-		{                                   % 输入数据
-			(0,4) (1,1) (2,2)
-			(3,5) (4,6) (5,1)
-		};
-		\end{axis}                         % 结束坐标
-		\end{tikzpicture}	
-		\caption{有折线图}\label{subfig:nosmooth}
-	\end{subfigure}
-	\qquad  
-	\begin{subfigure}[b]{.45\textwidth}
-		\centering
-		\begin{tikzpicture}
-		\begin{axis}[width=7cm, height=6.7cm, 
-		xlabel={x轴$(t)$}, ylabel={y轴$(m)$},
-		xmin=-0.5,xmax=5.5,ymin=0,ymax=6.5,
-		xtick={-0.5,1,2,3,4,5},
-		ytick={0,1,2,3,4,5,6}] 
-		\addplot+[smooth]                    % 设置绘图的类型是光滑线图
-		coordinates
-		{
-			(0,4) (1,1) (2,2)
-			(3,5) (4,6) (5,1)
-		};
-		\end{axis}
-		\end{tikzpicture}
-		\caption{光滑折线图}\label{subfig:smooth}
-	\end{subfigure}
-	\caption{线图}\label{fig:curve}
-\end{figure}	
-
-
-\subsubsection{条形图}
-条形图常用于展示各项目间的比较结果。如图\ref{subfig:strip1}所示给出一组数据 {(0,4),(1,1),(2,2),(3,5),(4,6),(5,1)}，绘制一般条形图。如图\ref{subfig:strip2}所示根据数据 {(0,4),(1,1),(2,2),(3,5),(4,6),(5,1)} 绘制蓝色边界、红色填充的条形图；同时，根据数据{(0,3),(1,4),(2,2),(3,9),(4,6),(5,2)} 绘制黑色边界、蓝色填充的条形图。
-\begin{figure}[htb]
-	\centering
-	\begin{subfigure}[b]{.45\textwidth}
-		\centering
-		\begin{tikzpicture}
-		\begin{axis}
-		\addplot+[ybar]                      % 绘制关于y坐标的条形图
-		coordinates
-		{
-			(0,4) (1,1) (2,2)
-			(3,5) (4,6) (5,1)
-		};
-		\end{axis}
-		\end{tikzpicture}	
-		\caption{一般条形图}\label{subfig:strip1}
-	\end{subfigure}
-	\qquad  \qquad
-	\begin{subfigure}[b]{.45\textwidth}
-		\centering
-		\begin{tikzpicture}
-		\begin{axis}[ybar,enlargelimits=0.15] %绘制关于y坐标的条形图，条形之间的最大间隔是0.15cm
-		\addplot[draw=blue,fill=red]           % 蓝色边界、红色填充
-		coordinates
-		{
-			(0,4) (1,1) (2,2)
-			(3,5) (4,6) (5,1)
-		};
-		\addplot[draw=black,fill=blue]         % 黑色边界、蓝色填充
-		coordinates
-		{
-			(0,3) (1,4) (2,2)
-			(3,9) (4,6) (5,2)
-		};
-		\end{axis}
-		\end{tikzpicture}
-		\caption{填充条形图}\label{subfig:strip2}
-	\end{subfigure}
-	\caption{条形图}\label{fig:strip}
+	\includegraphics[width=0.6\linewidth]{figures/sample/3-1}
+	\caption{导入BibTeX参考文献库步骤一}
+	\label{fig:3-1}
 \end{figure}
 
-\subsubsection{直方图}
-
-直方图又称为质量分布图，是最常用统计图之一。直方图的绘制方式与前面两种统计图略有不同，它依赖于 PGFPlots自身的计算功能。如图\ref{fig:histogram}所示绘制数据 {1,2,1,5,4,10,7,10,9,8,9,9} 的直方图。
-
-\begin{figure}[htb]
+\begin{figure}[tbh]
 	\centering
-	\begin{tikzpicture}
-	\begin{axis}[ybar interval]   % 绘制y条形图，并且分隔出区间
-	\addplot[hist={bins=3}]       % 绘制图像设置为直方图，组距为3
-	table[row sep=\\,y index=0]   % 设置表的行以"\\"分隔，y的从0开始
-	{
-		data\\                       % 输入数据
-		1\\ 2\\ 1\\ 5\\ 4\\ 10\\
-		7\\ 10\\ 9\\ 8\\ 9\\ 9\\
-	};
-	\end{axis}
-	\end{tikzpicture}
-	\caption{直方图}
-	\label{fig:histogram}
+	\includegraphics[width=0.6\linewidth]{figures/sample/3-2}
+	\caption{导入BibTeX参考文献库步骤二}
+	\label{fig:3-2}
 \end{figure}
-
-\subsection{ 线性回归}
-
-在 PGFPlots 中只能拟合一次函数，不能拟合更高次数的函数。下面给出一个示例。如图\ref{fig:regression}所示绘制数据 {(1,1),(2,4),(3,9),(4,16),(5,25),(6,36)} 的线性回归绘图。
-
-\begin{figure}[htb]
-	\centering
-	\begin{tikzpicture}
-	\begin{axis}[legend pos=outer north east] % 将图例放在图外，位于图的东北角
-	\addplot 
-	table                               % 绘制原始数据的折线图
-	{           		                % X，Y的原始数据
-		X Y
-		1 1
-		2 4
-		3 9
-		4 16 
-		5 25
-		6 36
-	};
-	\addplot
-	table[y={create col/linear regression={y=Y}}] % 对输入的数据作线性回归
-	{   				
-		X Y
-		1 1
-		2 4
-		3 9
-		4 16 
-		5 25
-		6 36
-	};
-	\addlegendentry{$y(x)$}          % 给第一个图像添加图例，即原始函数y(x)
-	\addlegendentry{                 % 给第二个图像添加图例，即线性回归结果a*x+b
-		$\pgfmathprintnumber{\pgfplotstableregressiona} \cdot x
-		\pgfmathprintnumber[print sign]{\pgfplotstableregressionb}$}
-	\end{axis}
-	\end{tikzpicture}
-	\caption{线性回归}
-	\label{fig:regression}
-\end{figure}
-
-\subsection{绘制函数图像}
-PGFPlots 最重要的功能是绘制函数图像，用它绘制二维和三维函数图像非常的简单。接下来，我们将分别展示一些基本函数图像的绘制。
-\subsubsection{二维显式函数图像}
-如图\ref{fig:two}所示绘制三角函数 f(x)=sinx 和 g(x)=cosx 在定义域 [0,2π] 上的图像。
-
-\begin{figure}[htb]
-	\centering
-	\begin{tikzpicture}
-	\begin{axis}
-	\addplot+[domain=0:2*pi]          % 设置函数的定义域
-	{sin(deg(x))};                   % 输入显式函数
-	\addplot+[domain=0:2*pi]          % 设置函数的定义域
-	{cos(deg(x))};                   % 输入显式函数
-	\end{axis}
-	\end{tikzpicture}
-	\caption{二维显式函数图像}
-	\label{fig:two}
-\end{figure}
-
-\subsubsection{三维显式函数图像}
-如图\ref{fig:regression}所示绘制函数$ f(x,y)=x^2+y^2$ 的三维函数图像。
-
-\begin{figure}[htb]
-	\centering
-	\begin{tikzpicture}
-	\begin{axis}[colorbar]         % 绘制坐标，并设置一个彩色指示条
-	\addplot3[surf]                % 绘制三维图
-	{x^2+y^2};                    % 输入二元显式函数
-	\end{axis}
-	\end{tikzpicture}
-	\caption{三维显式函数图像}
-	\label{fig:three}
-\end{figure}
-我们也可以绘制一些漂亮而“复杂”的三维图像，如图\ref{fig:hat}所示的“帽子图”。
-\begin{figure}[htb]
-	\centering
-	\begin{tikzpicture}
-	\begin{axis}[
-	title=Example using the mesh parameter, %图像的标题
-	hide axis,                              %隐藏坐标
-	colormap/cool,                          %颜色风格
-	]
-	\addplot3[
-	mesh,                                   %绘制的三维图像是网格
-	samples=50,                             %定义域分割数量
-	domain=-8:8,                            %定义域
-	]
-	{sin(deg(sqrt(x^2+y^2)))/sqrt(x^2+y^2)};    %二元显式函数
-	\addlegendentry{$\frac{sin(r)}{r}$}         %添加图例
-	\end{axis}
-	\end{tikzpicture}
-	\caption{三维帽子图}
-	\label{fig:hat}
-\end{figure}
-
-\subsubsection{隐式函数图像}
-隐式函数图像的绘制非常复杂。（在 Matlab 中，我们可以利用 isosurface 函数直接绘制隐式函数图像。）接下来，我们给出一个具体的在 PGFPlots 中绘制隐式函数的示例。如图\ref{fig:regression}所示绘制隐函数 x\^{}2/100+y\^{}2=1 的函数图像。我们将该隐函数转化为参数方程：x=10cost,y=sint，t定义域为 [0,2π]。
-
-\begin{figure}[htb]
-	\centering
-	\begin{tikzpicture}
-	\begin{axis}[width=12cm,height=6cm,trig format plots=rad,variable=t]
-	\addplot[red,thick,domain=-2*pi:2*pi,samples=200]
-	({10*cos(t)},{sin(t)});
-	\draw (0,1) -- (0,-1) (-10,0) -- (10,0);
-	\end{axis}
-	\end{tikzpicture}
-	\caption{隐式函数图像}
-	\label{fig:hide}
-\end{figure}
-
-
-
-
-
-
-
-
-
-
-
-
-
-

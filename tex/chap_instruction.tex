@@ -1,8 +1,10 @@
+% [说明]
 % 本LaTeX模板的一般使用说明
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{说明\footnote{章标题中脚注命令测试}}
-\label{sec:instruction}
+\label{chap:instruction}
 
-%-----------------------------
+%%================================================================
 \section{宏包\footnote{节标题中脚注命令测试}使用}
 
 请将表\ref{tab:tabu_file}中文件清单放在同一目录中，Windows系统可以选择TexLive+TeXstudio的方式，安装教程可参看百度经验\footnote{\href{https://jingyan.baidu.com/article/b2c186c83c9b40c46ff6ff4f.html}{安装教程请参看 : https://jingyan.baidu.com/article/b2c186c83c9b40c46ff6ff4f.html}}。
@@ -69,7 +71,7 @@
  
 请统一使用UTF-8编码。
 
-%-----------------------------
+%%================================================================
 \section{章节撰写}
 本模板支持一下标题级别标题级别
 
@@ -88,79 +90,61 @@
   \verb|\subparagraph{a)}|         & $\triangleright$ 理工类：1.1.1.1.1.1 a)  ~~~~文史类: （1） ~~a）\\
 \end{tabular}
 
-%-----------------------------
+%%================================================================
 \section{选项设置}
 
-\begin{itemize}[leftmargin=3cm]
-	\item[{\tt  $\backslash$refcolor} $\triangleright$]  开启/关闭引用编号颜色，包括参考文献，公式，图，表，算法等\\
-	\texttt{on}：开启 [默认]\\
-	\texttt{off}：关闭
-	\item[{\tt $\backslash$beginright} $\triangleright$]  摘要和正文从右侧开始\\
-	\texttt{on}：开启 [默认]\\
-	\texttt{off}：关闭
-	\item[{\tt $\backslash$emptypageword} $\triangleright$]  空白页留字
-	\item[{\tt $\backslash$Listfigtab} $\triangleright$]  是否使用图标清单目录\\
-	\texttt{on}：开启 [默认]\\
-	\texttt{off}：关闭
+\begin{itemize}
+	\item[$\triangleright$] 设置目录深度\verb|\setcounter{tocdepth}{1}|
+	
+	当目录深度为1时，对应着2级标题，即章和节 (第一章 和 1.1、1.2)；
+	
+	当目录深度为2时，对应着章、节、小节 (第一章、1.2、1.2.1)。
+	
+	\item[$\triangleright$] 最终版英文封面是否启用\verb|\Entitle{off}|
+	
+	\texttt{on}：开启 \\
+	\texttt{off}：关闭 [默认]
+	
+	\item[$\triangleright$] 学校信息是否隐去（盲审版封皮和页眉处）\verb|\HideNMU{off}|
+		
+	\texttt{on}：开启 \\
+	\texttt{off}：关闭 [默认]
 \end{itemize}
 
 
-%-----------------------------
+%%================================================================
 \section{注意事项}
 \begin{itemize}
-  \item[$\triangleright$] 若绪论不作为第一章，节中加星取消编号，内容自定义，如：\verb|“\section*{1. 概述}”|，章中内容\verb|“\chapter{绪论}+内容”|修改为
-  \verb|“{\chaptera{绪论}+内容}”|，切记章中的外括号不能省略，否则通篇都没有章号；
+  \item[$\triangleright$] 加星号表示取消编号，可用于章、节、图、表、公式……的不编号，可以自定义编号，例：\verb|“\section*{1. 概述}”|；
+  \item[$\triangleright$] 绪论不作为第一章时，使用星号\verb|\chapter*{绪论}|取消章编号，使用\verb|\markboth{绪论}{}|定义页眉显示的章标题，使用\verb|“\addcontentsline{toc}{chapter}{绪论}”|在目录中添加章标题；
   \item[$\triangleright$] 当出现未知错误时，请先\verb|工具（T）->清理辅助文件|或点击主文件目录下\verb|clean.bat|，进行清理后再行运行；
-  \item[$\triangleright$] 目录中仅出现两级标题，通过nmu.cls中404行\verb|\setcounter{tocdepth}{1}|设置两级标题目录深度；
-  \item[$\triangleright$] 若某参考文献标题中含有特定含义大写字母（“ISODATA”等,详见\cite{Li2017An}），应特别用第二重｛｝将其括起来才可使其正常表示；
-  \item[$\triangleright$] 切换论文版本后，重新生成目录需两次编译；
-  \item[$\triangleright$] 行末针对标点的断行不好，例如\ref{sec:error1}处的有个“、”被断在了句首；
-  \item[$\triangleright$] \verb|\label{<text>}|中不能使用中文；
-  \item[$\triangleright$] 浮动体与正文之间的距离是弹性的；
-  \item[$\triangleright$] 中文粗体将转换为楷体；
-  \item[$\triangleright$] 命令符与汉字之间请注意加空格以避免undefined错误（pdfLaTeX下好像一般不存在这个问题，主要在XeLaTeX编译环境下发生）；
-  \item[$\triangleright$] Mac系统可采用MacTex+TeXstudio的安装方式，请注意添加常用字库（宋体、黑体等）以避免\verb|Undefined control sequence. \begin{document}|错误
+  \item[$\triangleright$] 目录中若要求出现三级标题，在\verb|NMUThesis.tex|中通过\verb|\setcounter{tocdepth}{2}|设置三级标题目录深度；
+  \item[$\triangleright$] 切换论文版本后，若要使目录生效，需两次编译或者清理辅助文件后一次编译；
+  \item[$\triangleright$] 当文中用到\&、 \#、 \%、 \$、 \{、 \}、 \_、 \^{}、 \~{} $\cdots$ 等字符时，需要加反斜杠 \textbackslash 转义，更多特殊符号参看\ref{subsec:sysmbol}；
+  \item[$\triangleright$] 行末针对标点的断行不好，例如\ref{sec:error}处的有个“、”被断在了句首；
+  \item[$\triangleright$] 替换独创性声明：用Adobe Acrobat DC打开最终版论文，页面缩略图-- 选中独创性声明页面 -- 鼠标右键 -- 替换页面 -- 选择扫描好的签字文件 -- 确定 -- 保存；
+  \item[$\triangleright$] Mac系统可采用MacTex+TeXstudio的安装方式，请注意添加常用字库（宋体、黑体等）以避免\verb|Undefined control sequence. \begin{document}|错误。
 \end{itemize}
 
-%-----------------------------
-\section{ToDo}
-\begin{itemize}
-  \item[$\triangleright$] 模板选项参数选择(例：\verb|\documentclass[master,oneside,ultimate,MS]{nmu}|)；
-  \item[$\triangleright$] 导入BibTeX参考文献库可通过百度学术或Zotero等(例：如图\ref{fig:3-1}、\ref{fig:3-2})；
-  \item[$\triangleright$] 表格、图片可使用TeXstudio向导插入(例：如图\ref{subfig:3a}、\ref{subfig:3b})；
+%%================================================================
+\section{常用命令及快捷键}
 
-\end{itemize}
+\begin{center}
+	\begin{tabular}{cc|cc}
+		\toprule
+		功能  & 命令 & 功能 & 快捷键   \\
+		\midrule
+		硬空格 & \verb|~| & 定位 & Ctrl+左键 \\
+		换行 & \verb|\\| & 查找 & Ctrl+F \\
+		空一行 & \verb|~\\| & 替换 & Ctrl+R \\
+		换页 & \verb|\newpage| & 撤销 & Ctrl+Z \\
+		水平空距 & \verb|\hspace{}| & 恢复 & Ctrl+Y \\
+		垂直空距 & \verb|\vspace{}| & 注释/取消 & Crtl+T \\
+		\bottomrule
+	\end{tabular}
+\end{center}
 
-\begin{figure}[tbh!]
-	\centering
-	\includegraphics[width=0.6\linewidth]{figures/sample/3-1}
-	\caption{导入BibTeX参考文献库步骤一}
-	\label{fig:3-1}
-\end{figure}
-
-\begin{figure}[tbh!]
-	\centering
-	\includegraphics[width=0.6\linewidth]{figures/sample/3-2}
-	\caption{导入BibTeX参考文献库步骤二}
-	\label{fig:3-2}
-\end{figure}
-
-\begin{figure}[htb!]
-	\centering
-	\begin{subfigure}[b]{.4\textwidth}
-		\centering
-		\includegraphics[width=0.7\linewidth]{3-3.png}
-		\caption{TeXstudio向导}\label{subfig:3a}
-	\end{subfigure}
-	\begin{subfigure}[b]{.4\textwidth}
-		\centering
-		\includegraphics[width=0.8\linewidth]{3-4.png}
-		\caption{插入图片}\label{subfig:3b}
-	\end{subfigure}
-	\caption{使用TeXstudio向导插入图片}\label{fig:3}
-\end{figure}
-%-----------------------------
-
+%%================================================================
 \section{友情链接}
 \label{friendly_link}
 \noindent《北方民族大学学位论文\LaTeX{}模板》下载地址为：
@@ -180,9 +164,10 @@
 
  \highlight{\href{https://github.com/WizenZhang/NMUProposal}{https://github.com/WizenZhang/NMUProposal}}
 
+%%================================================================
 \section{意见及问题反馈}
 
-\indent E-mail：wizen\_zhang@163.com\\
+\indent E-mail：\href{mailto:wizen_zhang@163.com}{wizen\_zhang@163.com}\\
 \indent GitHub：\href{https://github.com/WizenZhang/NMUThesis/issues}{https://github.com/WizenZhang/NMUThesis/issues}
 
 
