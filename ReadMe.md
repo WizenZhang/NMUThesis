@@ -1,19 +1,19 @@
-# 北方民族大学学位论文LaTeX模板
+# 北方民族大学研究生学位论文LaTeX模板
 [![](https://img.shields.io/badge/version-v5.0-brightgreen.svg)](https://github.com/WizenZhang/NMUThesis/releases)   ![](https://img.shields.io/badge/license-MIT-blue.svg)
 
-**本项目为北方民族大学学位论文模板NMUThesis。模板按照院教字〔2003〕169号《北方民族大学研究生学位论文格式和要求》制定，适用于文史类和理工类论文(博士、学术硕士、专业硕士)，支持单双面打印以及盲审版、最终版排版。本模板为个人兴趣之作，仅供学习交流使用。**
+**本项目为北方民族大学研究生学位论文模板NMUThesis。模板按照院教字〔2003〕169号《北方民族大学研究生学位论文格式和要求》制定，适用于文史类和理工类论文(博士、学术硕士、专业硕士)，支持单双面打印以及盲审版、最终版排版。本模板为个人兴趣之作，仅供学习交流使用。**
 
 
 ## 预览
 
 **PDF下载预览:**[NMUThesis.pdf](https://raw.githubusercontent.com/WizenZhang/NMUThesis/master/NMUThesis.pdf)
-![](figures/NMUThesis_1.png)
+![](figures/NMUThesis_1.jpg)
 
-![](figures/NMUThesis_2.png) 
+![](figures/NMUThesis_2.jpg) 
   
-![](figures/NMUThesis_3.png) 
+![](figures/NMUThesis_3.jpg) 
   
-![](figures/NMUThesis_4.png)   
+![](figures/NMUThesis_4.jpg)   
 
 ## 下载地址
 
@@ -48,7 +48,7 @@
 
 ### 项目环境
 
-![](https://img.shields.io/badge/Windows%207-64bit-blue.svg)   ![](https://img.shields.io/badge/TeXstudio-2.12.8-orange.svg)   ![](https://img.shields.io/badge/Texlive2017-20170524-ff69b4.svg)
+![](https://img.shields.io/badge/Windows%207-64bit-blue.svg)   ![](https://img.shields.io/badge/TeXstudio-2.12.16-orange.svg)   ![](https://img.shields.io/badge/Texlive2019-20190410-ff69b4.svg)
 
 ### 项目结构
 
@@ -70,8 +70,8 @@ NMUThesis
 
 ## 友情链接
 
-+ Windows系统可以选择TexLive+TeXstudio的方式安装，配置教程请参看百度经验：
-[https://jingyan.baidu.com/article/b2c186c83c9b40c46ff6ff4f.html](https://jingyan.baidu.com/article/b2c186c83c9b40c46ff6ff4f.html)
++ 北方民族大学研究生学位论文LaTex模板使用教程：
+[https://v.youku.com/v_show/id_XNDIyNDM0MDEwOA==.html](https://v.youku.com/v_show/id_XNDIyNDM0MDEwOA==.html)
 
 + LaTeX入门视频教程请参看CSDN：
 [https://blog.csdn.net/so_geili/article/details/51702564](https://blog.csdn.net/so_geili/article/details/51702564)
